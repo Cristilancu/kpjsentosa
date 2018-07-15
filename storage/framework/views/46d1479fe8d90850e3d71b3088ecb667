@@ -1,0 +1,31 @@
+     <!-- upcoming events start -->
+
+                         <div class="panel-group" id="accordion">
+                                  
+                              <?php foreach(Helper::getEvents(5) as $key=>$event): ?>
+                                  
+                                      <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                          <h4 class="panel-title  <?php echo e($key==0?'active':''); ?>">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse-event-<?php echo e($event->id); ?>">
+                                              <span><i class="fa <?php echo e($key==0?'fa-minus fa-plus':'fa-plus'); ?>"></i></span><?php echo e($event->title); ?>
+
+                                            </a>
+                                          </h4>
+                                        </div>
+                                        
+                                        <div id="collapse-event-<?php echo e($event->id); ?>" class="panel-collapse collapse <?php echo e($key==0?'in':''); ?>">
+                                          <div class="panel-body">
+                                            <p><?php echo e($event->description); ?></p>
+                                            <a href="/latest_events/<?php echo e($event->id); ?>">- Read More</a>
+                                          </div>
+                                        </div>
+                                      </div>
+                              <?php endforeach; ?>
+                                    
+                                      <!-- end upcoming events -->
+                                      
+                                    </div><!-- end accordion -->
+                                      <div class="clearfix margin-bottom-20"></div>
+                              <p class="text-center"><a href="/latest_events" class="btn btn-danger btn-mini btn-rounded">View All Events</a></p>
+                              <div class="clearfix margin-bottom-40"></div>

@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <base href="" />
+	<!-- Basic Page Needs
+
+     ================================================== -->
+	 
+	 <meta charset="utf-8">
+	 
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+	 <link rel="icon" type="image/png" href="images/favicon.png">
+	
+     <title>Edit Account Details</title>
+    
+     <meta name="description" content="">
+    
+     <meta name="keywords" content="">
+    
+     <meta name="author" content="">
+
+	 
+	 <!-- Mobile Specific Metas
+    
+     ================================================== -->
+    
+     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    
+     <meta name="format-detection" content="telephone=no">
+
+	 
+	 <!-- Web Font
+	 ============================================= -->
+	 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet">
+	
+	
+	<!-- CSS
+    
+     ================================================== -->
+	 
+	 
+	<!-- Theme Color
+	============================================= -->
+	<link rel="stylesheet" id="color" href="css/blue.css">
+    
+	
+	<!-- Medicom Style
+	============================================= -->
+    <link rel="stylesheet" href="css/medicom.css">
+
+
+	
+	<!-- Bootstrap
+	============================================= -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+
+	<!-- Theme Skin
+	============================================= -->
+	<link href="css/light.css" rel="stylesheet" id="choose-theme">	
+    
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+	
+	
+	<!-- Header Scripts
+    
+    ================================================== -->
+	
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	
+    
+	</head>
+    <body class="fixed-header">
+		
+
+		<!-- Document Wrapper
+		============================================= -->
+		<div id="wrapper" class="clearfix">
+    
+		
+		<!-- Header
+		============================================= -->
+		<header id="header" class="medicom-header medical-nav">
+		
+			<!-- Top Row
+			============================================= -->
+			<div class="solid-row"></div>
+        
+			<div class="container">
+				
+				
+				<!-- Primary Navigation
+				============================================= -->
+				<nav class="navbar navbar-default" role="navigation">
+				
+					<!-- Brand and toggle get grouped for better mobile display
+					============================================= -->
+					
+					<div class="navbar-header">
+						
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-nav">
+						  <span class="sr-only">Toggle navigation</span>
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>
+						</button>
+						
+						<a class="navbar-brand" href="index.html"><img src="images/index/logo.png" alt="" title=""></a>
+					
+					</div>
+				
+					
+					<div class="collapse navbar-collapse navbar-right" id="primary-nav">
+						
+						<ul class="nav navbar-nav">
+							
+							<li>
+								<a href="index.html"><i class="fa fa-plus"></i>Home</a>						
+								
+							</li>
+							
+							<li>
+								<a href="patients_visitors.html"><i class="fa fa-plus"></i>Patients &amp;<br/> Visitors</a>
+								
+							</li>
+						  
+							<li>
+								<a href="#"><i class="fa fa-plus"></i>Service &amp;<br/> Procedures</a>
+								
+							</li>
+						  
+							<li>
+								<a href="screening_packages.html"><i class="fa fa-plus"></i>Screening &amp;<br/> Packages</a>
+								
+							</li>
+						  
+							<li>
+								<a href="#"><i class="fa fa-plus"></i>GPs &amp;<br/> Partners</a>
+								
+							</li>
+						  
+							<li>
+								<a href="find_doctor.html"><i class="fa fa-plus"></i>Find<br/> Doctor</a>
+								
+							</li>
+						  
+						  
+							<li class="last">
+								<a href="contact_us.html"><i class="fa fa-plus"></i>Contact<br/> Us</a>
+								
+							</li>
+						  
+						</ul>
+                        
+						
+					</div>
+					
+				</nav>
+
+			</div>
+
+    </header>
+    
+    <!-- Sub Page Banner
+			============================================= -->
+			<section class="sub-page-banner2 text-center" data-stellar-background-ratio="0.3">
+				
+				<div class="overlay"></div>
+				
+		  		<div class="container">
+					<h1 class="entry-title">My Account</h1>
+				</div>
+				
+			</section>
+            
+            <div class="page-header-breadcrumb">
+
+              
+              <ol class="breadcrumb page-breadcrumb text-center">
+
+                <li><a href="make_appointment.html">Make an Appointment</a>&nbsp;</li>
+                <li><a href="signup.html">Sign Up</a>&nbsp;</li>
+                <li><a href="#">Logout</a>&nbsp;</li>
+
+              </ol>
+              
+              <!-- Modal login -->
+                    <div class="modal fade book-an-appointment" id="modal-login" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Patient Login</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Log in to check/update your appointment bookings and update your personal details.</p>
+                                    <hr>
+        							
+                                    <div class="form-group">
+                                      <label class="col-md-4">Email (Login ID): <span class="text-danger">*</span></label>
+                                      <div class="col-md-8">
+                                         <input type="text" class="form-control" placeholder="eg. mail@yourdomain.com">
+                                      </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="form-group">
+                                      <label class="col-md-4">Password: <span class="text-danger">*</span></label>
+                                      <div class="col-md-8">
+                                         <input type="text" class="form-control">
+                                         <div class="clearfix"></div>
+                                         <a href="#" data-target="#modal-forgot-password" data-toggle="modal">Forgot Your Password?</a>
+                                         <div class="alert alert-success" style="width: 94%">
+                                            <i class="fa fa-check-circle"></i> Password entered correctly.
+                                        </div>
+                                        <div class="alert alert-danger" style="width: 94%">
+                                            <i class="fa fa-times-circle"></i> Password entered wrongly.
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+  
+        							<hr>
+                                    <div class="col-md-12 text-center">
+                                    	<input type="submit" class="btn btn-danger btn-rounded" style="width: 20%" value="Login">
+                                        <input type="submit" class="btn btn-primary btn-rounded" style="width: 20%" value="Cancel" data-dismiss="modal">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal login--> 
+                    
+                    <!-- Modal forgot password -->
+                    <div class="modal fade book-an-appointment" id="modal-forgot-password" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Forgot Your Password?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Please type in the email address you used for signup and we will send you the new password.</p>
+                                    <hr>
+        							
+                                    <div class="form-group">
+                                      <label class="col-md-4">Email (Login ID): <span class="text-danger">*</span></label>
+                                      <div class="col-md-8">
+                                         <input type="text" class="form-control" placeholder="eg. mail@yourdomain.com">
+                                      </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    
+  
+        							<hr>
+                                    <div class="col-md-12 text-center">
+                                    	<input type="submit" class="btn btn-danger btn-rounded" style="width: 40%" value="Reset Password">
+                                        <input type="submit" class="btn btn-primary btn-rounded" style="width: 20%" value="Cancel" data-dismiss="modal">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal forgot password --> 
+
+            </div>
+
+	
+	
+    		<!-- Sub Page Content
+			============================================= -->
+			<div id="sub-page-content" class="no-padding-bottom clearfix">
+    	
+				
+				<!-- patient transfer Start
+				============================================= -->
+			    <div class="container">
+					                    
+                    <div class="row">
+					
+						<div class="col-md-4">
+                            <div class="procedures">
+                                <h3>Quick Access</h3>
+                                <div class="panel-group sidebar-nav" id="accordion3">
+                                  <div class="panel panel-sidebar">
+                                    <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion3" href="#collapse1">
+                                    <i class="fa fa-angle-right"></i> Home
+                                    </a>
+                                    </h4>
+                                    </div>
+                                    <div id="collapse1" class="panel-collapse collapse">
+                                      <div class="panel-body">
+                                      <a href="dashboard.html"><i class="fa fa-angle-right"></i> Dashboard</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="panel panel-sidebar">
+                                    <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion3" href="#collapse2">
+                                    <i class="fa fa-angle-right"></i> Appointments
+                                    </a>
+                                    </h4>
+                                    </div>
+                                    <div id="collapse2" class="panel-collapse collapse">
+                                      <div class="panel-body">
+                                      <a href="appointment_list.html"><i class="fa fa-angle-right"></i> Booked Appointments</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="panel panel-sidebar">
+                                    <div class="panel-heading">
+                                    <h4 class="panel-title active">
+                                    <a data-toggle="collapse" data-parent="#accordion3" href="#collapse3">
+                                    <i class="fa fa-angle-right"></i> My Account
+                                    </a>
+                                    </h4>
+                                    </div>
+                                    <div id="collapse3" class="panel-collapse collapse in">
+                                      <div class="panel-body">
+                                        <a href="account_edit.html" class="active"><i class="fa fa-angle-right"></i> Edit Account Details</a>
+                                        <a href="#" data-target="#modal-change-password" data-toggle="modal"><i class="fa fa-angle-right"></i> Change/Update Password</a>
+                                       
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                                </div>
+                            </div>
+                        </div><!-- end col-md-4 -->
+                        
+                        <div class="col-md-8">
+                        	
+                           <h2 class="light bordered main-title">Edit Your <span>Account Details</span></h2>                   			
+                           <div class="text-danger text-right">* Mandatory field</div>
+                           <div class="clearfix"></div>
+                           <div class="height10"></div>
+                               
+                           <form class="form-horizontal">
+                                <div class="form-group">
+                                  <label class="col-md-3">MRN: </label>
+                                  <div class="col-md-9">
+                                     <input type="text" class="form-control" value="0000000001">
+                                     <div class="clearfix"></div>
+                                     <div class="text-info">The MRN number is on your appointment card. If you are the first-time patient, please leave it blank.</div>
+                                  </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                
+                                <div class="form-group">
+                                  <label class="col-md-3">Patient's Last Name: <span class="text-danger">*</span></label>
+                                  <div class="col-md-9">
+                                     <input type="text" class="form-control" value="Lim">
+                                  </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                
+                                <div class="form-group">
+                                  <label class="col-md-3">Patient's First Name: <span class="text-danger">*</span></label>
+                                  <div class="col-md-9">
+                                     <input type="text" class="form-control" value="Hock Hock">
+                                  </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                
+                                <div class="form-group">
+                                  <label class="col-md-3">Date of Birth: <span class="text-danger">*</span></label>
+                                  <div class="col-md-9">
+                                     <input type="text" placeholder="eg. 25 June, 1980" class="form-control" value="25 June, 1980"> 
+                                  </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="form-group">
+                                  <label class="col-md-3">Gender: <span class="text-danger">*</span></label>
+                                  <div class="col-md-9">
+                                      <select class="form-control">
+                                        <option>- Select -</option>
+                                        <option selected="selected">Male</option>
+                                        <option>Female</option>
+                                      </select> 
+                                  </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                
+                                <div class="form-group">
+                                  <label class="col-md-3">NRIC/Passport No.: <span class="text-danger">*</span></label>
+                                  <div class="col-md-9">
+                                     <input type="text" class="form-control" value="890625-04-3445">
+                                  </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                
+                                <div class="form-group">
+                                  <label class="col-md-3">Contact No.: <span class="text-danger">*</span></label>
+                                  <div class="col-md-9">
+
+                                     <input type="text" placeholder="eg. +6016-123-1234" class="form-control" value="+6016-123-1234">
+                                  </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                
+                                <div class="form-group">
+                                  <label class="col-md-3">Address: <span class="text-danger">*</span></label>
+                                  <div class="col-md-9">
+                                     <textarea rows="5" class="form-control">B2-2-2, Solaris Dutamas, No. 1, Jalan Dutamas 1, </textarea>
+                                  </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                
+                                <div class="form-group">
+                                  <label class="col-md-3">Postal Code: <span class="text-danger">*</span></label>
+                                  <div class="col-md-9">
+                                     <input type="text" class="form-control" value="50480">
+                                  </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                
+                                <div class="form-group">
+                                  <label class="col-md-3">City: <span class="text-danger">*</span></label>
+                                  <div class="col-md-9">
+                                     <input type="text" class="form-control" value="Kuala Lumpur">
+                                  </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                
+                                <div class="form-group">
+                                  <label class="col-md-3">State: <span class="text-danger">*</span></label>
+                                  <div class="col-md-9">
+                                     <input type="text" class="form-control" value="Wilayah Persekutuan">
+                                  </div>
+                                </div>
+
+                                <div class="form-group">
+                                  <label class="col-md-3">Country: <span class="text-danger">*</span></label>
+                                  <div class="col-md-9">
+                                     <select class="form-control">
+                                        <option>-- Please select --</option>
+                                        <option data-calling-code="93" data-eu-tax="unknown" value="AF">Afghanistan</option>
+                                        <option data-calling-code="358" data-eu-tax="unknown" value="AX">Åland Islands</option>
+                                        <option data-calling-code="355" data-eu-tax="unknown" value="AL">Albania</option>
+                                        <option data-calling-code="213" data-eu-tax="unknown" value="DZ">Algeria</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="AS">American Samoa</option>
+                                        <option data-calling-code="376" data-eu-tax="unknown" value="AD">Andorra</option>
+                                        <option data-calling-code="244" data-eu-tax="unknown" value="AO">Angola</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="AI">Anguilla</option>
+                                        <option data-calling-code="672" data-eu-tax="unknown" value="AQ">Antarctica</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="AG">Antigua and Barbuda</option>
+                                        <option data-calling-code="54" data-eu-tax="unknown" value="AR">Argentina</option>
+                                        <option data-calling-code="374" data-eu-tax="unknown" value="AM">Armenia</option>
+                                        <option data-calling-code="297" data-eu-tax="unknown" value="AW">Aruba</option>
+                                        <option data-calling-code="61" data-eu-tax="unknown" value="AU">Australia</option>
+                                        <option data-calling-code="43" data-eu-tax="yes" value="AT">Austria</option>
+                                        <option data-calling-code="994" data-eu-tax="unknown" value="AZ">Azerbaijan</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="BS">Bahamas</option>
+                                        <option data-calling-code="973" data-eu-tax="unknown" value="BH">Bahrain</option>
+                                        <option data-calling-code="880" data-eu-tax="unknown" value="BD">Bangladesh</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="BB">Barbados</option>
+                                        <option data-calling-code="375" data-eu-tax="unknown" value="BY">Belarus</option>
+                                        <option data-calling-code="32" data-eu-tax="yes" value="BE">Belgium</option>
+                                        <option data-calling-code="501" data-eu-tax="unknown" value="BZ">Belize</option>
+                                        <option data-calling-code="229" data-eu-tax="unknown" value="BJ">Benin</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="BM">Bermuda</option>
+                                        <option data-calling-code="975" data-eu-tax="unknown" value="BT">Bhutan</option>
+                                        <option data-calling-code="591" data-eu-tax="unknown" value="BO">Bolivia, Plurinational State of</option>
+                                        <option data-calling-code="387" data-eu-tax="unknown" value="BA">Bosnia and Herzegovina</option>
+                                        <option data-calling-code="267" data-eu-tax="unknown" value="BW">Botswana</option>
+                                        <option data-calling-code="55" data-eu-tax="unknown" value="BR">Brazil</option>
+                                        <option data-calling-code="246" data-eu-tax="unknown" value="IO">British Indian Ocean Territory</option>
+                                        <option data-calling-code="673" data-eu-tax="unknown" value="BN">Brunei Darussalam</option>
+                                        <option data-calling-code="359" data-eu-tax="yes" value="BG">Bulgaria</option>
+                                        <option data-calling-code="226" data-eu-tax="unknown" value="BF">Burkina Faso</option>
+                                        <option data-calling-code="257" data-eu-tax="unknown" value="BI">Burundi</option>
+                                        <option data-calling-code="855" data-eu-tax="unknown" value="KH">Cambodia</option>
+                                        <option data-calling-code="237" data-eu-tax="unknown" value="CM">Cameroon</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="CA">Canada</option>
+                                        <option data-calling-code="238" data-eu-tax="unknown" value="CV">Cape Verde</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="KY">Cayman Islands</option>
+                                        <option data-calling-code="236" data-eu-tax="unknown" value="CF">Central African Republic</option>
+                                        <option data-calling-code="235" data-eu-tax="unknown" value="TD">Chad</option>
+                                        <option data-calling-code="56" data-eu-tax="unknown" value="CL">Chile</option>
+                                        <option data-calling-code="86" data-eu-tax="unknown" value="CN">China</option>
+                                        <option data-calling-code="61" data-eu-tax="unknown" value="CX">Christmas Island</option>
+                                        <option data-calling-code="61" data-eu-tax="unknown" value="CC">Cocos (Keeling) Islands</option>
+                                        <option data-calling-code="57" data-eu-tax="unknown" value="CO">Colombia</option>
+                                        <option data-calling-code="269" data-eu-tax="unknown" value="KM">Comoros</option>
+                                        <option data-calling-code="242" data-eu-tax="unknown" value="CG">Congo</option>
+                                        <option data-calling-code="243" data-eu-tax="unknown" value="CD">Congo, the Democratic Republic of the</option>
+                                        <option data-calling-code="682" data-eu-tax="unknown" value="CK">Cook Islands</option>
+                                        <option data-calling-code="506" data-eu-tax="unknown" value="CR">Costa Rica</option>
+                                        <option data-calling-code="225" data-eu-tax="unknown" value="CI">Côte d'Ivoire</option>
+                                        <option data-calling-code="385" data-eu-tax="yes" value="HR">Croatia</option>
+                                        <option data-calling-code="53" data-eu-tax="unknown" value="CU">Cuba</option>
+                                        <option data-calling-code="357" data-eu-tax="yes" value="CY">Cyprus</option>
+                                        <option data-calling-code="420" data-eu-tax="yes" value="CZ">Czech Republic</option>
+                                        <option data-calling-code="45" data-eu-tax="yes" value="DK">Denmark</option>
+                                        <option data-calling-code="253" data-eu-tax="unknown" value="DJ">Djibouti</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="DM">Dominica</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="DO">Dominican Republic</option>
+                                        <option data-calling-code="593" data-eu-tax="unknown" value="EC">Ecuador</option>
+                                        <option data-calling-code="20" data-eu-tax="unknown" value="EG">Egypt</option>
+                                        <option data-calling-code="503" data-eu-tax="unknown" value="SV">El Salvador</option>
+                                        <option data-calling-code="240" data-eu-tax="unknown" value="GQ">Equatorial Guinea</option>
+                                        <option data-calling-code="291" data-eu-tax="unknown" value="ER">Eritrea</option>
+                                        <option data-calling-code="372" data-eu-tax="yes" value="EE">Estonia</option>
+                                        <option data-calling-code="251" data-eu-tax="unknown" value="ET">Ethiopia</option>
+                                        <option data-calling-code="500" data-eu-tax="unknown" value="FK">Falkland Islands (Malvinas)</option>
+                                        <option data-calling-code="298" data-eu-tax="unknown" value="FO">Faroe Islands</option>
+                                        <option data-calling-code="679" data-eu-tax="unknown" value="FJ">Fiji</option>
+                                        <option data-calling-code="358" data-eu-tax="yes" value="FI">Finland</option>
+                                        <option data-calling-code="33" data-eu-tax="yes" value="FR">France</option>
+                                        <option data-calling-code="594" data-eu-tax="unknown" value="GF">French Guiana</option>
+                                        <option data-calling-code="689" data-eu-tax="unknown" value="PF">French Polynesia</option>
+                                        <option data-calling-code="262" data-eu-tax="unknown" value="TF">French Southern Territories</option>
+                                        <option data-calling-code="241" data-eu-tax="unknown" value="GA">Gabon</option>
+                                        <option data-calling-code="220" data-eu-tax="unknown" value="GM">Gambia</option>
+                                        <option data-calling-code="995" data-eu-tax="unknown" value="GE">Georgia</option>
+                                        <option data-calling-code="49" data-eu-tax="yes" value="DE">Germany</option>
+                                        <option data-calling-code="233" data-eu-tax="unknown" value="GH">Ghana</option>
+                                        <option data-calling-code="350" data-eu-tax="unknown" value="GI">Gibraltar</option>
+                                        <option data-calling-code="30" data-eu-tax="yes" value="GR">Greece</option>
+                                        <option data-calling-code="299" data-eu-tax="unknown" value="GL">Greenland</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="GD">Grenada</option>
+                                        <option data-calling-code="590" data-eu-tax="unknown" value="GP">Guadeloupe</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="GU">Guam</option>
+                                        <option data-calling-code="502" data-eu-tax="unknown" value="GT">Guatemala</option>
+                                        <option data-calling-code="44" data-eu-tax="unknown" value="GG">Guernsey</option>
+                                        <option data-calling-code="224" data-eu-tax="unknown" value="GN">Guinea</option>
+                                        <option data-calling-code="245" data-eu-tax="unknown" value="GW">Guinea-Bissau</option>
+                                        <option data-calling-code="592" data-eu-tax="unknown" value="GY">Guyana</option>
+                                        <option data-calling-code="509" data-eu-tax="unknown" value="HT">Haiti</option>
+                                        <option data-calling-code="3906" data-eu-tax="unknown" value="VA">Holy See (Vatican City State)</option>
+                                        <option data-calling-code="504" data-eu-tax="unknown" value="HN">Honduras</option>
+                                        <option data-calling-code="852" data-eu-tax="unknown" value="HK">Hong Kong</option>
+                                        <option data-calling-code="36" data-eu-tax="yes" value="HU">Hungary</option>
+                                        <option data-calling-code="354" data-eu-tax="unknown" value="IS">Iceland</option>
+                                        <option data-calling-code="91" data-eu-tax="unknown" value="IN">India</option>
+                                        <option data-calling-code="62" data-eu-tax="unknown" value="ID">Indonesia</option>
+                                        <option data-calling-code="98" data-eu-tax="unknown" value="IR">Iran, Islamic Republic of</option>
+                                        <option data-calling-code="964" data-eu-tax="unknown" value="IQ">Iraq</option>
+                                        <option data-calling-code="353" data-eu-tax="yes" value="IE">Ireland</option>
+                                        <option data-calling-code="44" data-eu-tax="yes" value="IM">Isle of Man</option>
+                                        <option data-calling-code="972" data-eu-tax="unknown" value="IL">Israel</option>
+                                        <option data-calling-code="39" data-eu-tax="yes" value="IT">Italy</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="JM">Jamaica</option>
+                                        <option data-calling-code="81" data-eu-tax="unknown" value="JP">Japan</option>
+                                        <option data-calling-code="44" data-eu-tax="unknown" value="JE">Jersey</option>
+                                        <option data-calling-code="962" data-eu-tax="unknown" value="JO">Jordan</option>
+                                        <option data-calling-code="7" data-eu-tax="unknown" value="KZ">Kazakhstan</option>
+                                        <option data-calling-code="254" data-eu-tax="unknown" value="KE">Kenya</option>
+                                        <option data-calling-code="686" data-eu-tax="unknown" value="KI">Kiribati</option>
+                                        <option data-calling-code="850" data-eu-tax="unknown" value="KP">Korea, Democratic People's Republic of</option>
+                                        <option data-calling-code="82" data-eu-tax="unknown" value="KR">Korea, Republic of</option>
+                                        <option data-calling-code="965" data-eu-tax="unknown" value="KW">Kuwait</option>
+                                        <option data-calling-code="996" data-eu-tax="unknown" value="KG">Kyrgyzstan</option>
+                                        <option data-calling-code="856" data-eu-tax="unknown" value="LA">Lao People's Democratic Republic</option>
+                                        <option data-calling-code="371" data-eu-tax="yes" value="LV">Latvia</option>
+                                        <option data-calling-code="961" data-eu-tax="unknown" value="LB">Lebanon</option>
+                                        <option data-calling-code="266" data-eu-tax="unknown" value="LS">Lesotho</option>
+                                        <option data-calling-code="231" data-eu-tax="unknown" value="LR">Liberia</option>
+                                        <option data-calling-code="218" data-eu-tax="unknown" value="LY">Libyan Arab Jamahiriya</option>
+                                        <option data-calling-code="423" data-eu-tax="unknown" value="LI">Liechtenstein</option>
+                                        <option data-calling-code="370" data-eu-tax="yes" value="LT">Lithuania</option>
+                                        <option data-calling-code="352" data-eu-tax="yes" value="LU">Luxembourg</option>
+                                        <option data-calling-code="853" data-eu-tax="unknown" value="MO">Macao</option>
+                                        <option data-calling-code="389" data-eu-tax="unknown" value="MK">Macedonia, the former Yugoslav Republic of</option>
+                                        <option data-calling-code="261" data-eu-tax="unknown" value="MG">Madagascar</option>
+                                        <option data-calling-code="265" data-eu-tax="unknown" value="MW">Malawi</option>
+                                        <option data-calling-code="60" data-eu-tax="unknown" value="MY" selected="selected">Malaysia</option>
+                                        <option data-calling-code="960" data-eu-tax="unknown" value="MV">Maldives</option>
+                                        <option data-calling-code="223" data-eu-tax="unknown" value="ML">Mali</option>
+                                        <option data-calling-code="356" data-eu-tax="yes" value="MT">Malta</option>
+                                        <option data-calling-code="692" data-eu-tax="unknown" value="MH">Marshall Islands</option>
+                                        <option data-calling-code="596" data-eu-tax="unknown" value="MQ">Martinique</option>
+                                        <option data-calling-code="222" data-eu-tax="unknown" value="MR">Mauritania</option>
+                                        <option data-calling-code="230" data-eu-tax="unknown" value="MU">Mauritius</option>
+                                        <option data-calling-code="262" data-eu-tax="unknown" value="YT">Mayotte</option>
+                                        <option data-calling-code="52" data-eu-tax="unknown" value="MX">Mexico</option>
+                                        <option data-calling-code="691" data-eu-tax="unknown" value="FM">Micronesia, Federated States of</option>
+                                        <option data-calling-code="373" data-eu-tax="unknown" value="MD">Moldova, Republic of</option>
+                                        <option data-calling-code="377" data-eu-tax="yes" value="MC">Monaco</option>
+                                        <option data-calling-code="976" data-eu-tax="unknown" value="MN">Mongolia</option>
+                                        <option data-calling-code="382" data-eu-tax="unknown" value="ME">Montenegro</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="MS">Montserrat</option>
+                                        <option data-calling-code="212" data-eu-tax="unknown" value="MA">Morocco</option>
+                                        <option data-calling-code="258" data-eu-tax="unknown" value="MZ">Mozambique</option>
+                                        <option data-calling-code="94" data-eu-tax="unknown" value="MM">Myanmar</option>
+                                        <option data-calling-code="264" data-eu-tax="unknown" value="NA">Namibia</option>
+                                        <option data-calling-code="674" data-eu-tax="unknown" value="NR">Nauru</option>
+                                        <option data-calling-code="977" data-eu-tax="unknown" value="NP">Nepal</option>
+                                        <option data-calling-code="31" data-eu-tax="yes" value="NL">Netherlands</option>
+                                        <option data-calling-code="599" data-eu-tax="unknown" value="AN">Netherlands Antilles</option>
+                                        <option data-calling-code="687" data-eu-tax="unknown" value="NC">New Caledonia</option>
+                                        <option data-calling-code="64" data-eu-tax="unknown" value="NZ">New Zealand</option>
+                                        <option data-calling-code="505" data-eu-tax="unknown" value="NI">Nicaragua</option>
+                                        <option data-calling-code="227" data-eu-tax="unknown" value="NE">Niger</option>
+                                        <option data-calling-code="234" data-eu-tax="unknown" value="NG">Nigeria</option>
+                                        <option data-calling-code="683" data-eu-tax="unknown" value="NU">Niue</option>
+                                        <option data-calling-code="672" data-eu-tax="unknown" value="NF">Norfolk Island</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="MP">Northern Mariana Islands</option>
+                                        <option data-calling-code="47" data-eu-tax="unknown" value="NO">Norway</option>
+                                        <option data-calling-code="968" data-eu-tax="unknown" value="OM">Oman</option>
+                                        <option data-calling-code="92" data-eu-tax="unknown" value="PK">Pakistan</option>
+                                        <option data-calling-code="680" data-eu-tax="unknown" value="PW">Palau</option>
+                                        <option data-calling-code="970" data-eu-tax="unknown" value="PS">Palestinian Territory, Occupied</option>
+                                        <option data-calling-code="507" data-eu-tax="unknown" value="PA">Panama</option>
+                                        <option data-calling-code="675" data-eu-tax="unknown" value="PG">Papua New Guinea</option>
+                                        <option data-calling-code="595" data-eu-tax="unknown" value="PY">Paraguay</option>
+                                        <option data-calling-code="51" data-eu-tax="unknown" value="PE">Peru</option>
+                                        <option data-calling-code="63" data-eu-tax="unknown" value="PH">Philippines</option>
+                                        <option data-calling-code="649" data-eu-tax="unknown" value="PN">Pitcairn</option>
+                                        <option data-calling-code="48" data-eu-tax="yes" value="PL">Poland</option>
+                                        <option data-calling-code="351" data-eu-tax="yes" value="PT">Portugal</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="PR">Puerto Rico</option>
+                                        <option data-calling-code="974" data-eu-tax="unknown" value="QA">Qatar</option>
+                                        <option data-calling-code="262" data-eu-tax="unknown" value="RE">Réunion</option>
+                                        <option data-calling-code="40" data-eu-tax="yes" value="RO">Romania</option>
+                                        <option data-calling-code="7" data-eu-tax="unknown" value="RU">Russian Federation</option>
+                                        <option data-calling-code="250" data-eu-tax="unknown" value="RW">Rwanda</option>
+                                        <option data-calling-code="590" data-eu-tax="unknown" value="BL">Saint Barthélemy</option>
+                                        <option data-calling-code="290" data-eu-tax="unknown" value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="KN">Saint Kitts and Nevis</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="LC">Saint Lucia</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="MF">Saint Martin (French part)</option>
+                                        <option data-calling-code="508" data-eu-tax="unknown" value="PM">Saint Pierre and Miquelon</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="VC">Saint Vincent and the Grenadines</option>
+                                        <option data-calling-code="685" data-eu-tax="unknown" value="WS">Samoa</option>
+                                        <option data-calling-code="378" data-eu-tax="unknown" value="SM">San Marino</option>
+                                        <option data-calling-code="239" data-eu-tax="unknown" value="ST">Sao Tome and Principe</option>
+                                        <option data-calling-code="966" data-eu-tax="unknown" value="SA">Saudi Arabia</option>
+                                        <option data-calling-code="221" data-eu-tax="unknown" value="SN">Senegal</option>
+                                        <option data-calling-code="382" data-eu-tax="unknown" value="RS">Serbia</option>
+                                        <option data-calling-code="248" data-eu-tax="unknown" value="SC">Seychelles</option>
+                                        <option data-calling-code="232" data-eu-tax="unknown" value="SL">Sierra Leone</option>
+                                        <option data-calling-code="65" data-eu-tax="unknown" value="SG">Singapore</option>
+                                        <option data-calling-code="421" data-eu-tax="yes" value="SK">Slovakia</option>
+                                        <option data-calling-code="386" data-eu-tax="yes" value="SI">Slovenia</option>
+                                        <option data-calling-code="677" data-eu-tax="unknown" value="SB">Solomon Islands</option>
+                                        <option data-calling-code="252" data-eu-tax="unknown" value="SO">Somalia</option>
+                                        <option data-calling-code="27" data-eu-tax="unknown" value="ZA">South Africa</option>
+                                        <option data-calling-code="34" data-eu-tax="yes" value="ES">Spain</option>
+                                        <option data-calling-code="94" data-eu-tax="unknown" value="LK">Sri Lanka</option>
+                                        <option data-calling-code="249" data-eu-tax="unknown" value="SD">Sudan</option>
+                                        <option data-calling-code="597" data-eu-tax="unknown" value="SR">Suriname</option>
+                                        <option data-calling-code="" data-eu-tax="unknown" value="SJ">Svalbard and Jan Mayen</option>
+                                        <option data-calling-code="268" data-eu-tax="unknown" value="SZ">Swaziland</option>
+                                        <option data-calling-code="46" data-eu-tax="yes" value="SE">Sweden</option>
+                                        <option data-calling-code="41" data-eu-tax="unknown" value="CH">Switzerland</option>
+                                        <option data-calling-code="963" data-eu-tax="unknown" value="SY">Syrian Arab Republic</option>
+                                        <option data-calling-code="886" data-eu-tax="unknown" value="TW">Taiwan</option>
+                                        <option data-calling-code="992" data-eu-tax="unknown" value="TJ">Tajikistan</option>
+                                        <option data-calling-code="255" data-eu-tax="unknown" value="TZ">Tanzania, United Republic of</option>
+                                        <option data-calling-code="66" data-eu-tax="unknown" value="TH">Thailand</option>
+                                        <option data-calling-code="670" data-eu-tax="unknown" value="TL">Timor-Leste</option>
+                                        <option data-calling-code="228" data-eu-tax="unknown" value="TG">Togo</option>
+                                        <option data-calling-code="690" data-eu-tax="unknown" value="TK">Tokelau</option>
+                                        <option data-calling-code="676" data-eu-tax="unknown" value="TO">Tonga</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="TT">Trinidad and Tobago</option>
+                                        <option data-calling-code="216" data-eu-tax="unknown" value="TN">Tunisia</option>
+                                        <option data-calling-code="90" data-eu-tax="unknown" value="TR">Turkey</option>
+                                        <option data-calling-code="993" data-eu-tax="unknown" value="TM">Turkmenistan</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="TC">Turks and Caicos Islands</option>
+                                        <option data-calling-code="688" data-eu-tax="unknown" value="TV">Tuvalu</option>
+                                        <option data-calling-code="256" data-eu-tax="unknown" value="UG">Uganda</option>
+                                        <option data-calling-code="380" data-eu-tax="unknown" value="UA">Ukraine</option>
+                                        <option data-calling-code="971" data-eu-tax="unknown" value="AE">United Arab Emirates</option>
+                                        <option data-calling-code="44" data-eu-tax="yes" value="GB">United Kingdom</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="US">United States</option>
+                                        <option data-calling-code="598" data-eu-tax="unknown" value="UY">Uruguay</option>
+                                        <option data-calling-code="998" data-eu-tax="unknown" value="UZ">Uzbekistan</option>
+                                        <option data-calling-code="678" data-eu-tax="unknown" value="VU">Vanuatu</option>
+                                        <option data-calling-code="58" data-eu-tax="unknown" value="VE">Venezuela, Bolivarian Republic of</option>
+                                        <option data-calling-code="84" data-eu-tax="unknown" value="VN">Viet Nam</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="VG">Virgin Islands, British</option>
+                                        <option data-calling-code="1" data-eu-tax="unknown" value="VI">Virgin Islands, U.S.</option>
+                                        <option data-calling-code="681" data-eu-tax="unknown" value="WF">Wallis and Futuna</option>
+                                        <option data-calling-code="" data-eu-tax="unknown" value="EH">Western Sahara</option>
+                                        <option data-calling-code="967" data-eu-tax="unknown" value="YE">Yemen</option>
+                                        <option data-calling-code="260" data-eu-tax="unknown" value="ZM">Zambia</option>
+                                        <option data-calling-code="263" data-eu-tax="unknown" value="ZW">Zimbabwe</option>
+                                 </select>
+                                  </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                
+                                <div class="form-group">
+                                  <label class="col-md-3">Email (Login ID): <span class="text-danger">*</span></label>
+                                  <div class="col-md-9">
+                                     <input type="text" placeholder="eg. yourname@domain.com" class="form-control" value="hock@webqom.com">
+                                     <div class="clearfix"></div>
+                                     <div class="text-info">You will be able to login to check/edit your appointments.</div>
+                                  </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                
+                                <div class="form-group">
+                                  <label class="col-md-3">Password: <span class="text-danger">*</span></label>
+                                  <div class="col-md-9">
+                                     <input type="password" class="form-control" value="1234456@SDY#*">
+                                     <div class="text-info">Password must be at least 12 characters. The combination of the password must be alphanumeric with one special character (eg. ! @ # $ % ^ & * ( ) _ + { } | : < > ? " \ [ ] ' ; / . ~ `)</div>
+
+                                     	<div data-hover="tooltip" data-placement="top" title="Strong Password" class="progress progress-striped active">
+                                            
+                                            <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;" class="progress-bar progress-bar-success">100% Strong</div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                         <div data-hover="tooltip" data-placement="top" title="Moderate Password" class="progress progress-striped active">
+                                            
+                                            <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;" class="progress-bar progress-bar-warning">65% Moderate</div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                         <div data-hover="tooltip" data-placement="top" title="Weak Password" class="progress progress-striped active">
+                                            
+                                            <div role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%;" class="progress-bar progress-bar-danger">15% Weak</div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                     </div>
+                                  </div>
+
+                                <div class="clearfix"></div>
+                                
+                                
+                                <div class="form-group">
+                                  <label class="col-md-3">Confirm Password: <span class="text-danger">*</span></label>
+                                  <div class="col-md-9">
+                                     <input type="password" class="form-control" value="1234456@SDY#*">
+                                  </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <hr>
+                                
+                                <p><input type="checkbox" checked="checked"> &nbsp; I would like to subscribe to KPJ Sentosa KL Specialist Hospital's newsletter and get latest news &amp; events, promotions &amp; packages.</p>
+
+                                
+                                <hr>
+                                
+
+
+                                
+                                <div class="clearfix margin-bottom-20"></div>
+                                <div class="text-center">
+                                    <input type="submit" class="btn btn-danger btn-rounded" value="Update Details">
+                                    <input type="submit" class="btn btn-primary btn-rounded" value="Cancel">
+                                </div>
+                               
+                                
+                                
+                             </form>
+
+                            
+                            <div class="clearfix"></div>
+                              
+                              
+
+                        </div><!-- end col-md-8 -->
+                        
+						
+						
+					
+					</div><!-- end row -->
+					
+                    
+                    <!-- end row -->
+					
+                    <!-- Modal -->
+                    <div class="modal fade book-an-appointment" id="modal-change-password" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Change/Update Password</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Password must be <span class="text-danger">at least 12 characters</span>. The combination of the password must be alphanumeric with one special character <span class="text-danger">(eg. ! @ # $ % ^ & * ( ) _ + { } | : < > ? " \ [ ] ' ; / . ~ `)</span></p>
+                                    <hr>
+        							<div class="form-group">
+                                      <label class="col-md-4">Existing Password: <span class="text-danger">*</span></label>
+                                      <div class="col-md-8">
+                                         <input type="text" class="form-control">
+                                         <div class="alert alert-success" style="width: 94%">
+                                            <i class="fa fa-check-circle"></i> Password entered correctly.
+                                        </div>
+                                        <div class="alert alert-danger" style="width: 94%">
+                                            <i class="fa fa-times-circle"></i> Password entered wrongly.
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    
+                                    
+                                    <div class="form-group">
+                                      <label class="col-md-4">New Password: <span class="text-danger">*</span></label>
+                                      <div class="col-md-8">
+                                         <input type="text" class="form-control">
+                                         <div data-hover="tooltip" data-placement="top" title="Strong Password" class="progress progress-striped active">
+                                            
+                                            <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;" class="progress-bar progress-bar-success">100% Strong</div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                         <div data-hover="tooltip" data-placement="top" title="Moderate Password" class="progress progress-striped active">
+                                            
+                                            <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;" class="progress-bar progress-bar-warning">65% Moderate</div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                         <div data-hover="tooltip" data-placement="top" title="Weak Password" class="progress progress-striped active">
+                                            
+                                            <div role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%;" class="progress-bar progress-bar-danger">15% Weak</div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                      </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    
+                                    
+                                    <div class="form-group">
+                                      <label class="col-md-4">Confirm Password: <span class="text-danger">*</span></label>
+                                      <div class="col-md-8">
+                                         <input type="text" class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    
+        							<hr>
+                                    <div class="col-md-12 text-center">
+                                    	<input type="submit" class="btn btn-danger btn-rounded" style="width: 20%" value="Update">
+                                        <input type="submit" class="btn btn-primary btn-rounded" style="width: 20%" value="Cancel" data-dismiss="modal">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal --> 				
+				
+			  </div><!-- end container -->
+              <div class="height40"></div>
+              
+              
+              <!-- Find Health Information
+                ============================================= -->
+              <section class="medicom-app" data-stellar-background-ratio="0.3">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-5"> <img src="images/mobile-hand.png" class="app-img" alt="" title=""> </div>
+                    <div class="col-md-7">
+                      <div class="medicom-app-content">
+                        <h1>Find Health Information</h1>
+                        <p class="lead">All Topics by Letters</p>
+                        <form name="appoint_form" id="appoint_form" method="post" action="#" onSubmit="return false">
+                          <input type="text" placeholder="Search Topics">
+                          <input type="submit" value="Search" class="btn btn-danger btn-rounded" onClick="validateAppoint();">
+                          <div class="clearfix"></div>
+                          <div class="height20"></div>
+                          <a href="#" class="btn btn-rounded btn-default btn-sm">A</a> <a href="#" class="btn btn-rounded btn-default btn-sm">B</a> <a href="#" class="btn btn-rounded btn-default btn-sm">C</a> <a href="#" class="btn btn-rounded btn-default btn-sm">D</a> <a href="#" class="btn btn-rounded btn-default btn-sm">E</a> <a href="#" class="btn btn-rounded btn-default btn-sm">F</a> <a href="#" class="btn btn-rounded btn-default btn-sm">G</a> <a href="#" class="btn btn-rounded btn-default btn-sm">H</a> <a href="#" class="btn btn-rounded btn-default btn-sm">I</a> <a href="#" class="btn btn-rounded btn-default btn-sm">J</a> <a href="#" class="btn btn-rounded btn-default btn-sm">K</a> <a href="#" class="btn btn-rounded btn-default btn-sm">L</a> <a href="#" class="btn btn-rounded btn-default btn-sm">M</a>
+                          <div class="height10"></div>
+                          <a href="#" class="btn btn-rounded btn-default btn-sm">N</a> <a href="#" class="btn btn-rounded btn-default btn-sm">O</a> <a href="#" class="btn btn-rounded btn-default btn-sm">P</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Q</a> <a href="#" class="btn btn-rounded btn-default btn-sm">R</a> <a href="#" class="btn btn-rounded btn-default btn-sm">S</a> <a href="#" class="btn btn-rounded btn-default btn-sm">T</a> <a href="#" class="btn btn-rounded btn-default btn-sm">U</a> <a href="#" class="btn btn-rounded btn-default btn-sm">V</a> <a href="#" class="btn btn-rounded btn-default btn-sm">W</a> <a href="#" class="btn btn-rounded btn-default btn-sm">X</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Y</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Z</a>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              
+  			  	
+			
+		  </div><!--end sub-page-content-->
+    
+    
+	<div class="solid-row"></div>
+    
+	
+	<!-- Footer
+	============================================= -->
+	<footer id="footer" class="light">
+    	
+		<div class="container">
+        	
+			<div class="row">
+			
+            	<div class="col-md-3">
+                    
+					<!-- Footer Widget
+					============================================= -->
+					<div class="footer-widget">
+                        
+						<h4><span>Site Links</span></h4>
+                        
+						<ul class="footer-nav list-unstyled clearfix">
+                            <li><a href="index.html"><i class="fa fa-long-arrow-right"></i>Home</a></li>
+                            <li><a href="about_us.html"><i class="fa fa-long-arrow-right"></i>About Us</a></li>
+                            <li><a href="patients_visitors.html"><i class="fa fa-long-arrow-right"></i>Patients &amp; Visitors</a></li>
+                            <li><a href="patient_transfer.html"><i class="fa fa-long-arrow-right"></i>Patient Transfer</a></li>
+                            <li><a href="#"><i class="fa fa-long-arrow-right"></i>Services &amp; Procedures</a></li>
+                            <li><a href="screening_packages.html"><i class="fa fa-long-arrow-right"></i>Screening &amp; Packages</a></li>
+                            <li><a href="promotion_packages.html"><i class="fa fa-long-arrow-right"></i>Promotion Packages</a></li>
+                            <li><a href="#"><i class="fa fa-long-arrow-right"></i>GPs &amp; Partners</a></li>
+                            <li><a href="#"><i class="fa fa-long-arrow-right"></i>Health Calendar</a></li>
+                            <li><a href="#"><i class="fa fa-long-arrow-right"></i>KPJ Advisor Series</a></li>
+                            <li><a href="contact_us.html"><i class="fa fa-long-arrow-right"></i>Contact Us</a></li>
+                            <li><a href="#"><i class="fa fa-long-arrow-right"></i>Events</a></li>
+                            <li><a href="latest_news.html"><i class="fa fa-long-arrow-right"></i>Latest News</a></li>
+                            <li><a href="#"><i class="fa fa-long-arrow-right"></i>Career</a></li>
+                            <li><a href="faq.html"><i class="fa fa-long-arrow-right"></i>FAQ</a></li>
+                        </ul>
+						
+                    </div>
+					
+                </div>
+				
+            	<div class="col-md-3">
+				
+					<!-- Footer Widget
+					============================================= -->
+                	<div class="footer-widget">
+                        
+						<h4><span>newsletter</span></h4>
+                        
+						<div class="newsletter clearfix">
+                        
+							<i class="fa fa-envelope"></i>
+                            <p class="newsletter-text">Sign up with your name and email to get latest news &amp; events, promotions &amp; packages.</p>
+						
+						<div class="success" id="message-news" style="display:none;">Thank you! You have successfully subscribed.</div>
+						<form name="newsletter_form" id="newsletter_form" method="post" action="submit.php" onSubmit="return false">
+                            <input type="text" name="news_name" id="news_name" placeholder="Your Name" onKeyPress="removeChecks();">
+                            <input type="email" name="news_email_address" id="news_email_address" placeholder="Email Address" onKeyPress="removeChecks();">
+                            <input type="submit" value="subscribe" class="btn btn-danger btn-rounded" onClick="validateNewsletter();">
+                        </form>
+						
+                        </div>
+                    </div>
+					
+                </div>
+				
+            	<div class="col-md-3">
+				
+					<!-- Footer Widget
+					============================================= -->
+					<div class="footer-widget">
+						
+						<h4><span>KPJ Other hospitals</span></h4>
+						
+						<ul class="footer-nav list-unstyled clearfix">
+                            <li><a href="http://www.kpjjohor.com/" target="_blank"><i class="fa fa-long-arrow-right"></i>KPJ Johor Specialist Hospital</a></li>
+                            <li><a href="http://www.kpjampang.com/" target="_blank"><i class="fa fa-long-arrow-right"></i>KPJ Ampang Puteri Specialist Hospital</a></li>
+                            <li><a href="http://www.kpjselangor.kpjhealth.com.my/" target="_blank"><i class="fa fa-long-arrow-right"></i>KPJ Selangor Specialist Hospital</a></li>
+                            <li><a href="http://www.kpjputeri.com/" target="_blank"><i class="fa fa-long-arrow-right"></i>Puteri Specialist Hospital</a></li>
+                            <li><a href="http://www.kmc.kpjhealth.com.my/" target="_blank"><i class="fa fa-long-arrow-right"></i>Kedah Medical Centre</a></li>
+                            <li><a href="http://www.kpjkuching.com/" target="_blank"><i class="fa fa-long-arrow-right"></i>Kuching Specialist Hospital</a></li>
+                            <li><a href="http://www.kpjdamai.com/" target="_blank"><i class="fa fa-long-arrow-right"></i>Damai Specialist Centre</a></li>
+                            <li><a href="http://kpjkajang.com/" target="_blank"><i class="fa fa-long-arrow-right"></i>KPJ Kajang Specialist Hospital</a></li>
+                            <li><a href="http://www.kpjkluang.com/" target="_blank"><i class="fa fa-long-arrow-right"></i>Kluang Utama Specialist Hospital</a></li>
+                            <li><a href="http://www.kpjklang.com/" target="_blank"><i class="fa fa-long-arrow-right"></i>KPJ Klang Specialist Hospital</a></li>
+                            <li><a href="http://www.kpjpgsh.com/" target="_blank"><i class="fa fa-long-arrow-right"></i>Pasir Gudang Specialist Hospital</a></li>
+                            <li><a href="http://www.kpjipoh.com/" target="_blank"><i class="fa fa-long-arrow-right"></i>KPJ Ipoh Specialist Hospital</a></li>
+                            <li><a href="http://kpjdamansara.com/" target="_blank"><i class="fa fa-long-arrow-right"></i>KPJ Damansara Specialist Hospital</a></li>
+                            <li><a href="http://www.kpjtawakkal.com/" target="_blank"><i class="fa fa-long-arrow-right"></i>KPJ Tawakkal Hospital</a></li>
+                        </ul>
+                        <a href="#">- View All Hospitals</a>
+						
+					</div>
+					
+                </div>
+				
+            	<div class="col-md-3">
+                   
+					<!-- Footer Widget
+					============================================= -->
+					<div class="footer-widget">
+                    
+						<h4><span>get in touch</span></h4>
+                        
+						<div class="contact-widget">
+                        	<i class="fa fa-home"></i><p>KPJ Sentosa KL Specialist Hospital<br/>36 Jalan Cemor, Kompleks Damai, 50400 Kuala Lumpur.</p>
+							<i class="fa fa-globe"></i><p><a href="http://www.kpjsentosa.com">www.kpjsentosa.com</a></p>
+                            <i class="fa fa-phone"></i><p class="phone-number">(03) 4043-7166</p>
+                            <i class="fa fa-print"></i><p class="phone-number">(03) 4043-7761</p>
+                        </div>
+						
+						<ul class="social3 clearfix">
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-skype"></i></a></li>
+							<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+						</ul>
+						
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+		
+		
+		<!-- Copyright
+		============================================= -->
+        <p class="copyright text-center">Copyright &copy; 2016 KPJ Sentosa KL Specialist Hospital. All rights reserved. Powered by: <a href="http://www.webqom.com/web_design.html" target="_blank">Web Design Malaysia</a> &amp; <a href="http://www.webqom.com/web_hosting.html" target="_blank">Web Hosting Malaysia</a>.</p>
+        
+		
+		<!-- Footer Bottom
+		============================================= -->
+		<div class="container">
+        	<div class="row">
+
+            	<div class="col-md-12">
+                	<p class="footer-bottom-text text-center">KPJ Sentosa KL Specialist Hospital is subject to the personal data protection principles under the Personal Data Protection Act 2010 (hereafter referred to as PDPA) with effect from 15 November 2013, which regulates the processing of personal data in commercial transactions. The terms "personal data", "processing" and "commercial transactions" shall have the meaning provided in the PDPA. <a href="#">KPJ Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+                </div>
+            </div>
+        </div>
+		
+		
+    </footer>
+		
+		<!-- back to top -->
+		<a href="#." class="back-to-top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+	
+    </div><!--end #wrapper-->
+	
+    
+	
+	<!-- All Javascript 
+	============================================= -->
+	<script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.stellar.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/waypoints.js"></script>
+	<script src="js/jquery.uniform.js"></script>
+    <script src="js/easyResponsiveTabs.js"></script>
+	<script src="js/jquery.fancybox.pack.js"></script>
+	<script src="js/jquery.fancybox-media.js"></script>
+	<script src="js/jquery.mixitup.js"></script>
+	<script src="js/forms-validation.js"></script>
+	<script src="js/jquery.jcarousel.min.js"></script>
+	<script src="js/jquery.easypiechart.min.js"></script>
+	<script src="js/scripts.js"></script>
+    
+    	
+	
+  </body>
+</html>

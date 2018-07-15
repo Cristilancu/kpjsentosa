@@ -1,0 +1,163 @@
+[05-Feb-2017 22:14:01 Europe/Moscow] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/onlinekpjsentosa/public_html/config/app.php on line 195
+[06-Feb-2017 15:30:30 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Admin\Auth' not found in /home/onlinekpjsentosa/public_html/app/Http/Controllers/Admin/IndexController.php on line 457
+[07-Feb-2017 14:42:32 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Admin\Auth' not found in /home/onlinekpjsentosa/public_html/app/Http/Controllers/Admin/IndexController.php on line 457
+[07-Feb-2017 20:37:01 UTC] PHP Fatal error:  Uncaught exception 'ReflectionException' with message 'Class App\Exceptions\Handler does not exist' in /home/onlinekpjsentosa/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:779
+Stack trace:
+#0 /home/onlinekpjsentosa/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(779): ReflectionClass->__construct('App\\Exceptions\\...')
+#1 /home/onlinekpjsentosa/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(659): Illuminate\Container\Container->build('App\\Exceptions\\...', Array)
+#2 /home/onlinekpjsentosa/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(644): Illuminate\Container\Container->make('App\\Exceptions\\...', Array)
+#3 /home/onlinekpjsentosa/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(229): Illuminate\Foundation\Application->make('App\\Exceptions\\...', Array)
+#4 /home/onlinekpjsentosa/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(776): I in /home/onlinekpjsentosa/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 779
+[07-Feb-2017 20:37:01 UTC] PHP Fatal error:  Uncaught exception 'ReflectionException' with message 'Class App\Exceptions\Handler does not exist' in /home/onlinekpjsentosa/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:779
+Stack trace:
+#0 /home/onlinekpjsentosa/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(779): ReflectionClass->__construct('App\\Exceptions\\...')
+#1 /home/onlinekpjsentosa/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(659): Illuminate\Container\Container->build('App\\Exceptions\\...', Array)
+#2 /home/onlinekpjsentosa/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(644): Illuminate\Container\Container->make('App\\Exceptions\\...', Array)
+#3 /home/onlinekpjsentosa/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(229): Illuminate\Foundation\Application->make('App\\Exceptions\\...', Array)
+#4 /home/onlinekpjsentosa/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(776): I in /home/onlinekpjsentosa/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 779
+[09-Feb-2017 10:06:15 UTC] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/onlinekpjsentosa/public_html/storage/framework/views/38c7f55e36b20187f1abc13a3a62e544 on line 245
+[18-Feb-2017 16:26:00 Asia/Macau] PHP Fatal error:  Undefined class constant 'getPromotionpackages' in /home/onlinekpjsentosa/public_html/storage/framework/views/a08986bd6c9f2b05ff7fcead81470e0a on line 40
+[18-Feb-2017 16:26:00 Asia/Macau] PHP Fatal error:  Undefined class constant 'getPromotionpackages' in /home/onlinekpjsentosa/public_html/storage/framework/views/a08986bd6c9f2b05ff7fcead81470e0a on line 40
+[18-Feb-2017 16:26:36 Asia/Macau] PHP Fatal error:  Undefined class constant 'getPromotionpackages' in /home/onlinekpjsentosa/public_html/storage/framework/views/a08986bd6c9f2b05ff7fcead81470e0a on line 40
+[18-Feb-2017 16:26:36 Asia/Macau] PHP Fatal error:  Undefined class constant 'getPromotionpackages' in /home/onlinekpjsentosa/public_html/storage/framework/views/a08986bd6c9f2b05ff7fcead81470e0a on line 40
+[18-Feb-2017 16:34:30 Asia/Macau] PHP Fatal error:  Undefined class constant 'getPromotionpackages' in /home/onlinekpjsentosa/public_html/storage/framework/views/a08986bd6c9f2b05ff7fcead81470e0a on line 40
+[18-Feb-2017 16:34:30 Asia/Macau] PHP Fatal error:  Undefined class constant 'getPromotionpackages' in /home/onlinekpjsentosa/public_html/storage/framework/views/a08986bd6c9f2b05ff7fcead81470e0a on line 40
+[18-Feb-2017 16:54:51 Asia/Macau] PHP Fatal error:  Undefined class constant 'getPromotionpackages' in /home/onlinekpjsentosa/public_html/storage/framework/views/a08986bd6c9f2b05ff7fcead81470e0a on line 40
+[18-Feb-2017 16:54:51 Asia/Macau] PHP Fatal error:  Undefined class constant 'getPromotionpackages' in /home/onlinekpjsentosa/public_html/storage/framework/views/a08986bd6c9f2b05ff7fcead81470e0a on line 40
+[24-Feb-2017 23:05:22 Asia/Macau] PHP Fatal error:  Call to a member function getClientOriginalExtension() on a non-object in /home/onlinekpjsentosa/public_html/app/Http/Controllers/Admin/IndexController.php on line 1274
+[24-Feb-2017 23:31:26 Asia/Macau] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/onlinekpjsentosa/public_html/storage/framework/views/ce1f8340a4fca59f2a68138c685d90f8 on line 78
+[24-Feb-2017 23:31:39 Asia/Macau] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/onlinekpjsentosa/public_html/storage/framework/views/ce1f8340a4fca59f2a68138c685d90f8 on line 78
+[24-Feb-2017 23:35:10 Asia/Macau] PHP Parse error:  syntax error, unexpected ':' in /home/onlinekpjsentosa/public_html/storage/framework/views/b71fe7310a738f5cd122aa5a0704288a on line 42
+[27-Feb-2017 12:31:42 Asia/Macau] PHP Parse error:  syntax error, unexpected '>' in /home/onlinekpjsentosa/public_html/app/Http/Controllers/Admin/IndexController.php on line 1242
+[27-Feb-2017 20:31:32 Asia/Macau] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';' in /home/onlinekpjsentosa/public_html/storage/framework/views/a99b399ad2b0c883cd04c2fc60948391 on line 45
+[27-Feb-2017 20:33:20 Asia/Macau] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';' in /home/onlinekpjsentosa/public_html/storage/framework/views/a99b399ad2b0c883cd04c2fc60948391 on line 45
+[27-Feb-2017 20:34:11 Asia/Macau] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';' in /home/onlinekpjsentosa/public_html/storage/framework/views/a99b399ad2b0c883cd04c2fc60948391 on line 45
+[27-Feb-2017 20:37:29 Asia/Macau] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';' in /home/onlinekpjsentosa/public_html/storage/framework/views/a99b399ad2b0c883cd04c2fc60948391 on line 45
+[04-Mar-2017 19:20:43 Asia/Macau] PHP Fatal error:  Class 'App\setting' not found in /home/onlinekpjsentosa/public_html/app/Helpers/Helper.php on line 62
+[15-Mar-2017 21:59:46 Asia/Macau] PHP Fatal error:  Class 'App\health_info' not found in /home/onlinekpjsentosa/public_html/app/Http/Controllers/Admin/IndexController.php on line 350
+[15-Mar-2017 22:00:10 Asia/Macau] PHP Fatal error:  Class 'App\health_info' not found in /home/onlinekpjsentosa/public_html/app/Http/Controllers/Admin/IndexController.php on line 350
+[21-Mar-2017 05:19:13 Asia/Macau] PHP Fatal error:  Class 'App\Http\Controllers\Controller' not found in /home/onlinekpjsentosa/public_html/app/Http/Controllers/Admin/IndexController.php on line 29
+[28-Apr-2017 00:03:33 Asia/Macau] PHP Fatal error:  Cannot redeclare class App\Http\Controllers\Admin\IndexController in /home/k38sentosamy316/public_html/storage/framework/views/9482b808c52d4a6bd0241add14c91616 on line 1489
+[28-Apr-2017 00:04:42 Asia/Macau] PHP Fatal error:  Cannot redeclare class App\Http\Controllers\Admin\IndexController in /home/k38sentosamy316/public_html/storage/framework/views/9482b808c52d4a6bd0241add14c91616 on line 1489
+[28-Apr-2017 00:05:09 Asia/Macau] PHP Fatal error:  Cannot redeclare class App\Http\Controllers\Admin\IndexController in /home/k38sentosamy316/public_html/storage/framework/views/9482b808c52d4a6bd0241add14c91616 on line 1489
+[28-Apr-2017 21:15:32 Asia/Macau] PHP Fatal error:  Cannot redeclare class App\Http\Controllers\Admin\IndexController in /home/k38sentosamy316/public_html/storage/framework/views/9482b808c52d4a6bd0241add14c91616 on line 1489
+[28-Apr-2017 21:20:31 Asia/Macau] PHP Fatal error:  Cannot redeclare class App\Http\Controllers\Admin\IndexController in /home/k38sentosamy316/public_html/storage/framework/views/9482b808c52d4a6bd0241add14c91616 on line 1489
+[18-May-2017 09:36:35 Europe/Moscow] PHP Fatal error:  Out of memory (allocated 2359296) (tried to allocate 3072 bytes) in /home/www2kpjsentyzz/public_html/vendor/composer/ClassLoader.php on line 444
+[18-May-2017 15:39:25 Asia/Macau] PHP Fatal error:  Out of memory (allocated 3932160) (tried to allocate 3072 bytes) in /home/www2kpjsentyzz/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 684
+[30-May-2017 09:47:19 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www2kpjsentyzz/public_html/app/Http/Controllers/Admin/IndexController.php on line 367
+[30-May-2017 09:47:24 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www2kpjsentyzz/public_html/app/Http/Controllers/Admin/IndexController.php on line 367
+[06-Jun-2017 12:15:21 Asia/Macau] PHP Fatal error:  Out of memory (allocated 5767168) (tried to allocate 72 bytes) in /home/www2kpjsentyzz/public_html/vendor/symfony/routing/Symfony/Component/Routing/RouteCompiler.php on line 167
+[03-Jul-2017 01:45:10 Europe/Moscow] PHP Fatal error:  Out of memory (allocated 1048576) (tried to allocate 3072 bytes) in /home/www2kpjsentyzz/public_html/vendor/laravel/framework/src/Illuminate/Contracts/Container/Container.php on line 141
+[10-Jan-2018 10:23:40 Asia/Macau] PHP Fatal error:  Trait 'App\SoftDeletes' not found in /home/www3kpjsentosaco/public_html/app/NavbarMenu.php on line 7
+[10-Jan-2018 10:26:50 Asia/Macau] PHP Fatal error:  Trait 'App\Illuminate\Database\Eloquent\SoftDeletes' not found in /home/www3kpjsentosaco/public_html/app/NavbarMenu.php on line 7
+[10-Jan-2018 10:38:23 Asia/Macau] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/MenuController.php on line 65
+[10-Jan-2018 11:07:14 Asia/Macau] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/MenuController.php on line 85
+[15-Jan-2018 09:16:25 Asia/Macau] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/www3kpjsentosaco/public_html/app/NavbarMenu.php on line 12
+[15-Jan-2018 09:18:35 Asia/Macau] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/www3kpjsentosaco/public_html/app/NavbarMenu.php on line 12
+[01-Feb-2018 21:58:40 Asia/Macau] PHP Fatal error:  Class 'App\Service' not found in /home/y38msensamyday/public_html/app/Http/Controllers/IndexController.php on line 197
+[06-Feb-2018 14:22:53 Asia/Macau] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/y38msensamyday/public_html/storage/framework/views/ed013b82edb734f5eae7d5295e9f37b6 on line 204
+[26-Feb-2018 09:48:35 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 382
+[05-Mar-2018 07:52:07 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/y38msensamyday/public_html/app/Http/Controllers/Admin/IndexController.php on line 382
+[05-Mar-2018 07:52:11 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/y38msensamyday/public_html/app/Http/Controllers/Admin/IndexController.php on line 382
+[05-Mar-2018 07:52:13 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/y38msensamyday/public_html/app/Http/Controllers/Admin/IndexController.php on line 382
+[06-Mar-2018 06:15:27 Asia/Macau] PHP Fatal error:  Out of memory (allocated 3145728) (tried to allocate 3072 bytes) in /home/y38msensamyday/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 91
+[17-Mar-2018 21:37:07 Asia/Macau] PHP Fatal error:  Call to a member function appointments() on a non-object in /home/v3kpjsentosacom/public_html/app/Http/Controllers/Patient/Dashboard.php on line 19
+[21-Mar-2018 20:55:58 Asia/Macau] PHP Warning:  Uncaught exception 'ErrorException' with message 'require(/home/v3kpjsentosacom/public_html/app/Http/routes.php): failed to open stream: No such file or directory' in /home/v3kpjsentosacom/public_html/app/Providers/RouteServiceProvider.php:40
+Stack trace:
+#0 /home/v3kpjsentosacom/public_html/app/Providers/RouteServiceProvider.php(40): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/v...', '/home/v3kpjsent...', 40, Array)
+#1 /home/v3kpjsentosacom/public_html/app/Providers/RouteServiceProvider.php(40): App\Providers\RouteServiceProvider::App\Providers\{closure}()
+#2 [internal function]: App\Providers\RouteServiceProvider->App\Providers\{closure}(Object(Illuminate\Routing\Router))
+#3 /home/v3kpjsentosacom/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(352): call_user_func(Object(Closure), Object(Illuminate\Routing\Router))
+#4 /home/v3kpjsentosacom/public_html/app/Providers/RouteServiceProvider.php(41): Illuminate\Routing\Router->group(Array, Object(Closure) in /home/v3kpjsentosacom/public_html/app/Providers/RouteServiceProvider.php on line 40
+[21-Mar-2018 20:55:58 Asia/Macau] PHP Fatal error:  App\Providers\RouteServiceProvider::App\Providers\{closure}(): Failed opening required '/home/v3kpjsentosacom/public_html/app/Http/routes.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/v3kpjsentosacom/public_html/app/Providers/RouteServiceProvider.php on line 40
+[23-Mar-2018 15:08:48 Asia/Macau] PHP Fatal error:  Call to a member function appointments() on a non-object in /home/v3kpjsentosacom/public_html/app/Http/Controllers/Patient/Dashboard.php on line 24
+[02-Apr-2018 18:50:51 Asia/Macau] PHP Fatal error:  Out of memory (allocated 3407872) (tried to allocate 3072 bytes) in /home/v3kpjsentosacom/public_html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php on line 113
+[03-Apr-2018 01:03:48 Asia/Macau] PHP Parse error:  syntax error, unexpected '?' in /home/v3kpjsentosacom/public_html/storage/framework/views/3ca8f93bb8f54424c2ed1811df7195dd on line 26
+[03-Apr-2018 01:03:54 Asia/Macau] PHP Parse error:  syntax error, unexpected '?' in /home/v3kpjsentosacom/public_html/storage/framework/views/3ca8f93bb8f54424c2ed1811df7195dd on line 26
+[03-Apr-2018 01:35:48 Asia/Macau] PHP Parse error:  syntax error, unexpected '<', expecting ')' in /home/v3kpjsentosacom/public_html/storage/framework/views/3ca8f93bb8f54424c2ed1811df7195dd on line 58
+[03-Apr-2018 01:37:54 Asia/Macau] PHP Fatal error:  Call to a member function toArray() on a non-object in /home/v3kpjsentosacom/public_html/storage/framework/views/3ca8f93bb8f54424c2ed1811df7195dd on line 30
+[03-Apr-2018 10:26:22 Asia/Macau] PHP Fatal error:  Call to a member function firstOrNew() on a non-object in /home/v3kpjsentosacom/public_html/app/Http/Controllers/Admin/FindDoctorController.php on line 372
+[03-Apr-2018 18:27:54 Asia/Macau] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: doctor' in /home/v3kpjsentosacom/public_html/storage/framework/views/5be8d235140cb0749ba22dbe36b040a2:1
+Stack trace:
+#0 /home/v3kpjsentosacom/public_html/storage/framework/views/5be8d235140cb0749ba22dbe36b040a2(1): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/home/v3kpjsent...', 1, Array)
+#1 /home/v3kpjsentosacom/public_html/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(39): include('/home/v3kpjsent...')
+#2 /home/v3kpjsentosacom/public_html/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(57): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/v3kpjsent...', Array)
+#3 /home/v3kpjsentosacom/public_html/vendor/laravel/framework/src/Illuminate/View/View.php(142): Illuminate\View\Engines\CompilerEngine->get('/home/v3kpjsent...', Array)
+#4 /home/v3kpjsentosacom/public_html/vendor/laravel/framework/src/Illuminate/View/View.php(111): Illuminate\View\View->g in /home/v3kpjsentosacom/public_html/storage/framework/views/5be8d235140cb0749ba22dbe36b040a2 on line 1
+[03-Apr-2018 18:27:54 Asia/Macau] PHP Fatal error:  Call to a member function toArray() on a non-object in /home/v3kpjsentosacom/public_html/storage/framework/views/5be8d235140cb0749ba22dbe36b040a2 on line 1
+[03-Apr-2018 22:02:28 Asia/Macau] PHP Fatal error:  Class 'App\Appointments' not found in /home/v3kpjsentosacom/public_html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php on line 878
+[03-Apr-2018 22:20:44 Asia/Macau] PHP Fatal error:  Call to undefined method Illuminate\Database\Eloquent\Collection::update() in /home/v3kpjsentosacom/public_html/app/Http/Controllers/Admin/FindDoctorController.php on line 419
+[03-Apr-2018 22:58:02 Asia/Macau] PHP Parse error:  syntax error, unexpected end of file in /home/v3kpjsentosacom/public_html/storage/framework/views/8b6f563f94ade7b20ee75f40fa35413b on line 1822
+[03-Apr-2018 23:04:41 Asia/Macau] PHP Fatal error:  Call to undefined method Illuminate\Database\Eloquent\Collection::orderBy() in /home/v3kpjsentosacom/public_html/storage/framework/views/8b6f563f94ade7b20ee75f40fa35413b on line 1063
+[08-Apr-2018 18:26:37 Asia/Macau] PHP Fatal error:  Call to a member function appointments() on a non-object in /home/v5kpjsentosacom/public_html/app/Http/Controllers/Patient/Dashboard.php on line 24
+[23-Apr-2018 13:35:00 Europe/Moscow] PHP Fatal error:  Out of memory (allocated 2359296) (tried to allocate 3072 bytes) in /home/www3kpjsentosaco/public_html/vendor/laravel/framework/src/Illuminate/Contracts/Config/Repository.php on line 47
+[06-May-2018 23:15:14 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 383
+[06-May-2018 23:15:17 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 383
+[06-May-2018 23:15:19 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 383
+[06-May-2018 23:15:22 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 383
+[06-May-2018 23:15:24 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 383
+[06-May-2018 23:15:27 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 383
+[06-May-2018 23:15:29 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 383
+[06-May-2018 23:15:30 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 383
+[06-May-2018 23:15:33 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 383
+[06-May-2018 23:15:34 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 383
+[06-May-2018 23:15:36 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 383
+[06-May-2018 23:15:37 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 383
+[06-May-2018 23:15:39 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 383
+[06-May-2018 23:15:57 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 383
+[06-May-2018 23:54:46 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 335
+[06-May-2018 23:54:50 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 335
+[07-May-2018 00:28:09 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 335
+[07-May-2018 00:28:59 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/www3kpjsentosaco/public_html/app/Http/Controllers/Admin/IndexController.php on line 335
+[10-May-2018 14:02:55 Asia/Macau] PHP Fatal error:  Call to a member function appointments() on a non-object in /home/v4kpjsentosacom/public_html/app/Http/Controllers/Patient/Dashboard.php on line 24
+[10-May-2018 14:04:32 Asia/Macau] PHP Fatal error:  Call to a member function appointments() on a non-object in /home/v4kpjsentosacom/public_html/app/Http/Controllers/Patient/Dashboard.php on line 24
+[13-May-2018 14:57:52 Asia/Macau] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/v5kpjsentosacom/public_html/app/Patient.php on line 10
+[13-May-2018 14:58:04 Asia/Macau] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/v5kpjsentosacom/public_html/app/Patient.php on line 10
+[13-May-2018 15:03:59 Asia/Macau] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/v5kpjsentosacom/public_html/app/Patient.php on line 10
+[13-May-2018 15:04:39 Asia/Macau] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/v5kpjsentosacom/public_html/app/Patient.php on line 10
+[13-May-2018 15:10:00 Asia/Macau] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/v5kpjsentosacom/public_html/app/Patient.php on line 10
+[13-May-2018 15:13:18 Asia/Macau] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/v5kpjsentosacom/public_html/app/Patient.php on line 10
+[13-May-2018 15:13:34 Asia/Macau] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/v5kpjsentosacom/public_html/app/Patient.php on line 10
+[13-May-2018 15:17:14 Asia/Macau] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/v5kpjsentosacom/public_html/app/Patient.php on line 10
+[13-May-2018 15:17:16 Asia/Macau] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/v5kpjsentosacom/public_html/app/Patient.php on line 10
+[13-May-2018 15:50:00 Asia/Macau] PHP Fatal error:  Call to a member function appointments() on a non-object in /home/v5kpjsentosacom/public_html/app/Http/Controllers/Patient/Dashboard.php on line 24
+[13-May-2018 23:00:44 Asia/Macau] PHP Fatal error:  Call to a member function appointments() on a non-object in /home/v5kpjsentosacom/public_html/app/Http/Controllers/Patient/Dashboard.php on line 24
+[23-May-2018 06:06:37 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:06:43 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:09:50 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:09:52 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:11:15 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:12:53 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:12:56 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:25:43 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:25:45 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:29:45 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:29:47 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:36:11 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:36:14 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:52:45 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:52:48 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:57:23 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:57:25 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:58:45 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:58:49 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 06:59:20 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 07:00:57 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 07:01:00 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 07:03:22 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 07:03:25 Asia/Macau] PHP Fatal error:  Call to undefined function App\array_column() in /home/v5kpjsentosacom/public_html/app/User.php on line 52
+[23-May-2018 07:46:03 Asia/Macau] PHP Fatal error:  Call to a member function appointments() on a non-object in /home/v5kpjsentosacom/public_html/app/Http/Controllers/Patient/Dashboard.php on line 24
+[23-May-2018 07:46:05 Asia/Macau] PHP Fatal error:  Call to a member function appointments() on a non-object in /home/v5kpjsentosacom/public_html/app/Http/Controllers/Patient/Dashboard.php on line 24
+[29-May-2018 12:25:29 Asia/Macau] PHP Fatal error:  Call to a member function appointments() on a non-object in /home/v5kpjsentosacom/public_html/app/Http/Controllers/Patient/Dashboard.php on line 24
+[29-May-2018 12:48:14 Asia/Macau] PHP Fatal error:  Out of memory (allocated 6815744) (tried to allocate 3072 bytes) in /home/v5kpjsentosacom/public_html/vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/Grammar.php on line 96
+[10-Jun-2018 04:00:05 Asia/Macau] PHP Fatal error:  Call to undefined function isseet() in /home/v4kpjsentosacom/public_html/storage/framework/views/ca05c730b59ae2af12833a9c9c44bd84 on line 260
+[10-Jun-2018 04:10:08 Asia/Macau] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/v4kpjsentosacom/public_html/storage/framework/views/ca05c730b59ae2af12833a9c9c44bd84 on line 267
+[16-Jun-2018 23:36:44 Asia/Macau] PHP Parse error:  syntax error, unexpected '@' in /home/v3kpjsentosacom/public_html/app/Http/routes.php on line 146
+[16-Jun-2018 23:43:12 Asia/Macau] PHP Parse error:  syntax error, unexpected '$route' (T_VARIABLE) in /home/v3kpjsentosacom/public_html/app/Http/routes.php on line 149
+[17-Jun-2018 11:23:37 Asia/Macau] PHP Fatal error:  Call to a member function appointments() on a non-object in /home/v3kpjsentosacom/public_html/app/Http/Controllers/Patient/Dashboard.php on line 24
+[17-Jun-2018 11:25:41 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/v3kpjsentosacom/public_html/app/Http/Controllers/Admin/IndexController.php on line 335
+[17-Jun-2018 11:25:44 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/v3kpjsentosacom/public_html/app/Http/Controllers/Admin/IndexController.php on line 335
+[17-Jun-2018 11:26:11 Asia/Macau] PHP Fatal error:  Call to a member function delete() on a non-object in /home/v3kpjsentosacom/public_html/app/Http/Controllers/Admin/IndexController.php on line 335
+[18-Jun-2018 02:37:42 Asia/Macau] PHP Fatal error:  Call to a member function hasRole() on a non-object in /home/y38msensamyday/public_html/storage/framework/views/42bd502c32edf8edda43397c08e47306 on line 239
+[19-Jun-2018 14:15:13 Asia/Macau] PHP Fatal error:  Call to a member function hasRole() on a non-object in /home/y38msensamyday/public_html/storage/framework/views/42bd502c32edf8edda43397c08e47306 on line 239
+[24-Jun-2018 12:44:44 Asia/Macau] PHP Fatal error:  Call to a member function hasRole() on a non-object in /home/v4kpjsentosacom/public_html/storage/framework/views/9392e762c844fb5b6861666e75ae3694 on line 239

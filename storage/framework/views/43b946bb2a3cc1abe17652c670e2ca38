@@ -1,0 +1,105 @@
+<?php $__env->startSection('title'); ?>
+    <title>Patient &amp; Visitors</title>
+  <?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+
+    <section class="sub-page-banner15 text-center" data-stellar-background-ratio="0.3">
+      <div class="overlay"></div>
+      <div class="container">
+        <h1 class="entry-title">Patients &amp; Visitors</h1>
+        <!--<p>Staff is eagerly awaiting to serve our patients and visitors with warm welcome and glowing smile.</p>-->
+      </div>
+    </section>
+
+    <!-- Sub Page Content
+			============================================= -->
+
+    <div id="sub-page-content clearfix">
+      <!-- For patients &amp; visitors
+			============================================= -->
+      <div class="container padding-top-35">
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="light bordered">For <span>Patients</span></h2>
+            <div class="feature"> <i class="pull-left feature-icon"><img src="images/patients_visitors/icon_facilities.png" alt="Facilities &amp; Services"></i>
+                <div class="feature-content">
+                  <h5><a href="<?php echo e(url('patients_visitors_detail')); ?>">Facilities &amp; Services</a></h5>
+                  <p>Our facilities and services at KPJ Sentosa KL Specialist Hospital are among the best and most modern to serve your needs more effectively.</p>
+                  <div class="height10"></div>
+                  <p><a href="<?php echo e(url('patients_visitors_detail')); ?>">- View Details</a></p>
+                </div>
+            </div>
+            <div class="feature"> <i class="pull-left feature-icon"><img src="images/patients_visitors/icon_room_rates.png" alt="Room Rates"></i>
+                <div class="feature-content">
+                  <h5><a href="<?php echo e(url('patients_visitors_detail')); ?>">Room Rates</a></h5>
+                  <p>Room rates for Standard Wards / Paediatrics Wards / High Dependency/ICU/CCU Wards.</p>
+                  <div class="height10"></div>
+                  <p><a href="<?php echo e(url('patients_visitors_detail')); ?>">- View Details</a></p>
+                </div>
+            </div>
+            <div class="feature"> <i class="pull-left feature-icon"><img src="images/patients_visitors/icon_admission_discharge.png" alt="Admission &amp; Discharge"></i>
+                <div class="feature-content">
+                  <h5><a href="<?php echo e(url('patients_visitors_detail')); ?>">Admission &amp; Discharge</a></h5>
+                  <p>Find more information on the Admission &amp; Discharge at KPJ Hospital.</p>
+                  <div class="height10"></div>
+                  <p><a href="<?php echo e(url('patients_visitors_detail')); ?>">- View Details</a></p>
+                </div>
+            </div>
+          </div>
+          <!-- end col-md-6 -->
+          <div class="col-md-6">
+            <h2 class="light bordered">For <span>Visitors</span></h2>
+            <div class="feature"> <i class="pull-left feature-icon"><img src="images/patients_visitors/icon_accessibility.png" alt="Accessibility"></i>
+                <div class="feature-content">
+                  <h5><a href="<?php echo e(url('patients_visitors_detail')); ?>">Accessibility</a></h5>
+                  <p>There are few ways to reach KPJ Sentosa KL Specialist Hospital by using public transportation.</p>
+                  <div class="height10"></div>
+                  <p><a href="<?php echo e(url('patients_visitors_detail')); ?>">- View Details</a></p>
+                </div>
+            </div>
+            <div class="feature"> <i class="pull-left feature-icon"><img src="images/patients_visitors/icon_visitor_policies.png" alt="Visitor Policies"></i>
+                <div class="feature-content">
+                  <h5><a href="<?php echo e(url('patients_visitors_detail')); ?>">Visitor Policies</a></h5>
+                  <p>Fine more information on visting hours and visting hours at ICU and HDU.</p>
+                  <div class="height10"></div>
+                  <p><a href="<?php echo e(url('patients_visitors_detail')); ?>">- View Details</a></p>
+                </div>
+            </div>
+            <div class="feature"> <i class="pull-left feature-icon"><img src="images/patients_visitors/icon_overnight_stay.png" alt="Overnight Stay"></i>
+                <div class="feature-content">
+                  <h5><a href="<?php echo e(url('patients_visitors_detail')); ?>">Overnight Stay</a></h5>
+                  <p>We are obliged to provide you the best facilities in terms of your stay with us.</p>
+                  <div class="height10"></div>
+                  <p><a href="<?php echo e(url('patients_visitors_detail')); ?>">- View Details</a></p>
+                </div>
+            </div>
+            
+          </div>
+          <!-- end col-md-6 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+      <!-- Find Health Information
+            ============================================= -->
+   	<?php echo $__env->make('common.health_info', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </div>
+
+    <!--end sub-page-content-->
+    
+    
+	<div class="solid-row"></div>
+    
+  <?php $__env->stopSection(); ?>
+
+
+
+ <?php $__env->startSection('end_scripts'); ?>
+      <script type="text/javascript">
+          $('.lem').removeClass('active')
+          $('.lem_visitors').addClass('active')
+      </script>
+ <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

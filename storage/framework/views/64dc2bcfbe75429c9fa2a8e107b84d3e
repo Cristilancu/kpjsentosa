@@ -1,0 +1,261 @@
+<?php $__env->startSection('title'); ?>
+    <title>Patient &amp; Visitors</title>
+  <?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+
+    <section class="sub-page-banner5 text-center" data-stellar-background-ratio="0.3">
+      <div class="overlay"></div>
+      <div class="container">
+        <h1 class="entry-title">Patients &amp; Visitors</h1>
+        <!--<p>Staff is eagerly awaiting to serve our patients and visitors with warm welcome and glowing smile.</p>-->
+      </div>
+    </section>
+
+    <!-- Sub Page Content
+			============================================= -->
+
+    <div id="sub-page-content clearfix">
+      <!-- For patients &amp; visitors
+			============================================= -->
+      <div class="container padding-top-35 padding-bottom-40">
+				
+    
+                <div class="row">
+						
+						<!-- Toggle Styles
+						============================================= -->
+  						
+                        <!-- for patients start -->
+						<div class="col-md-6">
+							
+                            <h2 class="light bordered">For <span>Patients</span></h2>
+
+							<div class="panel-group" id="accordion">
+							  <div class="panel panel-default">
+								<div class="panel-heading">
+								  <h4 class="panel-title active">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+									  <span><i class="fa fa-plus fa-minus"></i></span><h4>Facilities &amp; Services</h4></a>
+								    </h4>
+								</div>
+								
+								<div id="collapseOne" class="panel-collapse collapse in">
+								  <div class="panel-body">
+									<p>Our facilities and services at KPJ Sentosa KL Specialist Hospital are among the best and most modern to serve your needs more effectively: </p>
+                                    <ul class="list-unstyled">
+                                    	<li><i class="fa fa-check"></i> 24-Hour Accident &amp; Emergency Unit</li>
+                                        <li><i class="fa fa-check"></i> 24-Hour Outpatient Medical Officer Treatment</li>
+                                        <li><i class="fa fa-check"></i> 24-Hour Pharmacy Services</li>
+                                        <li><i class="fa fa-check"></i> 24-Hour Laboratory Services</li>
+                                        <li><i class="fa fa-check"></i> Ambulance Services</li>
+                                        <li><i class="fa fa-check"></i> Color Doppler</li>
+                                        <li><i class="fa fa-check"></i> 64 Slice CT Scan</li>
+                                        <li><i class="fa fa-check"></i> Echo Cardiogram</li>
+                                        <li><i class="fa fa-check"></i> EEG</li>
+                                        <li><i class="fa fa-check"></i> Executive Health Screening</li>
+                                        <li><i class="fa fa-check"></i> Intensive Care / Coronary Care</li>
+                                        <li><i class="fa fa-check"></i> Lithotripsy</li>
+                                        <li><i class="fa fa-check"></i> Mammogram</li>
+                                        <li><i class="fa fa-check"></i> MRI</li>
+                                        <li><i class="fa fa-check"></i> Physiotherapy</li>
+                                        <li><i class="fa fa-check"></i> Pre-employment Screening</li>
+                                        <li><i class="fa fa-check"></i> Renal Haemodialysis</li>
+                                        <li><i class="fa fa-check"></i> Ultrasound</li>
+                                        <li><i class="fa fa-check"></i> X-ray with fluoroscopy</li>
+                                        <li><i class="fa fa-check"></i> Dietary Services</li>
+                                    </ul>
+								  </div>
+								</div>
+							  </div>
+							  <div class="panel panel-default">
+								<div class="panel-heading">
+								  <h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+									  <span><i class="fa fa-plus"></i></span><h4>Room Rates</h4></a>
+								  </h4>
+								</div>
+
+								<div id="collapseTwo" class="panel-collapse collapse">
+                                    <div>
+                                        <?php echo $roomRateBanner->room_rate_desc; ?>
+
+
+                                    </div>
+								  <div class="panel-body">
+                                      <?php foreach($rooms as $room): ?>
+                                          <h5><?php echo e($room->title); ?></h5>
+                                          <ul class="list-unstyled pricing-table">
+                                              <li class="table-heading">
+                                                  <span>Wards</span>
+                                                  <span>Facilities</span>
+                                                  <span class="text-right">Rates/Day</span>
+                                              </li>
+                                              <?php foreach($room->room_details as $detail): ?>
+                                                  <li class="list-dark">
+                                                      <span><?php echo e($detail->wards); ?></span>
+                                                      <span>
+                                            	<p><?php echo e($detail->facilities); ?></p>
+         									</span>
+                                                      <span class="text-right"><?php echo e($detail->rates_day); ?></span>
+                                                  </li>
+                                              <?php endforeach; ?>
+
+                                          </ul><!-- end standard ward -->
+
+                                          <div class="clearfix margin-bottom-20"></div>
+                                      <?php endforeach; ?>
+								   	<!-- standard ward start -->
+                                    <div class="clearfix margin-bottom-20"></div>
+                                    
+                                    <ul class="list-unstyled">
+                                    	<li><i class="fa fa-check"></i> Rates quoted are inclusive of meals for patient only.</li>
+                                        <li><i class="fa fa-check"></i> Rates quoted are exclusive of 6% government service tax.</li>
+                                        <li><i class="fa fa-check"></i> The rates are subject to changes.</li>
+                                    </ul>
+                                    
+								  </div>
+								</div>
+							  </div>
+							  <div class="panel panel-default">
+								<div class="panel-heading">
+								  <h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+									  <span><i class="fa fa-plus"></i></span><h4>Admission &amp; Discharge</h4>
+									</a>
+								  </h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse">
+								  <div class="panel-body">
+									<?php echo $admissionDepositBanner->admission_desc; ?>
+
+                                    <h5>Minimum Admission Deposit</h5>
+                                    <p>The minimum deposit for each type of surgical case is stated below for your information: </p>
+                                     
+                                    <!-- deposit start -->
+                                    <ul class="list-unstyled pricing-table">
+                                        <li class="table-heading">
+                                            <span>Type of Cases</span>
+                                            <span class="text-right">Initial Deposit</span>
+                                        </li>
+                                        <?php foreach($admissionDeposits as $admissionDeposit): ?>
+                                        <li class="list-dark">
+                                            <span><?php echo e($admissionDeposit->case_type); ?></span>
+                                            <span class="text-right"><?php echo e($admissionDeposit->initial_deposit); ?></span>
+                                        </li>
+                                        <?php endforeach; ?>
+                                       <!--  <li class="list-light">
+                                            <span>ICU Cases</span>
+                                            <span class="text-right">RM 5,000.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>Surgical Dayward / Admission</span>
+                                            <span class="text-right">Full Amount - Deposit Listing</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>Paediatric Cases </span>
+                                            <span class="text-right">RM 1,000.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>Gynae Major</span>
+                                            <span class="text-right">RM 5,000.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>Gynae Minor</span>
+                                            <span class="text-right">RM 1,500.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>Insurance Cases - Waiting GL (without investigation) </span>
+                                            <span class="text-right">RM 200.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>CT Scan </span>
+                                            <span class="text-right">RM 200.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>MRI </span>
+                                            <span class="text-right">RM 1,000.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>Foreign Labour - Outpatient </span>
+                                            <span class="text-right">RM 100.00</span>
+                                        </li> -->
+                                        
+                                    </ul><!-- end deposit -->
+                                    
+                                    <div class="clearfix margin-bottom-20"></div>
+                                    
+                                    <h5>Discharge</h5>
+                                    <p>You will be discharged upon your consultant's advice. Check out time is 2.00pm. Any items found broken or missing upon discharge will be charged to your bill accordingly. The bill will be ready within 1-2 hours after the patient has been discharged by the doctor.</p>
+                                    <p>* Insurance paying cases is subject to final approval by the insurance company. </p>
+                                    
+                                    <h5>Mode of payment</h5>
+                                    <ul class="list-unstyled">
+                                    	<li><i class="fa fa-check"></i> Cash / Credit Card / Bank Draft.</li>
+                                        <li><i class="fa fa-check"></i> Guarantee Letter</li>
+                                    </ul>
+                                    
+                                    <div class="clearfix margin-bottom-20"></div>
+                                    
+                                    <h5>Late Charges</h5>
+                                    <p>Generally, the bill prescribe at discharge will be the final bill. There may however, be late charges. The hospital will mail a final bill indicating the balance the account within seven days.</p>
+                                     
+                                     
+								  </div>
+								</div>
+							  </div>
+							</div><!-- end accordion -->
+						</div><!-- end col-md-6 -->
+                        <!-- end for patients -->
+                        <!-- For visitors start -->
+                    <div class="col-md-6">
+
+                        <h2 class="light bordered">For <span>Visitors</span></h2>
+                        <div class="panel-group" id="accordion-visitor">
+
+                            <?php foreach($visitors as $key=>$visitor): ?>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title active">
+                                            <a data-toggle="collapse" data-parent="accordion-visitor" href="#collapse<?php echo e($key+4); ?>">
+                                                <span><i class="fa <?php if($key==0): ?>fa-plus <?php endif; ?> fa-minus"></i></span><h4><?php echo e($visitor->title); ?></h4>
+                                            </a>
+                                        </h4>
+                                    </div>
+
+                                    <div id="collapse<?php echo e($key+4); ?>" class="panel-collapse collapse <?php if($key==0): ?>in <?php endif; ?>">
+                                        <div class="panel-body">
+                                            <?php echo $visitor->desc; ?>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <?php endforeach; ?>
+                        </div>
+
+                    </div><!-- end col-md-6 -->
+                    <!-- end col-md-6 -->
+                        <!-- end for visitors -->
+						
+					</div><!-- end row -->
+                
+				
+			</div>
+      <!-- end container -->
+      <!-- Find Health Information
+            ============================================= -->
+   	<?php echo $__env->make('common.health_info', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </div>
+
+    <!--end sub-page-content-->
+    
+    
+	<div class="solid-row"></div>
+    
+  <?php $__env->stopSection(); ?>
+
+
+
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,46 @@
+            <div class="height40"></div>
+              
+                <?php $setting = Helper::hasSetting('parallax_image');?>
+              <!-- Find Health Information
+                ============================================= -->
+                <?php if($setting && $setting->status): ?>
+                <section class="medicom-app" data-stellar-background-ratio="0.3" <?php if(isset($setting->details) &&$setting->status ): ?>  style=" background: url('<?php echo e($setting->details); ?>') repeat center top " <?php endif; ?> >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5">
+                            <?php $setting = Helper::hasSetting('parallax_content');?>
+                                <img src="<?php echo e(($setting &&$setting->status) ?$setting->details:'/images/mobile-hand.png'); ?>" class="app-img" alt="" title="<?php echo e($setting?$setting->line1:''); ?>">                    
+                            </div>
+                            <div class="col-md-7">
+                                <div class="medicom-app-content">
+                         <?php $setting = Helper::hasSetting('parallax_text');?>
+                                    <h1><?php echo e(($setting&&$setting->status )?$setting->line1:'Find Health Information'); ?></h1>
+                                    <p class="lead"><?php echo e(($setting&&$setting->status )?$setting->line2:'All Topics by Letters'); ?></p>
+                                    <form name="appoint_form" id="appoint_form" method="get" action="/search" onSubmit="">
+                                    <input type="text" name='filter' placeholder="Search Topics">
+                                    <input type="submit" value="Search" class="btn btn-danger btn-rounded" onClick="validateAppoint();">
+                                    <div class="clearfix"></div>
+                                    <div class="height20"></div>
+                                    <?php $letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','0','P','Q','R','S','T','U','V','W','X','Y','Z'];
+                                    ?>
+
+                                    <?php foreach($letters as $key=>$value): ?>
+                                        <a href="/search?search=<?php echo e($value); ?>" class="btn btn-rounded btn-default btn-sm"><?php echo e($value); ?></a>
+
+                                        <?php if($key==12): ?>
+                                         <div class="height10"></div>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <?php endif; ?>
+
+
+              
+  			  	
+			
+		  </div>

@@ -1,0 +1,136 @@
+<?php $__env->startSection('title'); ?>
+    <title>Show Events</title>
+  <?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+  <!-- InstanceBeginEditable name="EditRegion1" -->
+          <section class="sub-page-banner5 text-center" data-stellar-background-ratio="0.3">
+            <div class="overlay"></div>
+              <div class="container">
+                      <?php if($setting = Helper::hasSetting('events')): ?>
+                        <?php echo $setting->line1; ?>
+
+                    <?php else: ?> 
+                <h1 class="entry-title">Latest Events</h1>
+                  <?php endif; ?>
+                <!--<p>Staff is eagerly awaiting to serve our patients and visitors with warm welcome and glowing smile.</p>-->
+              </div>
+            </section>
+          <!-- InstanceEndEditable -->
+    <!-- Sub Page Content
+			============================================= -->
+    <!-- InstanceBeginEditable name="EditRegion2" -->
+    <div id="sub-page-content" class="clearfix">
+				
+				
+                <!-- Latest News
+                ============================================= -->
+                <section class="latest-news">
+                
+                    <div class="container">
+                    
+                        <div class="row">
+                            
+                            <div class="col-md-8 blog-wrapper clearfix">
+						        <?php if($setting = Helper::hasSetting('events')): ?>
+                        <?php echo $setting->line2; ?>
+
+                    <?php else: ?> 	
+                                <h2 class="bordered light">Latest <span>Events</span></h2>
+                    <?php endif; ?>        
+                                <article class="blog-item blog-full-width blog-detail">
+                                    
+                                    
+                                    <h4 class="blog-title"><?php echo e($event->title); ?></h4>
+                                    <div class="blog-thumbnail">
+                                        <img src="<?php echo e($event->image); ?>" alt="<?php echo e($event->alt); ?>">
+                                        <div class="blog-date"><p class="day"><?php echo e(date('d', strtotime(Helper::changeDate($event->date)))); ?></p><p class="monthyear"><?php echo e(date('M, Y', strtotime(Helper::changeDate($event->date)))); ?></p></div>
+                                    </div>
+                                    
+                                    	<?php echo $event->details; ?>   
+                                                
+                                    
+                                                
+                                </article>
+                                
+         <?php if($previous=Helper::get_previous('event',$event->id)): ?>
+                                <div class="pull-left">
+                                	<a href="/events/<?php echo e($previous->id); ?>" class="btn btn-danger btn-mini btn-rounded"><i class="fa fa-long-arrow-left"></i> Previous Event</a>
+                                </div>
+                        <?php endif; ?>
+
+                        <?php if($next=Helper::get_next('event',$event->id)): ?>
+                                <div class="pull-right">
+                                   <a href="/events/<?php echo e($next->id); ?>" class="btn btn-danger btn-mini btn-rounded">Next Event <i class="fa fa-long-arrow-right"></i></a>
+                                </div>
+                        <?php endif; ?>
+
+                                
+                                
+                                
+                                 
+                            </div><!-- end col-md-8 -->
+                            
+                            
+                            <!-- Sidebar
+                            ============================================= -->
+                     <aside class="col-md-4">
+                                
+                                    
+                                    <!-- Archives
+                                    ============================================= -->
+                                    <div class="sidebar-widget clearfix">
+                                  <?php if($setting = Helper::hasSetting('events')): ?>
+                        <?php echo $setting->line3; ?>  
+                                 <?php else: ?>
+                                        <h2 class="bordered light">Event <span>Archives</span></h2>
+                        <?php endif; ?>
+                                          <ul class="archives">
+                     <?php $d = Helper::getLatestDate('event')?Helper::getLatestDate('event'): (int) date('Y');?>
+                                          <?php for($i=$d; $i>=2010; $i--): ?>
+                                            <li><a href="<?php echo e(Helper::getArchives('event',$i)->count()?'/latest_events/archives/'.$i:'#'); ?>"><i class="fa fa-long-arrow-right"></i><?php echo e($i); ?></a> (<?php echo e(Helper::getArchives('event',$i)->count()); ?>)</li>
+                                          <?php endfor; ?>
+                                        </ul>
+                                        
+                                    </div>
+                                    
+                                    
+                                    <!-- upcoming events start -->
+                           <?php if($setting = Helper::hasSetting('events')): ?>
+                        <?php echo $setting->line4; ?>
+
+                            <?php else: ?>
+                                    <h2 class="bordered light">Latest <span>News</span></h2>
+                            <?php endif; ?>
+                                  <?php echo $__env->make('common.latest_news', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+                                    
+                                    <!-- health calendar start -->
+                               <?php if($setting = Helper::hasSetting('events')): ?>
+                        <?php echo $setting->line5; ?>
+
+                              <?php else: ?>
+                                    <h2 class="bordered light">Health <span>Calendar</span></h2>
+                               <?php endif; ?>
+                                <?php echo $__env->make('common.health_calendar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                                    <!-- end health calendar -->
+                                      
+                                                        
+                          </aside>
+                        </div>
+                        
+                    </div>
+                    
+                </section>
+			
+			
+			
+			</div>
+    <!-- InstanceEndEditable -->
+    <!--end sub-page-content-->
+    
+    
+	<div class="solid-row"></div>
+    
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

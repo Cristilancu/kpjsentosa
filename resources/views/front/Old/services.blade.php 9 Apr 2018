@@ -1,0 +1,81 @@
+@extends('layouts.front')
+
+
+@section('title')
+    <title>Services</title>
+  @stop
+
+@section('content')
+
+
+    <!-- InstanceBeginEditable name="EditRegion1" -->
+    <section class="sub-page-banner8 text-center" data-stellar-background-ratio="0.3">
+      <div class="overlay"></div>
+      <div class="container">
+      @if($setting = Helper::hasSetting('services')){
+                        {!!$setting->line1!!}
+      @else  
+        <h1 class="entry-title">Services &amp; Procedures</h1>
+      @endif
+        <!--<p>Staff is eagerly awaiting to serve our patients and visitors with warm welcome and glowing smile.</p>-->
+      </div>
+    </section>
+    <!-- InstanceEndEditable -->
+    <!-- Sub Page Content
+			============================================= -->
+    		<!-- InstanceBeginEditable name="EditRegion2" -->
+    		<div id="sub-page-content" class="no-padding-bottom clearfix">
+              <!-- Specialty
+				============================================= -->
+              <section class="no-bg-img">
+                <div class="container">
+                @if($setting = Helper::hasSetting('services'))
+                        {!!$setting->line2!!}
+                @else  
+                  <h2 class="light bordered main-title"><span>Specialties</span></h2>
+                @endif
+                  <div class="row text-left">
+                		
+              @foreach(Helper::getServices() as $key=>$service)
+                @if($key%3==2)
+                  <div class="row">
+                @endif
+                    <div class="col-md-4">
+                      <div class="feature"> <i class="pull-left feature-icon"><img src="{{$service->image}}" alt="Anesthesiology"></i>
+                          <div class="feature-content">
+                            <h5><a href="{{url('/services_procedures/'.$service->id)}}">{{preg_replace('/(?:<|&lt;)\/?([a-zA-Z]+) *[^<\/]*?(?:>|&gt;)/', '', $service->title)}}</a></h5>
+                            <p>{!!$service->description!!}</p>
+                            <div class="height10"></div>
+                            <a href="{{url('/services_procedures/'.$service->id)}}">- Learn More</a>
+                          </div>
+                      </div>
+                    </div>
+                  @if($key%3==2)
+                      </div>
+                @endif
+              @endforeach
+                </div>
+                </div>
+              </section>
+              <!-- Find Health Information -->
+
+              @include('common.health_info')
+ 
+
+            </div>
+    		<!-- InstanceEndEditable -->
+    		<!--end sub-page-content-->
+    
+    
+	<div class="solid-row"></div>
+    
+@stop
+
+
+@section('end_scripts')
+
+   <script type="text/javascript">
+          $('.lem').removeClass('active')
+          $('.lem_services').addClass('active')
+      </script>
+@stop

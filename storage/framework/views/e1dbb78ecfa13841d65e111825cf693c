@@ -1,0 +1,68 @@
+<div id="modal-add-patient" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog modal-wide-width">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                <h4 id="modal-login-label3" class="modal-title">For Patients - Add New</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form">
+                    <form class="form-horizontal" action="<?php echo e(url('/admin/for_patients_details_new')); ?>" method="POST"  id="modal-add-patient" enctype="multipart/form-data">
+                        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Status</label>
+                            <div class="col-md-9">
+                                <div data-on="success" data-off="primary" class="make-switch">
+                                    <input type="hidden" name="status" value="0">
+                                    <input type="checkbox" checked="checked" name="status" value="1"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Title <span class='require'>*</span></label>
+                            <div class="col-md-9">
+                                <input type="text" name="title" class="form-control" placeholder="eg. Room Rates" value="<?php echo e(old('title')); ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Short Description <span class='require'>*</span></label>
+                            <div class="col-md-9">
+                                <textarea name="short_desc" rows="2" class="form-control" id="inputContent" placeholder="eg. Our facilities and services at KPJ Sentosa KL Specialist Hospital are among the best and most modern to serve your needs more effectively."></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Upload Icon Image <span class='require'>*</span></label>
+                            <div class="col-md-9">
+                                <div class="xs-margin"></div>
+                                <input name="image_path" id="exampleInputFile2" type="file"/>
+                                <span class="help-block">(Image dimension: 48 x 48 pixels, PNG only, Max. 1MB) </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Icon Image Alt Text</label>
+                            <div class="col-md-9">
+                                <input name="image_alt" type="text" class="form-control" placeholder="eg. Room Rates">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <div class="col-md-offset-5 col-md-8">
+                                <button type=submit class="btn btn-red">
+                                    Save &nbsp;
+                                    <i class="fa fa-floppy-o"></i>
+                                </button>
+                                &nbsp;
+                                <a href="" data-dismiss="modal" class="btn btn-green">
+                                    Cancel &nbsp;
+                                    <i class="glyphicon glyphicon-ban-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

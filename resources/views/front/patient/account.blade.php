@@ -1,0 +1,286 @@
+@extends('layouts.front')
+
+@section('title')
+<title>Edit Account Details</title>
+@stop
+
+@section('content')
+	<section class="sub-page-banner2 text-center" data-stellar-background-ratio="0.3">
+		<div class="overlay"></div>
+		<div class="container">
+			<h1 class="entry-title">Appointments</h1>
+		</div>
+	</section>
+
+	<div class="page-header-breadcrumb">
+
+		<ol class="breadcrumb page-breadcrumb text-center">
+            <li><a href="/make-appointment">Make an Appointment</a>&nbsp;</li>
+            @if(\Auth::check())
+                <                  @if(isset(\Auth::user()->patient))
+                    <li><a href="/patient/dashboard">You are logged in as: {{\Auth::user()->patient->first_name}} {{\Auth::user()->patient->last_name}}</a></li>
+                    <li><a href="/patient/logout">Logout</a></li>
+                @else
+                    <li><a href="/patient/dashboard">You are logged in as: {{\Auth::user()->name}}</a></li>
+                    <li><a href="/patient/logout">Logout</a></li>
+                @endif
+            @else
+                <li><a href="#{{--signup.html--}}">Sign Up</a>&nbsp;</li>
+                <li><a href="#" data-target="#modal-login" data-toggle="modal">Patient Login</a>&nbsp;</li>
+            @endif
+        </ol>
+
+	</div>
+
+	<!-- Sub Page Content
+	============================================= -->
+	<div id="sub-page-content" class="no-padding-bottom clearfix">
+        
+                
+                <!-- patient transfer Start
+                ============================================= -->
+                <div class="container">
+                                        
+                    <div class="row">
+                    
+                        <div class="col-md-4">
+                            @include("layouts.patient.quick_access");
+                        </div><!-- end col-md-4 -->
+                        
+                        <div class="col-md-8">
+                            <h2 class="light bordered main-title">Edit Your <span>Account Details</span></h2>                   			
+                            <div class="text-danger text-right">* Mandatory field</div>
+                            <div class="clearfix"></div>
+                            <div class="height10"></div>
+                                
+                        <form class="form-horizontal" method="post" action="{{ url("/patient/account") }}">
+                                 <div class="form-group">
+                                   <label class="col-md-3">MRN: </label>
+                                   <div class="col-md-9">
+                                      <input type="text" class="form-control" value="{{ $account_detail->patient->mrn_number }}" name="mrn_number">
+                                      <div class="clearfix"></div>
+                                      <div class="text-info">The MRN number is on your appointment card. If you are the first-time patient, please leave it blank.</div>
+                                   </div>
+                                 </div>
+                                 <div class="clearfix"></div>
+                                 
+                                 <div class="form-group">
+                                   <label class="col-md-3">Patient's Last Name: <span class="text-danger">*</span></label>
+                                   <div class="col-md-9">
+                                      <input type="text" class="form-control" value="{{ $account_detail->patient->last_name }}" name="last_name">
+                                   </div>
+                                 </div>
+                                 <div class="clearfix"></div>
+                                 
+                                 <div class="form-group">
+                                   <label class="col-md-3">Patient's First Name: <span class="text-danger">*</span></label>
+                                   <div class="col-md-9">
+                                      <input type="text" class="form-control" value="{{ $account_detail->patient->first_name }}" name="first_name">
+                                   </div>
+                                 </div>
+                                 <div class="clearfix"></div>
+                                 
+                                 <div class="form-group">
+                                   <label class="col-md-3">Date of Birth: <span class="text-danger">*</span></label>
+                                   <div class="col-md-9">
+                                      <input type="date" placeholder="" class="form-control" value="{{ date_format(date_create($account_detail->patient->date_of_birth), 'Y-m-d') }}" name="date_of_birth"> 
+                                   </div>
+                                 </div>
+                                 <div class="clearfix"></div>
+ 
+                                 <div class="form-group">
+                                   <label class="col-md-3">Gender: <span class="text-danger">*</span></label>
+                                   <div class="col-md-9">
+                                       <select class="form-control" name="gender">
+                                         <option>- Select -</option>
+                                         <option @if($account_detail->patient->gender == 'male')  selected="selected" @endif value="male">Male</option>
+                                         <option @if($account_detail->patient->gender == 'female')  selected="selected" @endif value="female">Female</option>
+                                       </select> 
+                                   </div>
+                                 </div>
+                                 <div class="clearfix"></div>
+                                 
+                                 <div class="form-group">
+                                   <label class="col-md-3">NRIC/Passport No.: <span class="text-danger">*</span></label>
+                                   <div class="col-md-9">
+                                   <input type="text" class="form-control" name="passport_number" value="{{ $account_detail->patient->passport_number }}">
+                                   </div>
+                                 </div>
+                                 <div class="clearfix"></div>
+                                 
+                                 <div class="form-group">
+                                   <label class="col-md-3">Contact No.: <span class="text-danger">*</span></label>
+                                   <div class="col-md-9">
+ 
+                                      <input type="text" name="contact_number"  placeholder="eg. +6016-123-1234" class="form-control" value="{{ $account_detail->patient->contact_number }}">
+                                   </div>
+                                 </div>
+                                 <div class="clearfix"></div>
+                                 
+                                 <div class="form-group">
+                                   <label class="col-md-3">Address: <span class="text-danger">*</span></label>
+                                   <div class="col-md-9">
+                                      <textarea rows="5" class="form-control" name="address" >{{ $account_detail->patient->address }}
+                                      </textarea>
+                                   </div>
+                                 </div>
+                                 <div class="clearfix"></div>
+                                 
+                                 <div class="form-group">
+                                   <label class="col-md-3">Postal Code: <span class="text-danger">*</span></label>
+                                   <div class="col-md-9">
+                                      <input type="text" class="form-control" name="postal_code" value="{{ $account_detail->patient->postal_code }}">
+                                   </div>
+                                 </div>
+                                 <div class="clearfix"></div>
+                                 
+                                 <div class="form-group">
+                                   <label class="col-md-3">City: <span class="text-danger">*</span></label>
+                                   <div class="col-md-9">
+                                      <input type="text" class="form-control" name="city"  value="{{$account_detail->patient->city}}">
+                                   </div>
+                                 </div>
+                                 <div class="clearfix"></div>
+                                 
+                                 <div class="form-group">
+                                   <label class="col-md-3">State: <span class="text-danger">*</span></label>
+                                   <div class="col-md-9">
+                                      <input type="text" class="form-control" name="state" value="{{$account_detail->patient->state}}">
+                                   </div>
+                                 </div>
+ 
+                                 <div class="form-group">
+                                   <label class="col-md-3">Country: <span class="text-danger">*</span></label>
+                                   <div class="col-md-9">
+                                      <select class="form-control" name="country_id" >
+                                          <option>-- Please select --</option>
+                                          @foreach($countries as $country)
+                                              <option name="country_id" data-calling-code="{{$country->calling_code}}" data-eu-tax="{{$country->eu_tax}}" value="{{$country->id}}"  @if ($country->id == $account_detail->patient->country_id) selected = "selected" @endif >{{$country->name}}</option>
+                                          @endforeach
+                                        </select>
+                                   </div>
+                                 </div>
+                                 <div class="clearfix"></div>
+                                 
+                                 <div class="form-group">
+                                   <label class="col-md-3">Email (Login ID): <span class="text-danger">*</span></label>
+                                   <div class="col-md-9">
+                                      <input type="email"  name="email" placeholder="eg. yourname@domain.com" class="form-control" value="{{ $account_detail->email }}">
+                                      <div class="clearfix" ></div>
+                                      <div class="text-info">You will be able to login to check/edit your appointments.</div>
+                                   </div>
+                                 </div>
+                                 <div class="clearfix"></div>
+                                 
+                                 {{-- <div class="form-group">
+                                   <label class="col-md-3">Password: <span class="text-danger">*</span></label>
+                                   <div class="col-md-9">
+                                    <input type="password" class="form-control" value="{{ $account_detail->password }}">
+                                      <div class="text-info">Password must be at least 12 characters. The combination of the password must be alphanumeric with one special character (eg. ! @ # $ % ^ & * ( ) _ + { } | : < > ? " \ [ ] ' ; / . ~ `)</div>  --}}
+ 
+                                          {{--  <div data-hover="tooltip" data-placement="top" title="Strong Password" class="progress progress-striped active">
+                                             
+                                             <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;" class="progress-bar progress-bar-success">100% Strong</div>
+                                         </div>
+                                         <div class="clearfix"></div>
+                                          <div data-hover="tooltip" data-placement="top" title="Moderate Password" class="progress progress-striped active">
+                                             
+                                             <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;" class="progress-bar progress-bar-warning">65% Moderate</div>
+                                         </div>
+                                         <div class="clearfix"></div>
+                                          <div data-hover="tooltip" data-placement="top" title="Weak Password" class="progress progress-striped active">
+                                             
+                                             <div role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%;" class="progress-bar progress-bar-danger">15% Weak</div>
+                                         </div>  
+                                         <div class="clearfix"></div>
+                                      </div>
+                                   </div>--}}
+ 
+                                 <div class="clearfix"></div>
+                                 
+                                 
+                                 {{--  <div class="form-group">
+                                   <label class="col-md-3">Confirm Password: <span class="text-danger">*</span></label>
+                                   <div class="col-md-9">
+                                      <input type="password" class="form-control" value="1234456@SDY#*">
+                                   </div>
+                                 </div>  --}}
+                                 <div class="clearfix"></div>
+                                 <hr>
+                                 
+                                 <p><input type="checkbox" checked="checked"  name="newsletter_subscription" > &nbsp; I would like to subscribe to KPJ Sentosa KL Specialist Hospital's newsletter and get latest news &amp; events, promotions &amp; packages.</p>
+ 
+                                 
+                                 <hr>
+                                 
+ 
+ 
+                                 
+                                 <div class="clearfix margin-bottom-20"></div>
+                                 <div class="text-center">
+                                     <input type="submit" class="btn btn-success btn-rounded" value="Update Details">
+                                     {{--  <input type="submit" class="btn btn-primary btn-rounded" value="Cancel">  --}}
+                                 </div>
+                                
+                                 
+                                 
+                              </form>
+ 
+                             
+                             <div class="clearfix"></div>
+                        </div><!-- end col-md-8 -->
+                        
+                        
+                        
+                    
+                    </div><!-- end row -->
+                    
+                    
+                    <!-- end row -->
+                    
+                    <!-- Modal -->
+                    
+                    <!-- Modal -->              
+                
+              </div><!-- end container -->
+              <div class="height40"></div>
+              
+              
+              <!-- Find Health Information
+                ============================================= -->
+              <section class="medicom-app" data-stellar-background-ratio="0.3">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-5"> <img src="images/mobile-hand.png" class="app-img" alt="" title=""> </div>
+                    <div class="col-md-7">
+                      <div class="medicom-app-content">
+                        <h1>Find Health Information</h1>
+                        <p class="lead">All Topics by Letters</p>
+                        <form name="appoint_form" id="appoint_form" method="post" action="#" onSubmit="return false">
+                          <input type="text" placeholder="Search Topics">
+                          <input type="submit" value="Search" class="btn btn-danger btn-rounded" onClick="validateAppoint();">
+                          <div class="clearfix"></div>
+                          <div class="height20"></div>
+                          <a href="#" class="btn btn-rounded btn-default btn-sm">A</a> <a href="#" class="btn btn-rounded btn-default btn-sm">B</a> <a href="#" class="btn btn-rounded btn-default btn-sm">C</a> <a href="#" class="btn btn-rounded btn-default btn-sm">D</a> <a href="#" class="btn btn-rounded btn-default btn-sm">E</a> <a href="#" class="btn btn-rounded btn-default btn-sm">F</a> <a href="#" class="btn btn-rounded btn-default btn-sm">G</a> <a href="#" class="btn btn-rounded btn-default btn-sm">H</a> <a href="#" class="btn btn-rounded btn-default btn-sm">I</a> <a href="#" class="btn btn-rounded btn-default btn-sm">J</a> <a href="#" class="btn btn-rounded btn-default btn-sm">K</a> <a href="#" class="btn btn-rounded btn-default btn-sm">L</a> <a href="#" class="btn btn-rounded btn-default btn-sm">M</a>
+                          <div class="height10"></div>
+                          <a href="#" class="btn btn-rounded btn-default btn-sm">N</a> <a href="#" class="btn btn-rounded btn-default btn-sm">O</a> <a href="#" class="btn btn-rounded btn-default btn-sm">P</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Q</a> <a href="#" class="btn btn-rounded btn-default btn-sm">R</a> <a href="#" class="btn btn-rounded btn-default btn-sm">S</a> <a href="#" class="btn btn-rounded btn-default btn-sm">T</a> <a href="#" class="btn btn-rounded btn-default btn-sm">U</a> <a href="#" class="btn btn-rounded btn-default btn-sm">V</a> <a href="#" class="btn btn-rounded btn-default btn-sm">W</a> <a href="#" class="btn btn-rounded btn-default btn-sm">X</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Y</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Z</a>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              
+                
+            
+          </div><!--end sub-page-content-->
+
+	<div class="solid-row"></div>
+@stop
+
+
+@section('end_scripts')
+	<script type="text/javascript">
+
+	</script>
+@stop

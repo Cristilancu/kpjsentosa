@@ -1,0 +1,130 @@
+<?php $__env->startSection('title'); ?>
+    <title>Patient &amp; Visitors</title>
+  <?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+
+    <section class="sub-page-banner15 text-center" data-stellar-background-ratio="0.3">
+      <div class="overlay"></div>
+      <div class="container">
+        <h1 class="entry-title">Patients &amp; Visitors</h1>
+        <!--<p>Staff is eagerly awaiting to serve our patients and visitors with warm welcome and glowing smile.</p>-->
+      </div>
+    </section>
+
+    <div class="page-header-breadcrumb">
+
+        <ol class="breadcrumb page-breadcrumb text-center">
+            <li><a href="/make-appointment">Make an Appointment</a>&nbsp;</li>
+
+            <?php if(\Auth::check() && \Auth::user()->is_admin != 1): ?>
+                <li><a href="/patient/dashboard">Dashboard</a>&nbsp;</li>
+            <?php endif; ?>
+            <?php if(\Auth::check() && \Auth::user()->is_admin != 1): ?>
+                <?php if(isset(\Auth::user()->patient)): ?>
+                    <li><a href="/patient/dashboard">You are logged in as: <?php echo e(\Auth::user()->patient->first_name); ?> <?php echo e(\Auth::user()->patient->last_name); ?></a></li>
+                    <li><a href="/patient/logout">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="/patient/dashboard">You are logged in as: <?php echo e(\Auth::user()->name); ?></a></li>
+                    <li><a href="/patient/logout">Logout</a></li>
+                <?php endif; ?>
+            <?php else: ?>
+                <li><a href="/patient/registration">Sign Up</a>&nbsp;</li>
+                <li><a href="#" data-target="#modal-login" data-toggle="modal">Patient Login</a>&nbsp;</li>
+            <?php endif; ?>
+        </ol>
+
+            <?php echo $__env->make('front.loginmodel', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
+
+      </div>
+
+    <!-- Sub Page Content
+			============================================= -->
+
+    <div id="sub-page-content clearfix">
+      <!-- For patients &amp; visitors
+			============================================= -->
+      <div class="container padding-top-35">
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="light bordered">For <span>Patients</span></h2>
+
+            <?php foreach($patients as $patient): ?>
+            <div class="feature"> <i class="pull-left feature-icon"><img src="<?php echo e(asset('images/Patients&VisitorLists/' . $patient->image_path)); ?>" alt="<?php echo e($patient->title); ?>"></i>
+                <div class="feature-content">
+                  <h5><a href="<?php echo e(url('patients_visitors_detail')); ?>"><?php echo e($patient->title); ?></a></h5>
+                  <p><?php echo e($patient->short_desc); ?></p>
+                  <div class="height10"></div>
+                  <p><a href="<?php echo e(url('patients_visitors_detail')); ?>">- View Details</a></p>
+                </div>
+            </div>
+            <?php endforeach; ?>
+
+          </div>
+          <!-- end col-md-6 -->
+          <div class="col-md-6">
+            <h2 class="light bordered">For <span>Visitors</span></h2>
+
+            <?php foreach($visitors as $visitor): ?>
+            <div class="feature"> <i class="pull-left feature-icon"><img src="<?php echo e(asset('images/Patients&VisitorLists/' . $visitor->image_path)); ?>" alt="<?php echo e($visitor->title); ?>"></i>
+                <div class="feature-content">
+                  <h5><a href="<?php echo e(url('patients_visitors_detail')); ?>"><?php echo e($visitor->title); ?></a></h5>
+                  <p><?php echo e($visitor->short_desc); ?></p>
+                  <div class="height10"></div>
+                  <p><a href="<?php echo e(url('patients_visitors_detail')); ?>">- View Details</a></p>
+                </div>
+            </div>
+            <?php endforeach; ?>
+
+          </div>
+          <!-- end col-md-6 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+      <!-- Find Health Information
+            ============================================= -->
+   	<?php echo $__env->make('common.health_info', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </div>
+
+    <!--end sub-page-content-->
+    
+    
+	<div class="solid-row"></div>
+    
+  <?php $__env->stopSection(); ?>
+
+
+
+ <?php $__env->startSection('end_scripts'); ?>
+      <script type="text/javascript">
+          $('.lem').removeClass('active')
+          $('.lem_visitors').addClass('active')
+
+          $('#btn-login').on('click', function(e){
+            $.ajax({
+              url: '/patient/login',
+              type: 'POST',
+              data: {'_token': '<?php echo e(csrf_token()); ?>', 'email':$('#email').val(), 'password':$('#password').val()},
+            }).done(function(data) {
+              console.log("ok: ");
+              console.log(data);
+              if(data.status == 1){
+                $('#alert-message').html(data.alert);
+                setTimeout(function() {
+                  location.reload();
+                }, 1000);
+              } else {
+                $('#alert-message').html(data.alert);
+              }
+            }).fail(function(data) {
+              console.log("error: ");
+              console.log(data);
+            }).always(function() {
+              console.log("complete");
+            });
+          });
+      </script>
+ <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,516 @@
+<?php $__env->startSection('title'); ?>
+    <title>Patient &amp; Visitors</title>
+  <?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+
+    <section class="sub-page-banner5 text-center" data-stellar-background-ratio="0.3">
+      <div class="overlay"></div>
+      <div class="container">
+        <h1 class="entry-title">Patients &amp; Visitors</h1>
+        <!--<p>Staff is eagerly awaiting to serve our patients and visitors with warm welcome and glowing smile.</p>-->
+      </div>
+    </section>
+
+    <!-- Sub Page Content
+			============================================= -->
+
+    <div id="sub-page-content clearfix">
+      <!-- For patients &amp; visitors
+			============================================= -->
+      <div class="container padding-top-35 padding-bottom-40">
+				
+    
+                <div class="row">
+						
+						<!-- Toggle Styles
+						============================================= -->
+  						
+                        <!-- for patients start -->
+						<div class="col-md-6">
+							
+                            <h2 class="light bordered">For <span>Patients</span></h2>
+							
+							<div class="panel-group" id="accordion">
+							  <div class="panel panel-default">
+								<div class="panel-heading">
+								  <h4 class="panel-title active">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+									  <span><i class="fa fa-plus fa-minus"></i></span><h4>Facilities &amp; Services</h4></a>
+								    </h4>
+								</div>
+								
+								<div id="collapseOne" class="panel-collapse collapse in">
+								  <div class="panel-body">
+									<p>Our facilities and services at KPJ Sentosa KL Specialist Hospital are among the best and most modern to serve your needs more effectively: </p>
+                                    <ul class="list-unstyled">	
+                                    	<li><i class="fa fa-check"></i> 24-Hour Accident &amp; Emergency Unit</li>
+                                        <li><i class="fa fa-check"></i> 24-Hour Outpatient Medical Officer Treatment</li>
+                                        <li><i class="fa fa-check"></i> 24-Hour Pharmacy Services</li>
+                                        <li><i class="fa fa-check"></i> 24-Hour Laboratory Services</li>
+                                        <li><i class="fa fa-check"></i> Ambulance Services</li>
+                                        <li><i class="fa fa-check"></i> Color Doppler</li>
+                                        <li><i class="fa fa-check"></i> 64 Slice CT Scan</li>
+                                        <li><i class="fa fa-check"></i> Echo Cardiogram</li>
+                                        <li><i class="fa fa-check"></i> EEG</li>
+                                        <li><i class="fa fa-check"></i> Executive Health Screening</li>
+                                        <li><i class="fa fa-check"></i> Intensive Care / Coronary Care</li>
+                                        <li><i class="fa fa-check"></i> Lithotripsy</li>
+                                        <li><i class="fa fa-check"></i> Mammogram</li>
+                                        <li><i class="fa fa-check"></i> MRI</li>
+                                        <li><i class="fa fa-check"></i> Physiotherapy</li>
+                                        <li><i class="fa fa-check"></i> Pre-employment Screening</li>
+                                        <li><i class="fa fa-check"></i> Renal Haemodialysis</li>
+                                        <li><i class="fa fa-check"></i> Ultrasound</li>
+                                        <li><i class="fa fa-check"></i> X-ray with fluoroscopy</li>
+                                        <li><i class="fa fa-check"></i> Dietary Services</li>
+                                    </ul>
+								  </div>
+								</div>
+							  </div>
+							  <div class="panel panel-default">
+								<div class="panel-heading">
+								  <h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+									  <span><i class="fa fa-plus"></i></span><h4>Room Rates</h4></a>
+								  </h4>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse">
+								  <div class="panel-body">
+								   	<!-- standard ward start -->
+                                    <h5>Standard Ward</h5>
+                                    <ul class="list-unstyled pricing-table">
+                                        <li class="table-heading">
+                                            <span>Wards</span>
+                                            <span>Facilities</span>
+                                            <span class="text-right">Rates/Day</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>Single-bedded, Superior</span>
+                                            <span>
+                                            	<p>Air-conditioned <br/>
+                                                Television<br/>
+                                                Telephone<br/>
+                                                Sofa<br/>
+                                                Condition with basic amenities provided</p>
+         									</span>
+                                            <span class="text-right">RM 225.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>Single-bedded, Standard</span>
+                                            <span>
+                                            	<p>Air-conditioned <br/>
+                                                Television<br/>
+                                                Telephone<br/>
+                                                Sofa<br/>
+                                                Condition with basic amenities provided</p>
+         									</span>
+                                            <span class="text-right">RM 220.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>Double-bedded </span>
+                                            <span>
+                                            	<p>Air-conditioned <br/>
+                                                Television<br/>
+
+                                                </p>
+         									</span>
+                                            <span class="text-right">RM 130.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>Double-bedded, Whole Room</span>
+                                            <span>
+                                            	<p>Air-conditioned <br/>
+                                                Television<br/>
+                                                Condition with basic amenities provided
+                                                </p>
+         									</span>
+                                            <span class="text-right">RM 260.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>4-bedded</span>
+                                            <span>
+                                            	<p>Air-conditioned</p>
+         									</span>
+                                            <span class="text-right">RM 90.00</span>
+                                        </li>
+                                        
+                                    </ul><!-- end standard ward -->
+                                    
+                                    <div class="clearfix margin-bottom-20"></div>
+                                    
+                                    <!-- Paediatrics Wards start -->
+                                    <h5>Paediatrics Wards</h5>
+                                    <ul class="list-unstyled pricing-table">
+                                        <li class="table-heading">
+                                            <span>Wards</span>
+                                            <span>Facilities</span>
+                                            <span class="text-right">Rates/Day</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>Single-bedded, Superior</span>
+                                            <span>
+                                            	<p>Air-conditioned <br/>
+                                                Television<br/>
+                                                Telephone<br/>
+                                                Sofa<br/>
+                                                Condition with basic amenities provided<br/>
+                                                Companion Bed
+                                                </p>
+         									</span>
+                                            <span class="text-right">RM 225.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>Single-bedded, Standard</span>
+                                            <span>
+                                            	<p>Air-conditioned <br/>
+                                                Television<br/>
+                                                Telephone<br/>
+                                                Sofa<br/>
+                                                Condition with basic amenities provided</p>
+         									</span>
+                                            <span class="text-right">RM 220.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>Double-bedded </span>
+                                            <span>
+                                            	<p>Air-conditioned <br/>
+                                                Television<br/>
+                                                </p>
+         									</span>
+                                            <span class="text-right">RM 130.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>Double-bedded, Whole Room</span>
+                                            <span>
+                                            	<p>Air-conditioned <br/>
+                                                Television<br/>
+                                                Condition with basic amenities provided
+                                                </p>
+         									</span>
+                                            <span class="text-right">RM 260.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>4-bedded</span>
+                                            <span>
+                                            	<p>Air-conditioned</p>
+         									</span>
+                                            <span class="text-right">RM 90.00</span>
+                                        </li>
+                                        
+                                    </ul><!-- end Paediatrics Wards -->
+                                    
+                                    <div class="clearfix margin-bottom-20"></div>
+                                    
+                                    <!-- High Dependency/ICU/CCU Wards start -->
+                                    <h5>High Dependency/ICU/CCU Wards</h5>
+                                    <ul class="list-unstyled pricing-table">
+                                        <li class="table-heading">
+                                            <span>Wards</span>
+                                            <span>Facilities</span>
+                                            <span class="text-right">Rates/Day</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>High Dependency Ward (HDW)</span>
+                                            <span>
+                                            	<p>Air-conditioned</p>
+         									</span>
+                                            <span class="text-right">RM 200.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>ICU</span>
+                                            <span>
+                                            	<p>Air-conditioned</p>
+         									</span>
+                                            <span class="text-right">RM 275.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>ICU (Isolation)</span>
+                                            <span>
+                                            	<p>Air-conditioned</p>
+         									</span>
+                                            <span class="text-right">RM 320.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>Nursery (Newborn)</span>
+                                            <span>
+                                            	<p>Air-conditioned</p>
+         									</span>
+                                            <span class="text-right">RM 50.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>Nursery (Admitted baby)</span>
+                                            <span>
+                                            	<p>Air-conditioned</p>
+         									</span>
+                                            <span class="text-right">RM 50.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>1st Stage Room</span>
+                                            <span>
+                                            	<p>Air-conditioned</p>
+         									</span>
+                                            <span class="text-right">RM 100.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>Labour Room</span>
+                                            <span>
+                                            	<p>Air-conditioned</p>
+         									</span>
+                                            <span class="text-right">RM 200.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>Day Ward Bed</span>
+                                            <span>
+                                            	<p>Air-conditioned</p>
+         									</span>
+                                            <span class="text-right">RM 80.00</span>
+                                        </li>
+                                        
+                                    </ul><!-- end High Dependency/ICU/CCU Wards -->
+                                    
+                                    <div class="clearfix margin-bottom-20"></div>
+                                    
+                                    <ul class="list-unstyled">
+                                    	<li><i class="fa fa-check"></i> Rates quoted are inclusive of meals for patient only.</li>
+                                        <li><i class="fa fa-check"></i> Rates quoted are exclusive of 6% government service tax.</li>
+                                        <li><i class="fa fa-check"></i> The rates are subject to changes.</li>
+                                    </ul>
+                                    
+								  </div>
+								</div>
+							  </div>
+							  <div class="panel panel-default">
+								<div class="panel-heading">
+								  <h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+									  <span><i class="fa fa-plus"></i></span><h4>Admission &amp; Discharge</h4>
+									</a>
+								  </h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse">
+								  <div class="panel-body">
+									<h5>Admission</h5>
+                                    <p>Upon arrival, you will be referred to our admission counter located at Ground Floor during office hours.</p>
+                                    <p>Monday to Friday: 8.00am - 7.00pm<br/>
+                                     Saturday: 8.00am - 3.00pm <br/>
+                                     Sunday &amp; Public Holiday: 8.00am - 12.30pm</p>
+                                    <p>Admission after office hours will be conducted at the 24 hours Accident &amp; Emergency Department. </p>
+                                     
+                                    <h5>Minimum Admission Deposit</h5>
+                                    <p>The minimum deposit for each type of surgical case is stated below for your information: </p>
+                                     
+                                    <!-- deposit start -->
+                                    <ul class="list-unstyled pricing-table">
+                                        <li class="table-heading">
+                                            <span>Type of Cases</span>
+                                            <span class="text-right">Initial Deposit</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>Medical Cases</span>
+                                            <span class="text-right">RM 3,000.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>ICU Cases</span>
+                                            <span class="text-right">RM 5,000.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>Surgical Dayward / Admission</span>
+                                            <span class="text-right">Full Amount - Deposit Listing</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>Paediatric Cases </span>
+                                            <span class="text-right">RM 1,000.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>Gynae Major</span>
+                                            <span class="text-right">RM 5,000.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>Gynae Minor</span>
+                                            <span class="text-right">RM 1,500.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>Insurance Cases - Waiting GL (without investigation) </span>
+                                            <span class="text-right">RM 200.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>CT Scan </span>
+                                            <span class="text-right">RM 200.00</span>
+                                        </li>
+                                        <li class="list-dark">
+                                            <span>MRI </span>
+                                            <span class="text-right">RM 1,000.00</span>
+                                        </li>
+                                        <li class="list-light">
+                                            <span>Foreign Labour - Outpatient </span>
+                                            <span class="text-right">RM 100.00</span>
+                                        </li>
+                                        
+                                    </ul><!-- end deposit -->
+                                    
+                                    <div class="clearfix margin-bottom-20"></div>
+                                    
+                                    <h5>Discharge</h5>
+                                    <p>You will be discharged upon your consultant's advice. Check out time is 2.00pm. Any items found broken or missing upon discharge will be charged to your bill accordingly. The bill will be ready within 1-2 hours after the patient has been discharged by the doctor.</p>
+                                    <p>* Insurance paying cases is subject to final approval by the insurance company. </p>
+                                    
+                                    <h5>Mode of payment</h5>
+                                    <ul class="list-unstyled">
+                                    	<li><i class="fa fa-check"></i> Cash / Credit Card / Bank Draft.</li>
+                                        <li><i class="fa fa-check"></i> Guarantee Letter</li>
+                                    </ul>
+                                    
+                                    <div class="clearfix margin-bottom-20"></div>
+                                    
+                                    <h5>Late Charges</h5>
+                                    <p>Generally, the bill prescribe at discharge will be the final bill. There may however, be late charges. The hospital will mail a final bill indicating the balance the account within seven days.</p>
+                                     
+                                     
+								  </div>
+								</div>
+							  </div>
+							  
+							  
+							  
+						
+							</div><!-- end accordion -->
+                                                       
+							
+						</div><!-- end col-md-6 -->
+                        <!-- end for patients -->
+                        
+                        <!-- For visitors start -->
+                        <div class="col-md-6">
+							
+                            <h2 class="light bordered">For <span>Visitors</span></h2>
+							
+							<div class="panel-group" id="accordion-visitor">
+							  <div class="panel panel-default">
+								<div class="panel-heading">
+								  <h4 class="panel-title active">
+									<a data-toggle="collapse" data-parent="#accordion-visitor" href="#collapseFour">
+									  <span><i class="fa fa-plus fa-minus"></i></span><h4>Accessibility</h4></a>
+								  </h4>
+								</div>
+								
+								<div id="collapseFour" class="panel-collapse collapse in">
+								  <div class="panel-body">
+									<p>There are few ways to reach KPJ Sentosa KL Specialist Hospital by using public transportation. The options are:</p>
+                                    <ul class="list-unstyled">
+                                    	<li><i class="fa fa-check"></i> STAR LRT - Titiwangsa Station </li>
+                                        <li><i class="fa fa-check"></i> Monorail - Chow Kit Station</li>
+                                        <li><i class="fa fa-check"></i> Bus</li>
+                                        <li><i class="fa fa-check"></i> Taxi</li>
+                                    </ul>
+                                    
+								  </div>
+								</div>
+							  </div>
+							  <div class="panel panel-default">
+								<div class="panel-heading">
+								  <h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion-visitor" href="#collapseFive">
+									  <span><i class="fa fa-plus"></i></span><h4>Visitor Policies</h4></a>
+								  </h4>
+								</div>
+								<div id="collapseFive" class="panel-collapse collapse">
+								  <div class="panel-body">
+	
+                                    <h5>Visiting hours</h5>
+                                    <p>Visitors are required to observe and adhere to the following hours whenever possible. Our visiting hours are from 9.00am - 9.00pm. We are aware that the patients need the support of family and friends in their road to recovery. However, we do not encourage visitors to bring small children along. If children do visit, we need your kind cooperation to ensure that they are in their best behavior. </p>
+                                    <h5>Intensive Care Unit &amp; High Dependency Unit</h5>
+                                    <p>Visiting hours at ICU and HDU will be controlled by the ward staff to ensure critically ill patients are not disturbed. Visitor will be restricted to immediate family members and only two at any one time.</p>
+  
+								  </div>
+								</div>
+							  </div>
+							  <div class="panel panel-default">
+								<div class="panel-heading">
+								  <h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion-visitor" href="#collapseSix">
+									  <span><i class="fa fa-plus"></i></span><h4>Overnight Stay</h4></a>
+								  </h4>
+								</div>
+								<div id="collapseSix" class="panel-collapse collapse">
+								  <div class="panel-body">
+									<h5>Selecting Your Room</h5>
+                                    <p>We are obliged to provide you the best facilities in terms of your stay with us. The rooms of your choice are as follows: </p>
+                                    <ul class="list-unstyled">
+                                    	<li><i class="fa fa-check"></i> Single bedded - Superior </li>
+                                        <li><i class="fa fa-check"></i> Single bedded - Standard </li>
+                                        <li><i class="fa fa-check"></i> Double bedded</li>
+                                        <li><i class="fa fa-check"></i> Double bedded - whole room </li>
+                                        <li><i class="fa fa-check"></i> Four bedded</li>
+                                    </ul>
+                                    <p>All meals are complimentary to the patient and menu will be given to you daily to indicate your preference.</p> 
+                                     
+                                    <h5>What to Bring / What Not to Bring</h5>
+                                    <h6>Documents:</h6>
+                                    <ul class="list-unstyled">
+                                    	<li><i class="fa fa-check"></i> Identification documents (i.e. IC, Passport, Birth Certificate), Employer's Letter of Guarantee / Health Card of which the company has an account with KPJ Sentosa KL Specialist Hospital.</li>
+                                    </ul>
+                                    
+                                    <h6>Personal Items:</h6>
+                                    <ul class="list-unstyled">
+                                    	<li><i class="fa fa-check"></i> Personal clothing</li>
+                                        <li><i class="fa fa-check"></i> Slippers / Toiletries</li>
+                                    </ul>
+                                    
+                                    <h6>Deposit:</h6>
+                                    <p>You will be required to place a deposit upon admission. The deposit amount varies depending on the classification of case and treatment received. Additional deposit will be required when your expenses exceed the initial deposit paid. </p>
+                                    
+                                    <h6>Valuables:</h6>
+                                    <p>Patients are advised against bringing and keeping valuables with them whenever in the hospital. The hospital, however shall not be responsible for any lost or damage to property while in our premises.</p>
+                                    
+                                    <h6>Identification Bracelet:</h6>
+                                    <p>You will be given an identification wrist bracelet for identification purpose. Please do not remove this band during your stay in hospital.</p>
+                                    
+                                    <h6>Meal Service:</h6>
+                                    <p>Meals served to the patient have both local and western cuisine. For any special diet needs, you can inform our nursing staff. If your treatment involves a special therapeutic diet, our hospital dietitian will visit you for dietary counseling.</p>
+                                    <p>Feel free to consult our Dietitian regarding your special diet.</p>
+                                    
+                                    <h6>Nurse Call</h6>
+                                    <p>A nurse call bell is located near your bed and the bathroom. Please press the bell if you need any assistance.</p>
+                                    
+                                    <h6>Hand Phone</h6>
+                                    <p>Hand phones are not allowed within the hospital premises where there is high frequency electronic equipment as they will interfere with the equipment.</p>
+                                    
+       
+                                     
+                                     
+								  </div>
+								</div>
+                                
+ 
+							  </div>
+                              
+                              
+
+							</div><!-- end accordion -->
+                            
+							
+						</div><!-- end col-md-6 -->
+                        <!-- end for visitors -->
+						
+					</div><!-- end row -->
+                
+				
+			</div>
+      <!-- end container -->
+      <!-- Find Health Information
+            ============================================= -->
+   	<?php echo $__env->make('common.health_info', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </div>
+
+    <!--end sub-page-content-->
+    
+    
+	<div class="solid-row"></div>
+    
+  <?php $__env->stopSection(); ?>
+
+
+
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,40 @@
+   <div class="height40"></div>
+				
+				
+				<!-- Screening packages start
+                ============================================= -->
+                <section class="meet-the-doctors no-bg-img team-carousel">
+                  <div class="container">
+                    <h2 class="light bordered">Screening &amp; <span>Packages</span></h2>
+                    <div id="team-carousel" class="owl-carousel wrapper-padding-none">
+
+
+        <?php foreach(Helper::getScreeningpackages() as $pack): ?>
+                      <div class="team-member">
+                      <div class="team-thumb"> <img src="<?php echo e($pack->image); ?>" class="img-rounded" alt="<?php echo e($pack->alt); ?>">
+                            <div class="links"> 
+                        <?php if($pack->image_large): ?>
+                          <a href="<?php echo e($pack->image_large); ?>">
+                      <?php elseif($pack->pdf): ?>
+                          <a href="<?php echo e($pack->pdf); ?>">                 
+                      <?php elseif($pack->website): ?>                      
+                      <a href="<?php echo e(Helper::fix_link($pack->website)); ?>">
+                      <?php else: ?>
+                          <a href="/screening_packages/<?php echo e($pack->id); ?>">
+                      <?php endif; ?> <i class="fa fa-link"></i></a>
+
+                  </div>
+                        </div>
+                        <h5><a href="/screening_packages/<?php echo e($pack->id); ?>"><?php echo e($pack->title); ?></a></h5>
+                        <p><?php echo e($pack->description); ?> </p>
+                          <?php if($pack->sale_price != null): ?>
+                        <div class="price-rating">
+                          <p class="price"><b>RM <?php echo e($pack->sale_price); ?></b><del>RM <?php echo e($pack->cost_price); ?></del></p>
+                        </div>
+                          <?php endif; ?>
+                        <div class="clearfix"></div>
+                        <a href="/screening_packages/<?php echo e($pack->id); ?>">- VIEW DETAILS</a> </div>
+        <?php endforeach; ?>
+                  </div>
+                </section>
+		</div>

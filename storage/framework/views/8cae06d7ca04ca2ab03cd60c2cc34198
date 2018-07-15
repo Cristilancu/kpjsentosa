@@ -1,0 +1,92 @@
+<?php $__env->startSection('title'); ?>
+    <title>Screening Packages</title>
+  <?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+	    <!-- InstanceBeginEditable name="EditRegion1" -->
+    <section class="sub-page-banner11 text-center" data-stellar-background-ratio="0.3">
+      <div class="overlay"></div>
+      <div class="container">
+       <?php if($setting = Helper::hasSetting('screening')): ?>
+                        <?php echo $setting->line1; ?>
+
+                    <?php else: ?>  
+        <h1 class="entry-title">Screening &amp; Packages</h1>
+        <?php endif; ?>
+        <!--<p>Staff is eagerly awaiting to serve our patients and visitors with warm welcome and glowing smile.</p>-->
+      </div>
+    </section>
+    <!-- InstanceEndEditable -->
+    <!-- Sub Page Content
+			============================================= -->
+    <!-- InstanceBeginEditable name="EditRegion2" -->
+    <div id="sub-page-content" class="clearfix">
+      <!-- screening &amp; packages
+                ============================================= -->
+      <section class="no-bg-img">
+        <div class="container">
+         <?php if($setting = Helper::hasSetting('screening')): ?>
+                        <?php echo $setting->line2; ?>
+
+                    <?php else: ?>  
+          <h2 class="light bordered">Screening &amp; <span>Packages</span></h2>
+          <?php endif; ?>
+          <div class="wrapper-padding-none">
+ 
+          <?php foreach(Helper::getScreeningpackages() as $key=>$pack): ?>
+            <div class="col-md-3">
+              <div class="team-member">
+                <div class="team-thumb"> <img src="<?php echo e($pack->image?$pack->image:'images/screening_packages/img_not_available.jpg'); ?>" class="img-rounded" alt="<?php echo e($pack->alt); ?>">
+                    <div class="links">  
+                        <?php if($pack->image_large): ?>
+                          <a href="<?php echo e($pack->image_large); ?>">
+                      <?php elseif($pack->pdf): ?>
+                          <a href="<?php echo e($pack->pdf); ?>">                 
+                      <?php elseif($pack->website): ?>                      
+                      <a href="<?php echo e(Helper::fix_link($pack->website)); ?>">
+                      <?php else: ?>
+                          <a href="/screening_packages/<?php echo e($pack->id); ?>">
+                      <?php endif; ?> <i class="fa fa-link"></i></a> </div>
+                </div>
+                <h5><a  href="/screening_packages/<?php echo e($pack->id); ?>"><?php echo e($pack->title); ?></a></h5>
+                <p><?php echo e($pack->description); ?> </p>
+                <div class="price-rating">
+                  <p class="price"><b><?php echo e($pack->sale_price); ?></b><del><?php echo e($pack->cost_price); ?></del></p>
+                </div>
+                <div class="clearfix"></div>
+                <a  href="/screening_packages/<?php echo e($pack->id); ?>">- VIEW DETAILS</a> </div>
+            </div>
+          
+
+         <?php if($key%4==3): ?>
+            <div class="clearfix margin-bottom-30"></div>
+         <?php endif; ?>
+
+
+        <?php endforeach; ?>
+            
+           
+            
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- InstanceEndEditable -->
+    <!--end sub-page-content-->
+    
+
+    
+    
+	<div class="solid-row"></div>
+    
+	
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('end_scripts'); ?>
+
+   <script type="text/javascript">
+          $('.lem').removeClass('active')
+          $('.lem_screening').addClass('active')
+      </script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

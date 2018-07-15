@@ -1,0 +1,342 @@
+<?php $__env->startSection('title'); ?>
+	<title>Make an Appointment - Step One</title>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+	<section class="sub-page-banner2 text-center" data-stellar-background-ratio="0.3">
+		<div class="overlay"></div>
+		<div class="container">
+			<h1 class="entry-title">Appointment Confirmation</h1>
+		</div>
+	</section>
+
+	<div class="page-header-breadcrumb">
+
+
+		<ol class="breadcrumb page-breadcrumb text-center">
+            <?php if(\Auth::check()): ?>
+            <li><a href="/patient/dashboard">Dashboard</a>&nbsp;</li>
+            <?php endif; ?>
+            <li><a href="/make-appointment">Make an Appointment</a>&nbsp;</li>
+            <?php if(\Auth::check()): ?>
+                <li><a href="/patient/dashboard">You are logged in as: <?php echo e(\Auth::user()->patient->first_name); ?> <?php echo e(\Auth::user()->patient->last_name); ?></a></li>
+                <li><a href="/patient/logout">Logout</a></li>
+            <?php else: ?>
+                <li><a href="/patient/registration">Sign Up</a>&nbsp;</li>
+                <li><a href="#" data-target="#modal-login" data-toggle="modal">Patient Login</a>&nbsp;</li>
+            <?php endif; ?>
+        </ol>
+
+		<!-- Modal login -->
+			<div class="modal fade book-an-appointment" id="modal-login" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">Patient Login</h4>
+						</div>
+						<div class="modal-body">
+						<p>Log in to check/update your appointment bookings and update your personal details.</p>
+						<hr>
+
+						<div class="form-group">
+							<label class="col-md-4">Email (Login ID): <span class="text-danger">*</span></label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" placeholder="eg. mail@yourdomain.com">
+							</div>
+						</div>
+						<div class="clearfix"></div>
+							<div class="form-group">
+								<label class="col-md-4">Password: <span class="text-danger">*</span></label>
+								<div class="col-md-8">
+									<input type="text" class="form-control">
+									<div class="clearfix"></div>
+									<a href="#" data-target="#modal-forgot-password" data-toggle="modal">Forgot Your Password?</a>
+									<?php /*
+									<div class="alert alert-success" style="width: 94%">
+										<i class="fa fa-check-circle"></i> Password entered correctly.
+									</div>
+									<div class="alert alert-danger" style="width: 94%">
+										<i class="fa fa-times-circle"></i> Password entered wrongly.
+									</div>
+									*/ ?>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+
+							<hr>
+							<div class="col-md-12 text-center">
+								<input type="submit" class="btn btn-danger btn-rounded" style="width: 20%" value="Login">
+								<input type="submit" class="btn btn-primary btn-rounded" style="width: 20%" value="Cancel" data-dismiss="modal">
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- Modal login--> 
+
+		<!-- Modal forgot password -->
+		<div class="modal fade book-an-appointment" id="modal-forgot-password" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Forgot Your Password?</h4>
+					</div>
+					<div class="modal-body">
+						<p>Please type in the email address you used for signup and we will send you the new password.</p>
+						<hr>
+
+						<div class="form-group">
+							<label class="col-md-4">Email (Login ID): <span class="text-danger">*</span></label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" placeholder="eg. mail@yourdomain.com">
+							</div>
+						</div>
+						<div class="clearfix"></div>
+
+
+						<hr>
+						<div class="col-md-12 text-center">
+							<input type="submit" class="btn btn-danger btn-rounded" style="width: 40%" value="Reset Password">
+							<input type="button" class="btn btn-primary btn-rounded" style="width: 20%" value="Cancel" data-dismiss="modal">
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal forgot password --> 
+
+	</div>
+
+	<!-- Sub Page Content
+	============================================= -->
+	<div id="sub-page-content" class="no-padding-bottom clearfix">
+        <!-- patient transfer Start
+            ============================================= -->
+        <div class="container">
+            <h2 class="light bordered main-title">Appointment <span>Confirmation</span></h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-success">
+                        <h2 class="text-center"><i class="fa fa-check-circle"></i><strong>&nbsp; Your Appointment Reference #: kpj-<?php echo e(sprintf("%010d", $appointment->id)); ?></strong></h2>
+                        <h3 class="light text-center">You have successfully booked your appointment.</h3>
+                    </div>
+                </div>
+                <!-- end col-md-12 -->
+            </div>
+            <!-- end row -->
+            <div class="row">
+                <div class="col-md-6">
+                    You have selected Specialty: 
+                    <h5><?php echo e(strip_tags($appointment->doctor->service->title)); ?></h5>
+                    You have selected Consultant: 
+                    <h5><?php echo e($appointment->doctor->name); ?></h5>
+                    Appointment Date: 
+                    <h5><?php echo e(date("d F, Y", strtotime($appointment->appointment_date))); ?> (<?php echo e($appointment->appointment_day); ?>)</h5>
+                    Appointment Time: 
+                    <h5><?php echo e($appointment->appointment_time); ?></h5>
+                </div>
+                <!-- end col-md-6 -->
+                <div class="col-md-6 clearfix">
+                    <div class="doctors-img">
+                        <img src="<?php echo e(asset($appointment->doctor->image)); ?>" width="234" alt="<?php echo e(asset($appointment->doctor->name)); ?>" title="">
+                        <ul class="list-unstyled social2">
+                            <li><a href="#." class="fb"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#." class="twitter"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#." class="g-plus"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                        <div class="height10"></div>
+                    </div>
+                    <div class="doctors-detail">
+                        <h4><?php echo e($appointment->doctor->name); ?><span><?php echo e($appointment->doctor->type); ?></span></h4>
+                        <p><label class="heading">Speciality</label><label class="detail"><?php echo e(strip_tags($appointment->doctor->service->title)); ?></label></p>
+                        <p><label class="heading">Degrees</label><label class="detail"><?php echo e($appointment->doctor->degrees); ?></label></p>
+                        <p><label class="heading">Experience</label><label class="detail"><?php echo e($appointment->doctor->experience); ?></label></p>
+                        <p><label class="heading">Details</label><label class="detail"><?php echo e($appointment->doctor->details); ?></label></p>
+                        <p><label class="heading">Clinic Hours</label><label class="detail"><?php echo e($appointment->doctor->clinic_hours); ?></label></p>
+                    </div>
+                </div>
+                <!-- end col-md-6 -->
+            </div>
+            <!-- end row -->
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <h5>Your Details:</h5>
+                    <div class="clearfix"></div>
+                </div>
+                <!-- end col-md-12 -->
+            </div>
+            <!-- end row -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="col-md-4">MRN: </label>
+                        <div class="col-md-8">
+                            <div class="help-block"><?php echo e($appointment->patient->mrn_number); ?></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <label class="col-md-4">Patient's Last Name: </label>
+                        <div class="col-md-8">
+                            <div class="help-block"><?php echo e($appointment->patient->last_name); ?></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <label class="col-md-4">Patient's First Name: </label>
+                        <div class="col-md-8">
+                            <div class="help-block"><?php echo e($appointment->patient->first_name); ?></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <label class="col-md-4">Date of Birth: </label>
+                        <div class="col-md-8">
+                            <?php echo e($appointment->patient->date_of_birth); ?>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <label class="col-md-4">Gender: </label>
+                        <div class="col-md-8">
+                            <div class="help-block"><?php echo e($appointment->patient->gender); ?></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <label class="col-md-4">NRIC/Passport No.: </label>
+                        <div class="col-md-8">
+                            <div class="help-block"><?php echo e($appointment->patient->passport_number); ?></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <label class="col-md-4">Contact No.: </label>
+                        <div class="col-md-8">
+                            <div class="help-block"><?php echo e($appointment->patient->contact_number); ?></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <label class="col-md-4">Email (Login ID):</label>
+                        <div class="col-md-8">
+                            <div class="help-block"><?php echo e($appointment->patient->user->email); ?></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix margin-bottom-20"></div>
+                </div>
+                <!-- end col-md-6 -->
+                <div class="col-md-6 clearfix">
+                    <div class="form-group">
+                        <label class="col-md-4">Address:</label>
+                        <div class="col-md-8">
+                            <?php echo e($appointment->patient->address); ?>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <label class="col-md-4">Postal Code: </label>
+                        <div class="col-md-8">
+                            <div class="help-block"><?php echo e($appointment->patient->postal_code); ?></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <label class="col-md-4">City:</label>
+                        <div class="col-md-8">
+                            <div class="help-block"><?php echo e($appointment->patient->city); ?></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <label class="col-md-4">State:</label>
+                        <div class="col-md-8">
+                            <div class="help-block"><?php echo e($appointment->patient->state); ?></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4">Country:</label>
+                        <div class="col-md-8">
+                            <div class="help-block"><?php echo e($appointment->patient->country->name); ?></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!-- end col-md-6 -->
+                <div class="clearfix"></div>
+                <hr>
+            </div>
+            <!-- end row -->
+            <div class="row">
+                <div class="col-md-12 text-center">
+                <?php if(\Auth::check()): ?>
+                    <a href="/patient/dashboard"><input type="submit" class="btn btn-danger btn-rounded" value="Back to Dashboard"></a>
+                <?php endif; ?>
+                    <input type="submit" class="btn btn-primary btn-rounded" value="Print this page" onClick="window.print()">    
+                </div>
+                <!-- end col-md-12 -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+        <div class="height40"></div>
+        <!-- Find Health Information
+            ============================================= -->
+        <section class="medicom-app" data-stellar-background-ratio="0.3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5"> <img src="images/mobile-hand.png" class="app-img" alt="" title=""> </div>
+                    <div class="col-md-7">
+                        <div class="medicom-app-content">
+                            <h1>Find Health Information</h1>
+                            <p class="lead">All Topics by Letters</p>
+                            <form name="appoint_form" id="appoint_form" method="post" action="#" onSubmit="return false">
+                                <input type="text" placeholder="Search Topics">
+                                <input type="submit" value="Search" class="btn btn-danger btn-rounded" onClick="validateAppoint();">
+                                <div class="clearfix"></div>
+                                <div class="height20"></div>
+                                <a href="#" class="btn btn-rounded btn-default btn-sm">A</a> <a href="#" class="btn btn-rounded btn-default btn-sm">B</a> <a href="#" class="btn btn-rounded btn-default btn-sm">C</a> <a href="#" class="btn btn-rounded btn-default btn-sm">D</a> <a href="#" class="btn btn-rounded btn-default btn-sm">E</a> <a href="#" class="btn btn-rounded btn-default btn-sm">F</a> <a href="#" class="btn btn-rounded btn-default btn-sm">G</a> <a href="#" class="btn btn-rounded btn-default btn-sm">H</a> <a href="#" class="btn btn-rounded btn-default btn-sm">I</a> <a href="#" class="btn btn-rounded btn-default btn-sm">J</a> <a href="#" class="btn btn-rounded btn-default btn-sm">K</a> <a href="#" class="btn btn-rounded btn-default btn-sm">L</a> <a href="#" class="btn btn-rounded btn-default btn-sm">M</a>
+                                <div class="height10"></div>
+                                <a href="#" class="btn btn-rounded btn-default btn-sm">N</a> <a href="#" class="btn btn-rounded btn-default btn-sm">O</a> <a href="#" class="btn btn-rounded btn-default btn-sm">P</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Q</a> <a href="#" class="btn btn-rounded btn-default btn-sm">R</a> <a href="#" class="btn btn-rounded btn-default btn-sm">S</a> <a href="#" class="btn btn-rounded btn-default btn-sm">T</a> <a href="#" class="btn btn-rounded btn-default btn-sm">U</a> <a href="#" class="btn btn-rounded btn-default btn-sm">V</a> <a href="#" class="btn btn-rounded btn-default btn-sm">W</a> <a href="#" class="btn btn-rounded btn-default btn-sm">X</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Y</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Z</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--end sub-page-content-->
+
+	<div class="solid-row"></div>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('end_scripts'); ?>
+	<script type="text/javascript">
+		$('.lem').removeClass('active');
+		$('.lem_appointment').addClass('active');
+
+
+	$('#modal-book').on('show.bs.modal', function (event) {
+	  var button = $(event.relatedTarget) ;
+
+	  var strDate = button.data('strdate');
+	  var dayName = button.data('dayname');
+	  var appointmentDate = button.data('appointmentdate');
+
+	  var modal = $(this);
+	  modal.find('#str_date').html(strDate);
+	  modal.find('#day_name').html(dayName);
+	  modal.find('#appointment_date').val(appointmentDate);
+	});
+	</script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

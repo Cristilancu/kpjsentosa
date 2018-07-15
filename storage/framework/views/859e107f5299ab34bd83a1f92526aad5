@@ -1,0 +1,50 @@
+<div class="procedures">
+    <h3>Quick Access</h3>
+    <div class="panel-group sidebar-nav" id="accordion3">
+      <div class="panel panel-sidebar">
+        <div class="panel-heading">
+        <h4 class="panel-title active">
+        <a data-toggle="collapse" data-parent="#accordion3" href="#collapse1">
+        <i class="fa fa-angle-right"></i> Home
+        </a>
+        </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse <?php if(Request::is('patient/dashboard') || Request::is('patient/') ): ?> in <?php endif; ?>">
+          <div class="panel-body">
+          <a href="<?php echo e(url("/patient/dashboard")); ?>" <?php if(Request::is('patient/dashboard') || Request::is('patient/') ): ?> class="active" <?php endif; ?>><i class="fa fa-angle-right"></i> Dashboard</a>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-sidebar">
+        <div class="panel-heading">
+        <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion3" href="#collapse2">
+        <i class="fa fa-angle-right"></i> Appointments
+        </a>
+        </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse <?php if(Request::is('patient/appointment') || Request::is('patient/appointment/*') ): ?> in <?php endif; ?>">
+          <div class="panel-body">
+          <a href="<?php echo e(url("/patient/appointment")); ?>" <?php if(Request::is('patient/appointment') || Request::is('patient/appointment/*') ): ?> class="active" <?php endif; ?>><i class="fa fa-angle-right"></i> Booked Appointments</a>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-sidebar">
+        <div class="panel-heading">
+        <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion3" href="#collapse3">
+        <i class="fa fa-angle-right"></i> My Account
+        </a>
+        </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse <?php if(Request::is('patient/account')): ?> in <?php endif; ?>">
+          <div class="panel-body">
+            <a href="<?php echo e(url("/patient/account")); ?>" <?php if(Request::is('patient/account')): ?> class="active" <?php endif; ?>><i class="fa fa-angle-right"></i> Edit Account Details</a>
+            <a href="#" data-target="#modal-change-password" data-toggle="modal" <?php if(Request::is('patient/dashboard') || Request::is('patient/') ): ?> class="active" <?php endif; ?>><i class="fa fa-angle-right"></i> Change/Update Password</a>
+           
+          </div>
+        </div>
+      </div>
+      
+    </div>
+</div>

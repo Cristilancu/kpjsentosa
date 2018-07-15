@@ -1,0 +1,25 @@
+     <!-- health calendar start -->
+                                    
+                                    <div class="panel-group" id="accordion-visitor">
+
+                                    <?php foreach(Helper::getCalenders() as $key=>$cal): ?>
+                                      <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                          <h4 class="panel-title <?php echo e($key==0?'active':''); ?>">
+                                            <a data-toggle="collapse" data-parent="#accordion-visitor" href="#collapse-<?php echo e($cal->id); ?>">
+                                              <span><i class="fa <?php echo e($key==0?'fa-minus fa-plus':'fa-plus'); ?>"></i></span><?php echo e($cal->title); ?>
+
+                                            </a>
+                                          </h4>
+                                        </div>
+                                        <div id="collapse-<?php echo e($cal->id); ?>" class="panel-collapse collapse <?php echo e($key==0?'in':''); ?>">
+                                          <div class="panel-body">
+                                            <?php echo $cal->details; ?>
+
+                                            <a href="/health_calendar/<?php echo e($cal->id); ?>">- Read More</a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                     <?php endforeach; ?>
+                                    </div><!-- end accordion -->
+                                    

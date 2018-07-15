@@ -1,0 +1,266 @@
+<?php $__env->startSection('title'); ?>
+	<title>Make an Appointment - Step One</title>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+	<section class="sub-page-banner2 text-center" data-stellar-background-ratio="0.3">
+		<div class="overlay"></div>
+		<div class="container">
+			<h1 class="entry-title">Dashboard</h1>
+		</div>
+	</section>
+
+	<div class="page-header-breadcrumb">
+
+		<ol class="breadcrumb page-breadcrumb text-center">
+            <li><a href="/make-appointment">Make an Appointment</a>&nbsp;</li>
+            <?php if(\Auth::check()): ?>
+                <li><a href="/patient/dashboard">You are logged in as: <?php echo e(\Auth::user()->patient->first_name); ?> <?php echo e(\Auth::user()->patient->last_name); ?></a></li>
+                <li><a href="/patient/logout">Logout</a></li>
+            <?php else: ?>
+                <li><a href="#<?php /*signup.html*/ ?>">Sign Up</a>&nbsp;</li>
+                <li><a href="#" data-target="#modal-login" data-toggle="modal">Patient Login</a>&nbsp;</li>
+            <?php endif; ?>
+        </ol>
+
+	</div>
+
+	<!-- Sub Page Content
+	============================================= -->
+	<div id="sub-page-content" class="no-padding-bottom clearfix">
+        
+                
+                <!-- patient transfer Start
+                ============================================= -->
+                <div class="container">
+                                        
+                    <div class="row">
+                    
+                        <div class="col-md-4">
+                            <div class="procedures">
+                                <h3>Quick Access</h3>
+                                <div class="panel-group sidebar-nav" id="accordion3">
+                                  <div class="panel panel-sidebar">
+                                    <div class="panel-heading">
+                                    <h4 class="panel-title active">
+                                    <a data-toggle="collapse" data-parent="#accordion3" href="#collapse1">
+                                    <i class="fa fa-angle-right"></i> Home
+                                    </a>
+                                    </h4>
+                                    </div>
+                                    <div id="collapse1" class="panel-collapse collapse in">
+                                      <div class="panel-body">
+                                      <a href="dashboard.html" class="active"><i class="fa fa-angle-right"></i> Dashboard</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="panel panel-sidebar">
+                                    <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion3" href="#collapse2">
+                                    <i class="fa fa-angle-right"></i> Appointments
+                                    </a>
+                                    </h4>
+                                    </div>
+                                    <div id="collapse2" class="panel-collapse collapse">
+                                      <div class="panel-body">
+                                      <a href="appointment_list.html"><i class="fa fa-angle-right"></i> Booked Appointments</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="panel panel-sidebar">
+                                    <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion3" href="#collapse3">
+                                    <i class="fa fa-angle-right"></i> My Account
+                                    </a>
+                                    </h4>
+                                    </div>
+                                    <div id="collapse3" class="panel-collapse collapse">
+                                      <div class="panel-body">
+                                        <a href="account_edit.html"><i class="fa fa-angle-right"></i> Edit Account Details</a>
+                                        <a href="#" data-target="#modal-change-password" data-toggle="modal"><i class="fa fa-angle-right"></i> Change/Update Password</a>
+                                       
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                                </div>
+                            </div>
+                        </div><!-- end col-md-4 -->
+                        
+                        <div class="col-md-8">
+                            
+                            <h5>Welcome back! <?php echo e(\Auth::user()->patient->first_name); ?>,</h5>
+                            <p>Thank you for using KPJ Sentosa KL Specialist Hospital's online appointment system. You are able to check your previous booked appointments, update your personal details and so on.</p>
+                            <hr>
+                            
+                            <h5>Latest 5 Appointments</h5>
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>#</th>
+                                      <th>Status</th>
+                                      <th>Consultant Name</th>
+                                      <th>Specialty</th>
+                                      <th>Appointment Date/Time</th>
+                                      <th>Action</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <?php $i=0;?>
+                                    <?php foreach(\Auth::user()->patient->appointments()->where('status',1)->orderBy('appointment_date', 'desc')->limit(5)->get() as $appointment): ?>
+                                    <tr>
+                                      <td><?php echo e(++$i); ?></td>
+                                      <td><span class="label label-xs label-success">Booked</span></td>
+                                      <td><?php echo e($appointment->doctor->name); ?></td>
+                                      <td><?php echo e(strip_tags($appointment->doctor->service->title)); ?></td>
+                                      <td><?php echo e(date("d F, Y", strtotime($appointment->appointment_date))); ?> (<?php echo e($appointment->appointment_day); ?>)<br/><?php echo e($appointment->appointment_time); ?></td>
+                                      <td>
+                                        <a href="/patient/appointment/<?php echo e($appointment->id); ?>/details" data-hover="tooltip" data-placement="top" title="View Details">
+                                            <span class="label label-sm label-success"><i class="fa fa-pencil"></i></span>
+                                        </a>
+                                         
+                                      </td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                  </tbody>
+                                  <tfoot>
+                                    <tr>
+                                      <td colspan="6"></td>
+                                    </tr>
+                                  </tfoot>
+                                </table>
+                                <div class="tool-footer text-center">
+                                   <a href="appointment_list.html"><input type="submit" class="btn btn-sm btn-danger btn-rounded" value="View All Appointments"></a>
+                                  
+                                </div>
+                                <div class="clearfix"></div>
+                              </div><!-- end table-responsive -->
+                            
+                            
+                            
+                        </div><!-- end col-md-8 -->
+                        
+                        
+                        
+                    
+                    </div><!-- end row -->
+                    
+                    
+                    <!-- end row -->
+                    
+                    <!-- Modal -->
+                    <div class="modal fade book-an-appointment" id="modal-change-password" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Change/Update Password</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Password must be <span class="text-danger">at least 12 characters</span>. The combination of the password must be alphanumeric with one special character <span class="text-danger">(eg. ! @ # $ % ^ & * ( ) _ + { } | : < > ? " \ [ ] ' ; / . ~ `)</span></p>
+                                    <hr>
+                                    <div class="form-group">
+                                      <label class="col-md-4">Existing Password: <span class="text-danger">*</span></label>
+                                      <div class="col-md-8">
+                                         <input type="text" class="form-control">
+                                         <div class="alert alert-success" style="width: 94%">
+                                            <i class="fa fa-check-circle"></i> Password entered correctly.
+                                        </div>
+                                        <div class="alert alert-danger" style="width: 94%">
+                                            <i class="fa fa-times-circle"></i> Password entered wrongly.
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    
+                                    
+                                    <div class="form-group">
+                                      <label class="col-md-4">New Password: <span class="text-danger">*</span></label>
+                                      <div class="col-md-8">
+                                         <input type="text" class="form-control">
+                                         <div data-hover="tooltip" data-placement="top" title="Strong Password" class="progress progress-striped active">
+                                            
+                                            <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;" class="progress-bar progress-bar-success">100% Strong</div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                         <div data-hover="tooltip" data-placement="top" title="Moderate Password" class="progress progress-striped active">
+                                            
+                                            <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;" class="progress-bar progress-bar-warning">65% Moderate</div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                         <div data-hover="tooltip" data-placement="top" title="Weak Password" class="progress progress-striped active">
+                                            
+                                            <div role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%;" class="progress-bar progress-bar-danger">15% Weak</div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                      </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    
+                                    
+                                    <div class="form-group">
+                                      <label class="col-md-4">Confirm Password: <span class="text-danger">*</span></label>
+                                      <div class="col-md-8">
+                                         <input type="text" class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    
+                                    <hr>
+                                    <div class="col-md-12 text-center">
+                                        <input type="submit" class="btn btn-danger btn-rounded" style="width: 20%" value="Update">
+                                        <input type="submit" class="btn btn-primary btn-rounded" style="width: 20%" value="Cancel" data-dismiss="modal">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->              
+                
+              </div><!-- end container -->
+              <div class="height40"></div>
+              
+              
+              <!-- Find Health Information
+                ============================================= -->
+              <section class="medicom-app" data-stellar-background-ratio="0.3">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-5"> <img src="images/mobile-hand.png" class="app-img" alt="" title=""> </div>
+                    <div class="col-md-7">
+                      <div class="medicom-app-content">
+                        <h1>Find Health Information</h1>
+                        <p class="lead">All Topics by Letters</p>
+                        <form name="appoint_form" id="appoint_form" method="post" action="#" onSubmit="return false">
+                          <input type="text" placeholder="Search Topics">
+                          <input type="submit" value="Search" class="btn btn-danger btn-rounded" onClick="validateAppoint();">
+                          <div class="clearfix"></div>
+                          <div class="height20"></div>
+                          <a href="#" class="btn btn-rounded btn-default btn-sm">A</a> <a href="#" class="btn btn-rounded btn-default btn-sm">B</a> <a href="#" class="btn btn-rounded btn-default btn-sm">C</a> <a href="#" class="btn btn-rounded btn-default btn-sm">D</a> <a href="#" class="btn btn-rounded btn-default btn-sm">E</a> <a href="#" class="btn btn-rounded btn-default btn-sm">F</a> <a href="#" class="btn btn-rounded btn-default btn-sm">G</a> <a href="#" class="btn btn-rounded btn-default btn-sm">H</a> <a href="#" class="btn btn-rounded btn-default btn-sm">I</a> <a href="#" class="btn btn-rounded btn-default btn-sm">J</a> <a href="#" class="btn btn-rounded btn-default btn-sm">K</a> <a href="#" class="btn btn-rounded btn-default btn-sm">L</a> <a href="#" class="btn btn-rounded btn-default btn-sm">M</a>
+                          <div class="height10"></div>
+                          <a href="#" class="btn btn-rounded btn-default btn-sm">N</a> <a href="#" class="btn btn-rounded btn-default btn-sm">O</a> <a href="#" class="btn btn-rounded btn-default btn-sm">P</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Q</a> <a href="#" class="btn btn-rounded btn-default btn-sm">R</a> <a href="#" class="btn btn-rounded btn-default btn-sm">S</a> <a href="#" class="btn btn-rounded btn-default btn-sm">T</a> <a href="#" class="btn btn-rounded btn-default btn-sm">U</a> <a href="#" class="btn btn-rounded btn-default btn-sm">V</a> <a href="#" class="btn btn-rounded btn-default btn-sm">W</a> <a href="#" class="btn btn-rounded btn-default btn-sm">X</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Y</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Z</a>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              
+                
+            
+          </div><!--end sub-page-content-->
+
+	<div class="solid-row"></div>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('end_scripts'); ?>
+	<script type="text/javascript">
+
+	</script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

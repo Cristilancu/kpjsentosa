@@ -1,0 +1,215 @@
+<?php namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Http\Requests\PatientListRequest;
+use App\Http\Requests\PatientListRequestEdit;
+
+use App\PatientList;
+use App\VisitorList;
+use App\RoomRate;
+use App\AdmissionDeposit;
+
+class PatientController extends Controller
+{
+
+    public function getPatientsVisitorsList(){
+
+        $getPatients = PatientList::paginate(10);
+        $getVisitors = VisitorList::paginate(10);
+        return view('admin.patients.patients_visitors_list', compact('getPatients', 'getVisitors' ));
+
+    }
+    
+    
+    
+   public function store(PatientListRequest $request){
+     
+       $forpatient = new PatientList();
+       
+       $forpatient->title = $request->title;
+       $forpatient->short_desc = $request->short_desc;
+       $forpatient->status = $request->status;
+       $forpatient->image_alt  = $request->image_alt;
+
+        if($file = $request->file('image_path')){
+
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('images/Patients&VisitorLists' , $name);
+
+            $forpatient->image_path = $name;
+        }
+         $forpatient->save();
+         
+         return redirect('/admin/patients_visitors_list')->with('message', 'The information has been saved/updated successfully.');
+         
+   }
+   
+   
+   
+   public function edit($id)
+   {
+       $patient = PatientList::findOrFail($id);
+       return view('admin.patients.partial.edit_patient_list', compact('patient'));
+   }
+
+
+   public function update(PatientListRequestEdit $request, $id)
+   {
+
+       $forpatient = PatientList::findOrFail($id);
+       $forpatient->title = $request->title;
+       $forpatient->short_desc = $request->short_desc;
+       $forpatient->status = $request->status;
+       $forpatient->image_alt  = $request->image_alt;
+
+       if($file = $request->file('image_path')){
+
+            $old_image_path = $forpatient->image_path;
+
+            $path = 'images/Patients&VisitorLists/'.$old_image_path;
+       
+            if(file_exists($path)){
+                unlink($path);
+                $forpatient->image_path = null;
+                $forpatient->update();
+            }
+
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images/Patients&VisitorLists' , $name);
+            $forpatient->image_path = $name;
+        }
+       $forpatient->update();
+       return redirect('/admin/patients_visitors_list')
+       ->with('message', 'The information has been updated successfully.');
+   }
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   public function getDeletePatientList($id)
+   {
+       $patient = PatientList::findOrFail($id);
+       return view('admin.patients.partial.delete_patient_list',compact('patient'));
+   }
+   
+   
+
+   public function deletePatientList($id)
+   {
+       $patient = PatientList::findOrFail($id);
+       $patientTitle = $patient->title;
+       $image_path = $patient->image_path;
+
+       if($patient->delete()){            
+            $path = 'images/Patients&VisitorLists/'.$image_path;
+            
+            if(file_exists($path)){
+                unlink($path);
+                $patient->image_path = null;
+                $patient->update();
+            }
+
+           return redirect('/admin/patients_visitors_list')
+               ->with('message', $patientTitle.' has been deleted successfully.');
+       }
+   }
+   
+   
+   
+   
+   
+    public function deleteAllPatientList()   
+   {
+       $patients = PatientList::all();
+
+       if(count($patients)>0){
+
+            foreach($patients as $patient)
+            {
+                $patient->delete();
+            }
+
+            return redirect('/admin/patients_visitors_list')
+               ->with('message','All patient lists have been deleted successfully.');
+       }else{
+           return redirect('/admin/patients_visitors_list');
+       }    
+
+   }
+
+   
+   
+   
+   
+   
+   public function DeleteSelectedPatientList(Request $request)
+   {
+    $ids = $request->ids;
+    $patients = PatientList::whereIn('id',explode(",",$ids))->get();
+
+    foreach ($patients as $patient) {
+        
+                $image_path = $patient->image_path;
+                $path = 'images/Patients&VisitorLists/'.$image_path;
+            
+                if(file_exists($path)){
+                    unlink($path);
+                    $patient->image_path = null;
+                    $patient->update();
+                }
+                $patient->delete();
+
+    }
+
+    return response()->json(['success'=>"Patients have been deleted successfully."]);    
+   }
+
+   
+   
+   
+   /**
+    * for_patient_details
+    */
+
+    public function getGeneralDescription($id)
+    {
+        $patient = PatientList::findOrfail($id);
+        $room_rates = RoomRate::where('patient_list_id',$id)->paginate(50);
+        $admission_deposits = AdmissionDeposit::where('patient_list_id',$id)->paginate(50);
+        //return $admission_deposits->firstItem();
+        return view('admin.patients.for_patients_details', compact('patient', 'room_rates','admission_deposits'));
+        
+    }
+
+    public function postGeneralDescription(Request $request, $id)
+    {
+       
+        $patient = PatientList::findOrFail($id);
+        $patient->details_status = $request->details_status;
+        $patient->general_desc = $request->general_desc;
+        $patient->room_rate_desc = $request->room_rate_desc;
+        $patient->admission_desc = $request->admission_desc;
+        $patient->save();
+
+        $date = date('d M, Y @ h:i a', strtotime($patient->updated_at));
+
+        return response()->json(['success'=>'The information has been saved/updated successfully.','date'=>$date]);
+    }
+
+   
+   
+  
+   
+   
+
+}
+
+?>

@@ -1,0 +1,136 @@
+<?php $__env->startSection('title'); ?>
+    <title>Screening Packages</title>
+  <?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+	    <!-- InstanceBeginEditable name="EditRegion1" -->
+    <section class="sub-page-banner11 text-center" data-stellar-background-ratio="0.3">
+      <div class="overlay"></div>
+      <div class="container">
+       <?php if($setting = Helper::hasSetting('screening')): ?>
+                        <?php echo $setting->line1; ?>
+
+                    <?php else: ?>  
+        <h1 class="entry-title">Screening &amp; Packages</h1>
+        <?php endif; ?>
+        <!--<p>Staff is eagerly awaiting to serve our patients and visitors with warm welcome and glowing smile.</p>-->
+      </div>
+    </section>
+
+    <div class="page-header-breadcrumb">
+
+        <ol class="breadcrumb page-breadcrumb text-center">
+                <?php if(\Auth::check()): ?>
+                <li><a href="/patient/dashboard">Dashboard</a>&nbsp;</li>
+                <?php endif; ?>
+                <li><a href="/make-appointment">Make an Appointment</a>&nbsp;</li>
+                <?php if(\Auth::check()): ?>
+                    <li><a href="/patient/dashboard">You are logged in as: <?php echo e(\Auth::user()->patient->first_name); ?> <?php echo e(\Auth::user()->patient->last_name); ?></a></li>
+                    <li><a href="/patient/logout">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="/patient/registration">Sign Up</a>&nbsp;</li>
+            <li><a href="#" data-target="#modal-login" data-toggle="modal">Patient Login</a>&nbsp;</li>
+                <?php endif; ?>
+            </ol>
+
+            <?php echo $__env->make('front.loginmodel', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
+
+      </div>
+    <!-- InstanceEndEditable -->
+    <!-- Sub Page Content
+			============================================= -->
+    <!-- InstanceBeginEditable name="EditRegion2" -->
+    <div id="sub-page-content" class="clearfix">
+      <!-- screening &amp; packages
+                ============================================= -->
+      <section class="no-bg-img">
+        <div class="container">
+         <?php if($setting = Helper::hasSetting('screening')): ?>
+                        <?php echo $setting->line2; ?>
+
+                    <?php else: ?>  
+          <h2 class="light bordered">Screening &amp; <span>Packages</span></h2>
+          <?php endif; ?>
+          <div class="wrapper-padding-none">
+ 
+          <?php foreach(Helper::getScreeningpackages() as $key=>$pack): ?>
+            <div class="col-md-3">
+              <div class="team-member">
+                <div class="team-thumb"> <img src="<?php echo e($pack->image?$pack->image:'images/screening_packages/img_not_available.jpg'); ?>" class="img-rounded" alt="<?php echo e($pack->alt); ?>">
+                    <div class="links">  
+                        <?php if($pack->image_large): ?>
+                          <a href="<?php echo e($pack->image_large); ?>">
+                      <?php elseif($pack->pdf): ?>
+                          <a href="<?php echo e($pack->pdf); ?>">                 
+                      <?php elseif($pack->website): ?>                      
+                      <a href="<?php echo e(Helper::fix_link($pack->website)); ?>">
+                      <?php else: ?>
+                          <a href="/screening_packages/<?php echo e($pack->id); ?>">
+                      <?php endif; ?> <i class="fa fa-link"></i></a> </div>
+                </div>
+                <h5><a  href="/screening_packages/<?php echo e($pack->id); ?>"><?php echo e($pack->title); ?></a></h5>
+                <p><?php echo e($pack->description); ?> </p>
+                <div class="price-rating">
+                  <p class="price"><b><?php echo e($pack->sale_price); ?></b><del><?php echo e($pack->cost_price); ?></del></p>
+                </div>
+                <div class="clearfix"></div>
+                <a  href="/screening_packages/<?php echo e($pack->id); ?>">- VIEW DETAILS</a> </div>
+            </div>
+          
+
+         <?php if($key%4==3): ?>
+            <div class="clearfix margin-bottom-30"></div>
+         <?php endif; ?>
+
+
+        <?php endforeach; ?>
+            
+           
+            
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- InstanceEndEditable -->
+    <!--end sub-page-content-->
+    
+
+    
+    
+	<div class="solid-row"></div>
+    
+	
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('end_scripts'); ?>
+
+   <script type="text/javascript">
+          $('.lem').removeClass('active')
+          $('.lem_screening').addClass('active')
+
+          $('#btn-login').on('click', function(e){
+            $.ajax({
+              url: '/patient/login',
+              type: 'POST',
+              data: {'_token': '<?php echo e(csrf_token()); ?>', 'email':$('#email').val(), 'password':$('#password').val()},
+            }).done(function(data) {
+              console.log("ok: ");
+              console.log(data);
+              if(data.status == 1){
+                $('#alert-message').html(data.alert);
+                setTimeout(function() {
+                  location.reload();
+                }, 1000);
+              } else {
+                $('#alert-message').html(data.alert);
+              }
+            }).fail(function(data) {
+              console.log("error: ");
+              console.log(data);
+            }).always(function() {
+              console.log("complete");
+            });
+          });
+      </script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

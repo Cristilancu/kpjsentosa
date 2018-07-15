@@ -1,0 +1,91 @@
+@extends('layouts.front')
+
+@section('title')
+    <title>Screening Packages</title>
+  @stop
+
+@section('content')
+	    <!-- InstanceBeginEditable name="EditRegion1" -->
+    <section class="sub-page-banner11 text-center" data-stellar-background-ratio="0.3">
+      <div class="overlay"></div>
+      <div class="container">
+       @if($setting = Helper::hasSetting('screening'))
+                        {!!$setting->line1!!}
+                    @else  
+        <h1 class="entry-title">Screening &amp; Packages</h1>
+        @endif
+        <!--<p>Staff is eagerly awaiting to serve our patients and visitors with warm welcome and glowing smile.</p>-->
+      </div>
+    </section>
+    <!-- InstanceEndEditable -->
+    <!-- Sub Page Content
+			============================================= -->
+    <!-- InstanceBeginEditable name="EditRegion2" -->
+    <div id="sub-page-content" class="clearfix">
+      <!-- screening &amp; packages
+                ============================================= -->
+      <section class="no-bg-img">
+        <div class="container">
+         @if($setting = Helper::hasSetting('screening'))
+                        {!!$setting->line2!!}
+                    @else  
+          <h2 class="light bordered">Screening &amp; <span>Packages</span></h2>
+          @endif
+          <div class="wrapper-padding-none">
+ 
+          @foreach(Helper::getScreeningpackages() as $key=>$pack)
+            <div class="col-md-3">
+              <div class="team-member">
+                <div class="team-thumb"> <img src="{{$pack->image?$pack->image:'images/screening_packages/img_not_available.jpg'}}" class="img-rounded" alt="{{$pack->alt}}">
+                    <div class="links">  
+                        @if($pack->image_large)
+                          <a href="{{$pack->image_large}}">
+                      @elseif($pack->pdf)
+                          <a href="{{$pack->pdf}}">                 
+                      @elseif($pack->website)                      
+                      <a href="{{Helper::fix_link($pack->website)}}">
+                      @else
+                          <a href="/screening_packages/{{$pack->id}}">
+                      @endif <i class="fa fa-link"></i></a> </div>
+                </div>
+                <h5><a  href="/screening_packages/{{$pack->id}}">{{$pack->title}}</a></h5>
+                <p>{{$pack->description}} </p>
+                <div class="price-rating">
+                  <p class="price"><b>{{$pack->sale_price}}</b><del>{{$pack->cost_price}}</del></p>
+                </div>
+                <div class="clearfix"></div>
+                <a  href="/screening_packages/{{$pack->id}}">- VIEW DETAILS</a> </div>
+            </div>
+          
+
+         @if($key%4==3)
+            <div class="clearfix margin-bottom-30"></div>
+         @endif
+
+
+        @endforeach
+            
+           
+            
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- InstanceEndEditable -->
+    <!--end sub-page-content-->
+    
+
+    
+    
+	<div class="solid-row"></div>
+    
+	
+@stop
+
+@section('end_scripts')
+
+   <script type="text/javascript">
+          $('.lem').removeClass('active')
+          $('.lem_screening').addClass('active')
+      </script>
+@stop

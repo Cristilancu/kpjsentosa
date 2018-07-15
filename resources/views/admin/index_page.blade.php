@@ -1,0 +1,469 @@
+@extends('layouts.admin')
+
+@section('title')
+  <title>Index:: Edit</title>
+@stop
+@section('content')
+
+
+ <div id="page-wrapper"><!--BEGIN PAGE HEADER & BREADCRUMB-->
+        
+        <div class="page-header-breadcrumb">
+          <div class="page-heading hidden-xs">
+            <h1 class="page-title">CMS Pages</h1>
+          </div>
+          
+          <!-- InstanceBeginEditable name="EditRegion1" -->
+          <ol class="breadcrumb page-breadcrumb">
+            <li><i class="fa fa-home"></i>&nbsp;<a href="/admin">Dashboard</a>&nbsp; <i class="fa fa-angle-right"></i>&nbsp;</li>
+            <li>CMS Pages &nbsp; <i class="fa fa-angle-right"></i>&nbsp;</li>
+            <li class="active">Index - Edit</li>
+          </ol>
+          <!-- InstanceEndEditable --></div>
+        <!--END PAGE HEADER & BREADCRUMB--><!--BEGIN CONTENT-->
+        <!-- InstanceBeginEditable name="EditRegion2" -->
+        <div class="page-content">
+          <div class="row">
+            <div class="col-lg-12">
+              <h2>Index <i class="fa fa-angle-right"></i> Edit</h2>
+              <div class="clearfix"></div>
+             @include('common.alerts')
+              <div class="clearfix"></div>
+              <p></p>
+              
+              <div class="portlet">
+                <div class="portlet-header">
+                  <div class="caption">Page Content</div>
+                  <div class="clearfix"></div>
+                  <span class="text-blue text-12px">You can edit the content by clicking the text section below.</span>
+                  <div class="tools"> <i class="fa fa-chevron-up"></i> </div>
+                </div>
+                <div class="portlet-body">
+                	
+                    <!-- welcome text start -->
+                    <section class="creative-sec no-bg">
+                        <div contenteditable="true" id='line1'>  
+                           @if($setting=Helper::hasSetting('index_page'))
+
+              {!! $setting->line1 !!}
+            @else
+                            <div class="text-center">
+                                <h2 class="light">At Sentosa Medical Centre, excellent care, advanced technology and comfortable surroundings are paramount.</h2>
+                                <p class="lead">We take pride in giving our patients the personal care and attention they deserve. We look at our services through patients' eyes to create positive and caring relationships with our patients and their family members.</p>
+                                <p><img src="/images/index/img_logos.jpg" alt=""></p>
+                                <a href="/about-us" class="btn btn-rounded btn-danger">read more</a>
+            
+                            </div>
+                      @endif
+              			</div>
+                    </section><!-- end welcome text -->
+                    
+                    <!-- Features
+					============================================= -->
+					<section class="features">	
+                    
+                    	
+                        <div contenteditable="true" id='line2'>
+                     @if($setting=Helper::hasSetting('index_page'))
+
+              {!! $setting->line2 !!}
+            @else
+                  			<h1 class="text-center">Featured Services</h1>
+            @endif
+                        </div>
+                        note to programmer: all the featured services info are fetched from "Services & Procedures" section.
+                        
+                        <div class="clearfix"></div>
+                    
+                    </section>
+                    
+                   
+                </div><!-- end portlet body -->
+                <!-- save button start -->
+                <div class="form-actions none-bg"> <a href="javascript:void(0)" class="btn btn-red preview_line">Save &amp; Preview &nbsp;<i class="fa fa-search"></i></a>&nbsp; <a href="javascript:void(0)" class="btn btn-blue save_line" type="index_page">Save &amp; Publish &nbsp;<i class="fa fa-globe"></i></a>&nbsp; <a href="#" class="btn btn-green">Cancel &nbsp;<i class="glyphicon glyphicon-ban-circle"></i></a> </div>
+                <!-- save button end -->
+              </div>
+              
+              
+              <ul id="myTab" class="nav nav-tabs">
+                <li class="active"><a href="#popup-image" data-toggle="tab">Popup Image</a></li>
+                <li><a href="#parallax-bg-text" data-toggle="tab">Find Health Information Parallax Background &amp; Text</a></li>
+              </ul>
+              
+              <div id="myTabContent" class="tab-content">
+              	
+                
+                <div id="popup-image" class="tab-pane fade in active">
+
+                  <div class="portlet">
+                    <div class="portlet-header">
+                      <div class="caption">Popup Image Edit</div>
+                      <div class="tools"> <i class="fa fa-chevron-up"></i> </div>
+                    </div>
+                    <div class="portlet-body">
+                      <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>Status</th>
+                              <th>Image</th>
+                              <th>Title</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <?php $setting = Helper::hasSetting('popup');?>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>{!!($setting&&$setting->status)?"<span class='label label-sm label-success'>Active</span>":"<span class='label label-sm label-danger'>Inactive</span>"!!}</td>
+                              <td><img src="{{$setting?$setting->details:'/images/promotion_packages/img_love_your_liver_campaign_large.jpg'}}" class="img-responsive" width="192"></td>
+                              <td>{{$setting?$setting->line1:'Love Your Liver Promotion'}}</td>
+                              <td><a href="#" data-hover="tooltip" data-placement="top" data-target="#modal-edit-popup" data-toggle="modal" title="Edit"><span class="label label-sm label-success"><i class="fa fa-pencil"></i></span></a>
+                                  <!--Modal Edit Popup image start-->
+                                  <div id="modal-edit-popup" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true" class="modal fade">
+                                    <div class="modal-dialog modal-wide-width">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                                          <h4 id="modal-login-label3" class="modal-title">Edit Popup Image</h4>
+                                        </div>
+
+                                        <div class="modal-body">
+                                          <div class="form">
+                                            <form class="form-horizontal" method="post" action="/admin/save_line" enctype="multipart/form-data">
+                                              <div class="form-group">
+                                                <label class="col-md-3 control-label">Status</label>
+                                                <div class="col-md-6">
+                                                  <div data-on="success" data-off="primary" class="make-switch">
+                                                    <input type="checkbox"  name="status" {{($setting&&$setting->status)?'checked':''}} />
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <label class="col-md-3 control-label">Title <span class="require">*</span></label>
+                                                <div class="col-md-6">
+                                                  <input id="text" type="text" class="form-control" placeholder="eg. Love Your Liver Promotion" value="{{$setting?$setting->line1:'Love Your Liver Promotion'}}"  name="line1">
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <label class="col-md-3 control-label">Upload Background Image <span class='require'>*</span></label>
+                                                <div class="col-md-9">
+                                                  <div class="text-15px margin-top-10px"> <img src="{{$setting?$setting->details:'/images/promotion_packages/img_love_your_liver_campaign_large.jpg'}}" class="img-responsive"><br/>
+                                                      <input id="exampleInputFile2" type="file" name="image" {{($setting&&$setting->details)?"":'required'}}/>
+                                                      <br/>
+                                                      <span class="help-block">(JPEG/GIF/PNG only, Max. 1MB) </span> </div>
+                                                </div>
+                                              </div>
+                                              <input type="hidden" name="model" value="popup">
+                                              <div class="form-actions">
+                                                <div class="col-md-offset-5 col-md-8"> <button class="btn btn-red">Save &nbsp;<i class="fa fa-floppy-o"></i></button>&nbsp; <a href="#" data-dismiss="modal" class="btn btn-green">Cancel &nbsp;<i class="glyphicon glyphicon-ban-circle"></i></a> 
+                                                </div>
+                                              </div>
+                                            </form>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!--END MODAL Edit popup image -->
+                              </td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <td colspan="5"></td>
+                            </tr>
+                          </tfoot>
+                        </table>
+                      </div>
+                      <!-- end table responsive -->
+                      <div class="clearfix"></div>
+                    </div>
+                    <!-- end portlet body -->
+                  </div><!-- end portlet -->
+     
+                </div><!-- end popup image -->
+
+                <div id="parallax-bg-text" class="tab-pane fade">
+                  <div class="portlet">
+                    <div class="portlet-header">
+
+                      <div class="caption">Find Health Information Parallax Text Edit</div>
+                       
+					  <div class="tools"> <i class="fa fa-chevron-up"></i> </div>
+                    </div>
+                    <div class="portlet-body">
+                      <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>Status</th>
+                              <th>Heading Text</th>
+                              <th>Sub Heading Text</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          <?php $setting= Helper::hasSetting('parallax_text');?>
+                            <tr>
+                              <td>1</td>
+                              <td>{!!($setting&&$setting->status)?"<span class='label label-sm label-success'>Active</span>":"<span class='label label-sm label-danger'>Inactive</span>"!!}</td>
+                              <td>{{$setting?$setting->line1:'Find Health Information'}}</td>
+                              <td>{{$setting?$setting->line2:'All Topics by Letters'}}</td>
+                              <td><a href="#" data-hover="tooltip" data-placement="top" data-target="#modal-edit-text" data-toggle="modal" title="Edit"><span class="label label-sm label-success"><i class="fa fa-pencil"></i></span></a>
+                                  <!--Modal Edit banner text start-->
+                                  <div id="modal-edit-text" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true" class="modal fade">
+                                    <div class="modal-dialog modal-wide-width">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                                          <h4 id="modal-login-label3" class="modal-title">Edit Parallax Background Text</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                          <div class="form">
+                                            <form class="form-horizontal" method="post" enctype="multipart/form-data" action="/admin/save_line">
+                                              <div class="form-group">
+                                                <label class="col-md-3 control-label">Status</label>
+                                                <div class="col-md-6">
+                                                  <div data-on="success" data-off="primary" class="make-switch">
+                                                    <input type="checkbox"  name="status" {{($setting&&$setting->status)?'checked':''}} />
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <label class="col-md-3 control-label">Heading Text <span class="require">*</span> </label>
+                                                <div class="col-md-9">
+                                                   <input type="text" class="form-control" placeholder="eg. Find Health Information" value="{{$setting?$setting->line1:'Find Health Information'}}" name="line1"> 
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <label class="col-md-3 control-label">Sub Heading Text <span class="require">*</span> </label>
+                                                <div class="col-md-9">
+                                                   <input type="text" class="form-control" placeholder="eg. All Topics by Letters" value="{{$setting?$setting->line2:'All Topics by Letters'}}" name="line2">
+                                                </div> 
+                                                <input type="hidden" name="model" value="parallax_text">
+                                              </div>
+                                              <div class="form-actions">
+                                                <div class="col-md-offset-5 col-md-8"> <button class="btn btn-red">Save &nbsp;<i class="fa fa-floppy-o"></i></button>&nbsp; <a href="#" data-dismiss="modal" class="btn btn-green">Cancel &nbsp;<i class="glyphicon glyphicon-ban-circle"></i></a> 
+                                                </div>
+                                              </div>
+                                            </form>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!--END MODAL Edit text-->
+                              </td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <td colspan="5"></td>
+                            </tr>
+                          </tfoot>
+                        </table>
+                        <div class="clearfix"></div>
+                      </div><!-- end table responsive -->
+                    </div>
+                  </div><!-- End porlet -->
+                  
+                  <div class="portlet">
+                    <div class="portlet-header">
+                      <div class="caption">Parallax Background Image Edit</div>
+                      <div class="tools"> <i class="fa fa-chevron-up"></i> </div>
+                    </div>
+                    <div class="portlet-body">
+                      <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>Status</th>
+                              <th>Image</th>
+                              <th>Title</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          <?php $setting=Helper::hasSetting('parallax_image');?>
+                            <tr>
+                              <td>1</td>
+                              <td>{!!($setting&&$setting->status)?"<span class='label label-sm label-success'>Active</span>":"<span class='label label-sm label-danger'>Inactive</span>"!!}</td>
+                              <td><img src="{{$setting?$setting->details:'/images/parallax/find_health_info_bg.jpg'}}" class="img-responsive" width="192" height="125"></td>
+                              <td>{{$setting?$setting->line1:'Find Health Information'}}</td>
+                              <td><a href="#" data-hover="tooltip" data-placement="top" data-target="#modal-edit-background" data-toggle="modal" title="Edit"><span class="label label-sm label-success"><i class="fa fa-pencil"></i></span></a>
+                                  <!--Modal Edit Background image start-->
+                                  <div id="modal-edit-background" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true" class="modal fade">
+                                    <div class="modal-dialog modal-wide-width">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                                          <h4 id="modal-login-label3" class="modal-title">Edit Parallax Background Image</h4>
+                                        </div>
+
+                                        <div class="modal-body">
+                                          <div class="form">
+                                            <form class="form-horizontal" method="post" enctype="multipart/form-data" action="/admin/save_line" >
+                                              <div class="form-group">
+                                                <label class="col-md-3 control-label">Status</label>
+                                                <div class="col-md-6">
+                                                  <div data-on="success" data-off="primary" class="make-switch">
+                                                    <input type="checkbox"  name="status" {{($setting&&$setting->status)?'checked':''}} />
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <label class="col-md-3 control-label">Title <span class="require">*</span></label>
+                                                <div class="col-md-6">
+                                                  <input id="text" type="text" class="form-control" placeholder="eg. Find Health Information" value="{{$setting?$setting->line1:'Find Health Information'}}" name="line1">
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <label class="col-md-3 control-label">Upload Background Image <span class='require'>*</span></label>
+                                                <div class="col-md-9">
+                                                  <div class="text-15px margin-top-10px"> <img src="{{$setting?$setting->details:'/images/parallax/find_health_info_bg.jpg'}}" class="img-responsive"><br/>
+                                                      <input id="exampleInputFile2" type="file" name="image" {{($setting&&$setting->details)?"":'required'}}/>
+                                                      <br/>
+                                                      <span class="help-block">(Image dimension: 1920 x 1250 pixels, JPEG/GIF/PNG only, Max. 1MB) </span> </div>
+
+                                                      <input type="hidden" value="parallax_image" name="model">
+                                                </div>
+                                              </div>
+                                              <div class="form-actions">
+                                                <div class="col-md-offset-5 col-md-8"> <button class="btn btn-red">Save &nbsp;<i class="fa fa-floppy-o"></i></button>&nbsp; <a href="#" data-dismiss="modal" class="btn btn-green">Cancel &nbsp;<i class="glyphicon glyphicon-ban-circle"></i></a> 
+                                                </div>
+                                              </div>
+                                            </form>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!--END MODAL Edit parallax background image -->
+                              </td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <td colspan="5"></td>
+                            </tr>
+                          </tfoot>
+                        </table>
+                      </div>
+                      <!-- end table responsive -->
+                      <div class="clearfix"></div>
+                    </div>
+                    <!-- end portlet body -->
+                  </div><!-- end portlet -->
+                  
+                  <div class="portlet">
+                    <div class="portlet-header">
+                      <div class="caption">Content Image Edit</div>
+                      <div class="tools"> <i class="fa fa-chevron-up"></i> </div>
+                    </div>
+                    <div class="portlet-body">
+                      <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>Status</th>
+                              <th>Image</th>
+                              <th>Title</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          <?php $setting = Helper::hasSetting('parallax_content');?>
+                            <tr>
+                              <td>1</td>
+                              <td>{!!($setting&&$setting->status)?"<span class='label label-sm label-success'>Active</span>":"<span class='label label-sm label-danger'>Inactive</span>"!!}</td>
+                              <td><img src="{{$setting?$setting->details:'/images/mobile-hand.png'}}" class="img-responsive" width="93" height="116"></td>
+                              <td>{{$setting?$setting->line1:'Mobile App'}}</td>
+                              <td><a href="#" data-hover="tooltip" data-placement="top" data-target="#modal-edit-content-image" data-toggle="modal" title="Edit"><span class="label label-sm label-success"><i class="fa fa-pencil"></i></span></a>
+                                  <!--Modal Edit content image start-->
+                                  <div id="modal-edit-content-image" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true" class="modal fade">
+                                    <div class="modal-dialog modal-wide-width">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                                          <h4 id="modal-login-label3" class="modal-title">Edit Content Image</h4>
+                                        </div>
+
+                                        <div class="modal-body">
+                                          <div class="form">
+                                            <form class="form-horizontal" action="/admin/save_line" method="post" enctype="multipart/form-data">
+                                              <div class="form-group">
+                                                <label class="col-md-3 control-label">Status</label>
+                                                <div class="col-md-6">
+                                                  <div data-on="success" data-off="primary" class="make-switch">
+                                                    <input type="checkbox"  name="status" {{($setting&&$setting->status)?'checked':''}} />
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <label class="col-md-3 control-label">Title <span class="require">*</span></label>
+                                                <div class="col-md-6">
+                                                  <input id="text" type="text" class="form-control" placeholder="eg. Mobile App" value="{{$setting?$setting->line1:'Mobile App'}}" name="line1">
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <label class="col-md-3 control-label">Upload Content Image <span class='require'>*</span></label>
+                                                <div class="col-md-9">
+                                                  <div class="text-15px margin-top-10px"> <img src="{{$setting?$setting->details:'/images/mobile-hand.png'}}" class="img-responsive"><br/>
+                                                      <input id="exampleInputFile2" type="file" name="image" />
+                                                      <br/>
+                                                      <span class="help-block">(Image dimension: 374 x 465 pixels, JPEG/GIF/PNG only, Max. 1MB) </span> </div>
+                                                </div>
+                                              </div>
+                                              <input type="hidden" name="model" value="parallax_content">
+                                              <div class="form-actions">
+                                                <div class="col-md-offset-5 col-md-8"> <button class="btn btn-red">Save &nbsp;<i class="fa fa-floppy-o"></i></button>&nbsp; <a href="#" data-dismiss="modal" class="btn btn-green">Cancel &nbsp;<i class="glyphicon glyphicon-ban-circle"></i></a> 
+                                                </div>
+                                              </div>
+                                            </form>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!--END MODAL Edit content image -->
+                              </td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <td colspan="5"></td>
+                            </tr>
+                          </tfoot>
+                        </table>
+                      </div>
+                      <!-- end table responsive -->
+                      <div class="clearfix"></div>
+                    </div>
+                    <!-- end portlet body -->
+                  </div><!-- end portlet -->
+                  
+                  
+                </div><!-- end tab parallax bg image & text -->
+              
+              </div><!-- end tab content -->
+                  
+                  
+            </div>
+          </div>
+        </div>
+
+
+@stop
+
+
+ @section('end_scripts')
+    <script type="text/javascript">
+        $('.lem').removeClass('active')
+        $('.lem_index').addClass('active');
+    </script>
+  @stop

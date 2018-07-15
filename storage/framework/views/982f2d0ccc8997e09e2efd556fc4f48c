@@ -1,0 +1,94 @@
+<?php $__env->startSection('title'); ?>
+    <title><?php echo e($cat->title); ?></title>
+  <?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?> 
+
+
+		  <!-- InstanceBeginEditable name="EditRegion1" -->
+          <section class="sub-page-banner7 text-center" data-stellar-background-ratio="0.3">
+            <div class="overlay"></div>
+              <div class="container">
+               <?php if($setting = Helper::hasSetting('category')): ?>
+                        <?php echo $setting->line1; ?>
+
+                    <?php else: ?> 
+                <h1 class="entry-title">KPJ Advisor Series</h1>
+                <?php endif; ?>
+                <!--<p>Staff is eagerly awaiting to serve our patients and visitors with warm welcome and glowing smile.</p>-->
+              </div>
+            </section>
+          <!-- InstanceEndEditable -->
+    <!-- Sub Page Content
+			============================================= -->
+    <!-- InstanceBeginEditable name="EditRegion2" -->
+    
+    <div id="sub-page-content" class="no-padding-bottom clearfix">
+      
+      
+      <!-- find health information Start
+		============================================= -->
+      <section class="no-bg-img clearfix">
+                <div class="container">
+                  <h2 class="light bordered"><?php echo e($cat->title); ?></h2>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h5><span>Filter Topics by Letters</span></h5>
+
+                        <?php $letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+                                    ?>
+
+                                    <?php foreach($letters as $key=>$value): ?>
+
+                      <a href="/search?search=<?php echo e($value); ?>" class="btn btn-rounded btn-danger btn-sm"><?php echo e($value); ?></a> 
+
+                      <?php endforeach; ?>
+                      <div class="height20"></div>
+                      
+                    </div><!-- end col-md-12 -->
+                    <hr>
+                    
+                    <div class="col-md-12">
+                      <h5><span>All <?php echo e($cat->title); ?> Topics</span></h5>
+                     
+                        <ul class="list-unstyled medicom-feature-list">
+                        <?php foreach($cat->listings()->where('status', 1)->get() as $kpj): ?>
+                         <div class="col-md-6">
+                          <li><i class="fa fa-check medicom-check"></i>
+                      <?php if($kpj->pdf): ?>
+                          <a href="<?php echo e($kpj->pdf); ?>">
+                      <?php elseif($kpj->website): ?>                      
+                          <a href="<?php echo e(Helper::fix_link($kpj->website)); ?>">
+                      <?php else: ?>
+                          <a href="/articles/<?php echo e($kpj->id); ?>">
+                      <?php endif; ?> <?php echo e($kpj->title); ?></a></li>
+                         </div>
+                        <?php endforeach; ?>
+                      </div><!-- end col-md-6-->
+                                            
+                      
+                    </div><!-- end col-md-12 -->
+                    <div class="clearfix"></div>
+                    <hr>
+                    
+                    <div class="text-center">
+                    <ul class="pagination pagination-sm">
+                     
+                     </ul>
+                     </div>
+                    
+                    
+                    
+                    
+                  </div>
+                  <!-- end row -->
+                </div>
+                <!-- end container -->
+
+              </section>
+
+      <div class="height40"></div>
+      
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.front', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

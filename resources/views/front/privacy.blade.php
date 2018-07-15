@@ -1,0 +1,233 @@
+@extends('layouts.admin')
+
+@section('title')
+    <title>Privacy</title>
+  @stop
+
+@section('content')
+
+    <section class="sub-page-banner1 text-center" data-stellar-background-ratio="0.3">
+            <div class="overlay"></div>
+              <div class="container">
+                <h1 class="entry-title">Privacy Policy</h1>
+                <!--<p>Staff is eagerly awaiting to serve our patients and visitors with warm welcome and glowing smile.</p>-->
+              </div>
+            </section>
+          <!-- InstanceEndEditable -->
+    <!-- Sub Page Content
+			============================================= -->
+    <!-- InstanceBeginEditable name="EditRegion2" -->
+    <div id="sub-page-content" class="no-padding-bottom clearfix">
+    	
+				
+				<!-- patient transfer Start
+				============================================= -->
+			    <div class="container">
+					
+					<h2 class="light bordered main-title">Personal Data <span>Notice</span></h2>
+                    
+                    <div class="row">
+						
+                        <div class="col-md-12">
+						
+                        	<div id="horizontalTab" class="tab-horizontal1">
+									
+								<ul class="resp-tabs-list">
+									<li>English Version</li>
+									<li>Malay Version</li>
+								</ul>
+									
+								<div class="resp-tabs-container">
+									<!-- english version start -->
+                                    <div>
+                                    	<h5>Personal Data Protection ACT 2010 Notice</h5>
+										<p>KPJ Sentosa Specialist Hospital is subject to the personal data protection principles under the Personal Data Protection Act 2010 (hereafter referred to as PDPA) with effect from 15 November 2013, which regulates the processing of personal data in commercial transactions. The terms "personal data", "processing" and "commercial transactions" shall have the meaning provided in the PDPA.</p>
+                                        <p>It is obligatory that you supply us with your personal data. If you fail to supply us with such personal data, we may not be able to process and/or disclose your data for the purposes as provided in item C) below.</p>
+                                        <p>This Personal Data Notice applies to any person whose personal data is being processed by KPJ Sentosa Specialist Hospital.</p>
+                                        <p>We wish to inform you how your personal data is being processed by and on behalf of KPJ Sentosa Specialist Hospital.</p>
+                                        
+                                        <h5>A) Source of the Personal Data</h5>
+                                        <p>Your personal data is collected from various sources, including information you have provided us, information from third parties and information in the public domain.</p>
+                                        
+                                        <h5>B) Description of the Personal Data</h5>
+                                        <p>Your personal data processed by us may include, where relevant:- name, date of birth, identity card or passport, name of employer/company, home and office address, telephone/handphone number, faximile number, email address, occupation, age, gender, marital status, weight, height, photos, race, nationality, religion, family and/or next of kin information, medical checkup result, medical record, Medical Report No. (MRN), medical report, diagnosis, personal health information, criminal history, investigation result, insurance details and any other personal data required for the purposes set out in item C) below.</p>
+                                        
+                                        <h5>C) Purposes of the Personal Data</h5>
+                                        <p>Your personal data may be processed for the following purposes, where relevant:-</p>
+                                        <ul class="list-unstyled">
+                                     		<li><i class="fa fa-check"></i> For medical and healthcare services</li>
+                                            <li><i class="fa fa-check"></i> To facilitate the patients personal needs (i.e. extension of stay for health tourists) </li>
+                                            <li><i class="fa fa-check"></i> To establish and manage medical records and medical reports </li>
+                                            <li><i class="fa fa-check"></i> To facilitate payment process relating to the patients </li>
+                                            <li><i class="fa fa-check"></i> To institute debt recovery proceedings against defaulters</li>
+                                            <li><i class="fa fa-check"></i> To report the personal data to the relevant authorities and/or third parties under the governing laws relevant to the healthcare industry</li>
+                                            <li><i class="fa fa-check"></i> To share the personal data with KPJ Healthcare Berhad and its related companies as defined in the Companies Act 1965 </li>
+                                            <li><i class="fa fa-check"></i> To conduct research, analysis and improvement </li>
+                                            <li><i class="fa fa-check"></i> To market and advertise products and services </li>
+                                            <li><i class="fa fa-check"></i> To administer and respond to request, queries, complaints and legal issues </li>
+                                            <li><i class="fa fa-check"></i> To facilitate human resource management activities relating to employees </li>
+                                            <li><i class="fa fa-check"></i> For submisson and registration of relevant forms, licenses to the relevant authorities and/or third parties under the governing laws relevant to the healthcare industries </li>
+                                            <li><i class="fa fa-check"></i> To share personal data for the purpose of banking facilities, signing of legal and accounting documents </li>
+                                            <li><i class="fa fa-check"></i> For purpose of purchase of items, outsource of services, new development and others</li>
+                                            <li><i class="fa fa-check"></i> For education and training </li>
+                                            <li><i class="fa fa-check"></i> For any other purpose that is incidental or in furtherance to the above purposes </li>
+                                        </ul>
+                                        
+                                        <h5>D) Disclosure of the Personal Data</h5>
+                                        <p>Your personal data may be disclosed to the following parties, where relevant:- </p>
+                                        <ul class="list-unstyled">
+                                     		<li><i class="fa fa-check"></i> Healthcare professional (as defined in PDPA)</li>
+                                            <li><i class="fa fa-check"></i> KPJ Healthcare Berhad and its related companies (as defined under Companies Act 1965)</li>
+                                            <li><i class="fa fa-check"></i> Government agencies, local authorities, non government agencies</li>
+                                            <li><i class="fa fa-check"></i> Paying and insurance agents </li>
+                                            <li><i class="fa fa-check"></i> Debt collection authorities and agencies </li>
+                                            <li><i class="fa fa-check"></i> Financial institutions </li>
+                                            <li><i class="fa fa-check"></i> Legal firms</li>
+                                            <li><i class="fa fa-check"></i> Auditors </li>
+                                            <li><i class="fa fa-check"></i> Vendor/Contractor</li>
+                                            <li><i class="fa fa-check"></i> Other private and public hospitals</li>
+                                            <li><i class="fa fa-check"></i> Other Healthcare providers </li>
+                                            <li><i class="fa fa-check"></i> Training providers</li>
+                                            <li><i class="fa fa-check"></i> Family and next of kin </li>
+                                            <li><i class="fa fa-check"></i> To such parties as may be required by law, court, regulator or legal process to disclose</li>
+                                            <li><i class="fa fa-check"></i> To such parties as may be permitted under the laws of Malaysia </li>
+                                            <li><i class="fa fa-check"></i> Any other person which KPJ Sentosa Specialist Hospital may deem necessary </li>
+                                        </ul>
+                                        
+                                        <h5>E) Access and Update the Personal Data</h5>
+                                        <p>We shall do our best to ensure that the personal data we hold about you is accurate, complete, not misleading and up-to-date. If there are any changes to your personal data or if you believe that the personal data we have about you is inaccurate, incomplete, misleading or not up-to-date, please contact us so that we may take steps to update your personal data.</p>
+                                        <p>You have the right to access your personal data. If you would like to request access to your personal data, please contact us. We recommend that your request for access to your personal data held by KPJ Sentosa Specialist Hospital be made in writing. We may also take steps to verify your identity before fulfilling your request for access to your personal data.</p>
+                                        <p>In accordance with the PDPA:</p>
+                                        <p>i. Depending on the information requested, we may charge a fee as stipulated in the First Schedule (Regulation 2) of Personal Data Protection [Fees] Regulations 2013 for processing your request for access; and </p>
+                                        <p>ii. We may refuse to comply with your request to access or make a correction in accordance with PDPA. </p>
+                                        
+                                        <h5>F) How to Contact Us</h5>
+                                        <p>Please contact us by using any of the following modes if you have any queries or complaints in respect of your personal data:- </p>    
+ 
+                                        <p><b>Address:</b> KPJ Sentosa KL Specialist Hospital, 36 Jalan Chemur, KompleksDamai, 50400 Kuala Lumpur </p>
+   										<p><b>Attention:</b> Mohd Khairul Nizam</p>
+                                        <p><b>Telephone Number:</b> (03) 4043-7166 </p>
+                                        <p><b>Fax:</b> (03) 4043-7761 </p>
+                                        <p><b>Email Address:</b> <a href="mailto:pdpa@sentosa.kpjhealth.com.my">pdpa@sentosa.kpjhealth.com.my</a></p>
+                                        
+                                        <p>If you do not wish us or other parties to communicate marketing offers to you, you may email to us at <a href="mailto:pdpa@sentosa.kpjhealth.com.my">pdpa@sentosa.kpjhealth.com.my</a></p>
+                                        <p>We provide this Personal Data Notice in both English and Bahasa Malaysia. In case of any inconsistencies between these two, the English version shall prevail.</p>
+                                        <p>By providing to us your personal data, you hereby consent to the processing of your personal data in accordance with all of the foregoing. </p>
+                                                                            
+                                        
+									</div>
+                                    <!-- end english version -->
+									
+                                    <!-- malay version start -->
+									<div>
+										<h5>Notis Akta Perlindungan Data Peribadi 2010 (Notis Data Peribadi)</h5>
+                                        <p>Hospital Pakar KPJ Sentosa adalah tertakluk kepada prinsip perlindungan data peribadi di bawah Akta Perlindungan Data Peribadi 2010 (selepas ini dirujuk sebagai PDPA) yang telah berkuatkuasa mulai 15 November 2013, untuk mengawal selia pemprosesan data peribadi dalam transaksi komersial. Terma-terma "data peribadi", "pemprosesan" dan "transaksi komersial" mempunyai maksud sepertimana yang ditakrifkan dalam PDPA.</p>
+                                        <p>Anda diwajibkan untuk memberikan kepada kami data peribadi anda. Sekiranya anda gagal untuk memberikan data peribadi anda, kami mungkin tidak dapat memproses dan/atau menzahirkan data peribadi anda bagi tujuan-tujuan yang dinyatakan di dalam item C) di bawah.</p>
+                                        <p>Notis Data Peribadi ini terpakai bagi mana-mana pihak yang data peribadinya diproses oleh Hospital Pakar KPJ Sentosa.</p>
+                                        <p>Kami ingin memaklumkan kepada anda bagaimana data peribadi anda diproses oleh dan bagi pihak Hospital Pakar KPJ Sentosa. </p>
+                                        
+                                        <h5>A) Sumber Data Peribadi</h5>
+                                        <p>Data peribadi anda dikumpul daripada pelbagai sumber, termasuk maklumat yang telah anda berikan kepada kami, maklumat daripada pihak ketiga dan maklumat dalam domain awam.</p>
+                                        
+                                        <h5>B) Jenis Data Peribadi</h5>
+                                        <p>Data peribadi anda yang diproses oleh kami termasuk, mana-mana yang berkenaan:- nama, tarikh lahir, nombor kad pengenalan atau nombor paspot, nama majikan/syarikat, alamat rumah dan pejabat, nombor telefon/telefon bimbit, nombor faks, alamat emel, pekerjaan, umur, jantina, status perkahwinan, berat, tinggi, gambar, bangsa, kerakyatan, agama, maklumat keluarga/keluarga terdekat, keputusan pemeriksaan perubatan, rekod perubatan, MRN, laporan perubatan, diagnosis, maklumat kesihatan, rekod jenayah, keputusan siasatan, maklumat insurans dan data peribadi lain yang diperlukan untuk tujuan yang dinyatakan dalam perenggan C) di bawah.</p>
+                                        
+                                        <h5>C) Tujuan Data Peribadi</h5>
+                                        <p>Data peribadi anda diproses bagi tujuan-tujuan seperti berikut, mana-mana yang berkenaan:- </p>
+                                        <ul class="list-unstyled">
+                                        	 <li><i class="fa fa-check"></i> Untuk perkhidmatan perubatan dan jagaan kesihatan</li>
+                                             <li><i class="fa fa-check"></i> Untuk membantu keperluan peribadi pesakit (contoh melanjutkan tempoh tinggal untuk pelancongan kesihatan) </li>
+                                             <li><i class="fa fa-check"></i> Untuk mewujudkan dan menguruskan rekod-rekod perubatan dan laporan-laporan perubatan </li>
+                                             <li><i class="fa fa-check"></i> Untuk membantu proses pembayaran berkaitan dengan pesakit-pesakit </li>
+                                             <li><i class="fa fa-check"></i> Untuk menjalankan prosiding terhadap penghutang bagi mendapatkan semula hutang</li>
+                                             <li><i class="fa fa-check"></i> Untuk melaporkan data peribadi kepada pihak berkuasa dan/atau pihak-pihak ketiga di bawah undang-undang yang berkaitan dengan industri jagaan kesihataan</li>
+                                             <li><i class="fa fa-check"></i> Untuk berkongsi data peribadi dengan KPJ Healthcare Berhad dan syarikat-syarikat berkaitan sebagaimana yang ditakrifkan di dalam Akta Syarikat 1965 </li>
+                                             <li><i class="fa fa-check"></i> Untuk menjalankan penyelidikan, analisis dan penambahbaika</li>
+                                             <li><i class="fa fa-check"></i> Untuk memasarkan dan mengiklankan produk-produk dan perkhidmatan-perkhidmatan</li>
+                                             <li><i class="fa fa-check"></i> Untuk mentadbir dan memberi maklumbalas mengenai permintaaan, pertanyaan, aduan dan isu-isu undang-undang </li>
+                                             <li><i class="fa fa-check"></i> Untuk membantu aktiviti-aktiviti pengurusan sumber manusia berkaitan dengan pekerja-pekerja</li>
+                                             <li><i class="fa fa-check"></i> Untuk penghantaran dan pendaftaran borang-borang, lesen-lesen yang berkaitan kepada pihak-pihak berkuasa yang berkenaan dan/atau pihak-pihak ketiga di bawah undang-undang yang berkaitan dengan industri jagaan kesihataan </li>
+                                             <li><i class="fa fa-check"></i> Untuk berkongsi data peribadi bagi tujuan kemudahan perbankan, menandatangani dokumen-dokumen undang-undang dan perakaunan</li>
+                                             <li><i class="fa fa-check"></i> Bagi tujuan pembelian barangan, perkhidmatan sumber luar, pembangunan baru dan lain-lain </li>
+                                             <li><i class="fa fa-check"></i> Untuk tujuan pendidikan dan latihan </li>
+                                             <li><i class="fa fa-check"></i> Untuk apa-apa tujuan lain yang bersampingan dengan atau berlanjutan daripada tujuan yang dinyatakan di atas</li>
+                                        </ul>
+                                        
+                                        <h5>D) Penzahiran Data Peribadi</h5>
+                                        <p>Data peribadi anda dizahirkan kepada pihak-pihak berikut, mana-mana yang berkenaan:- </p>
+                                        <ul class="list-unstyled">
+                                        	<li><i class="fa fa-check"></i> Profesional jagaan kesihatan (sebagaimana yang ditakrifkan di dalam PDPA)</li>
+                                            <li><i class="fa fa-check"></i> KPJ Healthcare Berhad dan syarikat-syarikat berkaitan (sebagaimana yang ditakrifkan di dalam Akta Syarikat 1965)</li>
+                                            <li><i class="fa fa-check"></i> Agensi-agensi kerajaan, pihak berkuasa tempatan, dan agensi-agensi bukan kerajaan</li>
+                                            <li><i class="fa fa-check"></i> Agen-agen pembayaran dan insurans</li>
+                                            <li><i class="fa fa-check"></i> Pihak-pihak dan agensi-agensi pemungut hutang </li>
+                                            <li><i class="fa fa-check"></i> Institut-institut perbankan</li>
+                                            <li><i class="fa fa-check"></i> Firma-firma guaman</li>
+                                            <li><i class="fa fa-check"></i> Auditor</li>
+                                            <li><i class="fa fa-check"></i> Vendor/Kontraktor</li>
+                                            <li><i class="fa fa-check"></i> Hospital-hospital swasta dan kerajaan yang lain </li>
+                                            <li><i class="fa fa-check"></i> Penyedia-penyedia jagaan kesihatan yang lain </li>
+                                            <li><i class="fa fa-check"></i> Penyedia-penyedia latihan </li>
+                                            <li><i class="fa fa-check"></i> Keluarga dan keluarga terdekat </li>
+                                            <li><i class="fa fa-check"></i> Kepada pihak-pihak lain sepertimana yang dikehendaki oleh undang-undang, mahkamah, pengawal selia atau proses undang-undang yang memerlukan penzahiran</li>
+                                            <li><i class="fa fa-check"></i> Kepada pihak-pihak lain yang dibenarkan di bawah undang-undang Malaysia </li>
+                                            <li><i class="fa fa-check"></i> Kepada mana-mana pihak yang mana Hospital Pakar KPJ Sentosa fikirkan perlu </li>
+                                        </ul>
+                                        
+                                        <h5>E) Akses dan Kemaskini Data Peribadi</h5>
+                                        <p>Kami akan melakukan yang terbaik untuk memastikan agar data peribadi yang kami pegang mengenai anda adalah tepat, lengkap, tidak mengelirukan dan terkini. Jika terdapat sebarang perubahan terhadap data peribadi anda atau anda percaya bahawa data peribadi anda adalah tidak tepat, tidak lengkap, mengelirukan dan tidak terkini, sila hubungi kami agar kami dapat mengambil langkah-langkah perlu untuk mengemaskini data peribadi anda.</p>
+                                        <p>Anda mempunyai hak untuk mengakses data peribadi anda. Jika anda ingin memohon untuk mengakses data peribadi anda, sila hubungi kami. Kami sarankan agar permohonan anda untuk mengakses data peribadi yang dipegang oleh Hospital Pakar KPJ Sentosa dibuat secara bertulis. Kami juga mungkin akan mengambil langkah-langkah untuk mengesahkan identiti anda sebelum memenuhi permohonan anda untuk mengakses data peribadi anda.</p>
+                                        <p>Selaras dengan PDPA:-</p>
+                                        <p>i) Bergantung kepada maklumat yang dimohon, kami mungkin mengenakan bayaran selaras dengan Jadual Pertama (Peraturan 2) Peraturan-peraturan Perlindungan Data Peribadi (Fi) 2013 untuk memproses permohonan anda untuk mengakses data peribadi.</p>
+                                        <p>ii) Kami boleh menolak permohonan anda untuk mengakses atau membuat pembetulan selaras dengan PDPA.</p>
+                                        
+                                        <h5>F) Hubungi Kami</h5>
+                                        <p>Silahubungi kami denganmenggunakancara-caraseperti di bawahjikaandainginmembuat pertanyaanatauaduanberkenaandengan data peribadianda:- </p>
+                                        
+                                        <p><b>Alamat:</b> KPJ Sentosa KL Specialist Hospital, 36 Jalan Chemur, KompleksDamai, 50400 Kuala Lumpur
+UntukPerhatian: Mohd Khairul Nizam</p>
+										<p><b>Nombor Telefon:</b> (03) 4043-7166</p>
+                                        <p><b>Faks:</b> (03) 4043-7761</p>
+                                        <p><b>Alamat Emel:</b> <a href="mailto:pdpa@sentosa.kpjhealth.com.my">pdpa@sentosa.kpjhealth.com.my</a></p>
+                                        <p>Jika anda tidak berminat untuk menerima sebarang tawaran pemasaran daripada kami atau pihak lain, sila emel kepada kami di <a href="mailto:pdpa@sentosa.kpjhealth.com.my">pdpa@sentosa.kpjhealth.com.my</a></p>
+                                        <p>Kami menyediakan Notis Data Peribadi ini di dalam versi Bahasa Inggeris dan Bahasa Malaysia. Jika terdapat sebarang keselarasan di antara dua versi ini, versi Bahasa Inggeris akan diguna pakai.</p>
+                                        <p>Dengan memberikan data peribadi anda kepada kami, anda dengan ini, membenarkan pemprosesan data peribadi selaras dengan segala yang dinyatakan di atas.</p>
+                                        
+                                        
+									</div>
+                                    <!-- end malay version -->
+									
+									
+										
+								</div>
+									
+							</div><!-- end horizontal tab -->
+                        
+                        </div><!-- end col-md-12 -->
+						
+					
+					</div><!-- end row -->
+					
+					
+                    				
+				
+			  </div><!-- end container -->
+              <div class="height20"></div>
+             
+              
+              
+     
+              
+              <div class="height40"></div>
+              
+  			  	
+			
+		  </div>
+    <!-- InstanceEndEditable -->
+    <!--end sub-page-content-->
+    
+    
+	<div class="solid-row"></div>
+    
+
+  @stop

@@ -1,0 +1,278 @@
+@extends('layouts.front')
+
+@section('title')
+	<title>Make an Appointment - Step One</title>
+@stop
+
+@section('content')
+	<section class="sub-page-banner2 text-center" data-stellar-background-ratio="0.3">
+		<div class="overlay"></div>
+		<div class="container">
+			<h1 class="entry-title">Appointment Details</h1>
+		</div>
+	</section>
+
+	<div class="page-header-breadcrumb">
+
+		<ol class="breadcrumb page-breadcrumb text-center">
+            <li><a href="/make-appointment">Make an Appointment</a>&nbsp;</li>
+            @if(\Auth::check())
+                @if(\Auth::user()->patient)
+                <li><a href="/patient/dashboard">You are logged in as: {{\Auth::user()->patient->first_name}} {{\Auth::user()->patient->last_name}}</a></li>
+                @endif
+                <li><a href="/patient/logout">Logout</a></li>
+            @else
+                <li><a href="#{{--signup.html--}}">Sign Up</a>&nbsp;</li>
+                <li><a href="#" data-target="#modal-login" data-toggle="modal">Patient Login</a>&nbsp;</li>
+            @endif
+        </ol>
+
+	</div>
+
+	<!-- Sub Page Content
+	============================================= -->
+	<div id="sub-page-content" class="no-padding-bottom clearfix">
+        
+                
+                <!-- patient transfer Start
+                ============================================= -->
+                <div class="container">
+                                        
+                    <div class="row">
+                    
+                        <div class="col-md-4">
+                            @include("layouts.patient.quick_access");
+                        </div><!-- end col-md-4 -->
+                        
+                        <div class="col-md-8">
+
+                            <h2 class="light bordered main-title">Appointment <span>Details</span></h2>
+                            <div class="text-right"><input type="submit" class="btn btn-primary btn-rounded" value="Print this page" onClick="window.print()"></div>
+                            <div class="margin-bottom-10"></div>
+
+                            @if($appointment->status == 1)
+                            <div class="alert alert-success">
+                                <h2 class="text-center light"><i class="fa fa-check-circle"></i>&nbsp; Your Appointment Reference #: <br/><strong>kpj-{{sprintf("%010d",$appointment->id)}}</strong></h2>
+                            </div>
+                            @endif
+
+                            @if($appointment->status == 0)
+                            <div class="alert alert-warning">
+                                <h2 class="text-center light">
+                                    <i class="fa fa-check-circle"></i>&nbsp; 
+                                    You have successfully cancelled this appointment. 
+                                    <br/><strong></strong>
+                                </h2>
+                            </div>
+                            @endif
+
+                            <div class="clearfix"></div>
+
+                            <div class="col-md-6 no-padding-left">
+                                You have selected Specialty: <h5>{{strip_tags($appointment->doctor->service->title)}}</h5>
+                                You have selected Consultant: <h5>{{$appointment->doctor->name}}</h5>
+                            </div><!-- end col-md-6 -->
+
+                            <div class="col-md-6 no-padding-left clearfix">
+
+                                Appointment Date: <h5>{{ date("d F, Y", strtotime($appointment->appointment_date)) }} ({{$appointment->appointment_day}})</h5>
+                                Appointment Time: <h5>{{$appointment->appointment_time}}</h5>
+                            </div><!--end col-md-6 -->
+
+                            <div class="clearfix"></div>
+                            <hr>
+                            <h5>Booked Details:</h5>
+
+                            <div class="col-md-6 no-padding-left">
+
+
+                                <div class="form-group">
+                                    <label class="col-md-4">MRN: </label>
+                                    <div class="col-md-8">
+                                        <div class="help-block">{{$appointment->patient->mrn_number}}</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4">Patient's Last Name: </label>
+                                    <div class="col-md-8">
+                                        <div class="help-block">{{$appointment->patient->last_name}}</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4">Patient's First Name: </label>
+                                    <div class="col-md-8">
+                                        <div class="help-block">{{$appointment->patient->first_name}}</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4">Date of Birth: </label>
+                                    <div class="col-md-8">
+                                        {{$appointment->patient->date_of_birth}}
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4">Gender: </label>
+                                    <div class="col-md-8">
+                                        <div class="help-block">{{ucwords($appointment->patient->gender)}}</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4">NRIC/Passport No.: </label>
+                                    <div class="col-md-8">
+                                        <div class="help-block">{{$appointment->patient->passport_number}}</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4">Contact No.: </label>
+                                    <div class="col-md-8">
+                                        <div class="help-block">{{$appointment->patient->contact_number}}</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+
+
+                                <div class="form-group">
+                                    <label class="col-md-4">Email (Login ID):</label>
+                                    <div class="col-md-8">
+                                        <div class="help-block">{{$appointment->patient->user["email"]}}</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="clearfix margin-bottom-20"></div>
+
+                            </div><!-- end col-md-6 -->
+
+                            <div class="col-md-6 no-padding-left clearfix">
+
+                                <div class="form-group">
+                                    <label class="col-md-4">Address:</label>
+                                    <div class="col-md-8">
+                                        {{$appointment->patient->address}}
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4">Postal Code: </label>
+                                    <div class="col-md-8">
+                                        <div class="help-block">{{$appointment->patient->postal_code}}</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4">City:</label>
+                                    <div class="col-md-8">
+                                        <div class="help-block">{{$appointment->patient->city}}</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4">State:</label>
+                                    <div class="col-md-8">
+                                        <div class="help-block">{{$appointment->patient->state}}</div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4">Country:</label>
+                                    <div class="col-md-8">
+                                        <div class="help-block">{{$appointment->patient->country["name"]}}</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                            </div><!-- end col-md-6 -->
+
+                            <div class="clearfix"></div>
+                            <hr>
+
+                            <div class="text-center">
+                                @if($appointment->status != 0)
+                                <a href="/patient/change_data_appointment/{{$appointment->id}}">
+                                    <input type="submit" class="btn btn-danger btn-rounded" value="Change Date/Time">
+                                </a>
+                                @endif
+                                @if($appointment->status != 0)
+                                <a href="/patient/cancel_appointment/{{$appointment->id}}">
+                                    <input type="submit" class="btn btn-warning btn-rounded" value="Cancel Appointment">
+                                </a>
+                                @else
+                                    <a href="/patient/active_appointment/{{$appointment->id}}">
+                                        <input type="submit" class="btn btn-success btn-rounded" value="Booked Appointment">
+                                    </a>
+                                @endif
+
+                            </div><!-- end col-md-12 -->
+
+                        </div><!-- end col-md-8 -->
+                        
+                        
+                        
+                    
+                    </div><!-- end row -->
+                    
+                    
+                    <!-- end row -->
+                    
+                    <!-- Modal -->
+                    
+                    <!-- Modal -->              
+                
+              </div><!-- end container -->
+              <div class="height40"></div>
+              
+              
+              <!-- Find Health Information
+                ============================================= -->
+              <section class="medicom-app" data-stellar-background-ratio="0.3">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-5"> <img src="images/mobile-hand.png" class="app-img" alt="" title=""> </div>
+                    <div class="col-md-7">
+                      <div class="medicom-app-content">
+                        <h1>Find Health Information</h1>
+                        <p class="lead">All Topics by Letters</p>
+                        <form name="appoint_form" id="appoint_form" method="post" action="#" onSubmit="return false">
+                          <input type="text" placeholder="Search Topics">
+                          <input type="submit" value="Search" class="btn btn-danger btn-rounded" onClick="validateAppoint();">
+                          <div class="clearfix"></div>
+                          <div class="height20"></div>
+                          <a href="#" class="btn btn-rounded btn-default btn-sm">A</a> <a href="#" class="btn btn-rounded btn-default btn-sm">B</a> <a href="#" class="btn btn-rounded btn-default btn-sm">C</a> <a href="#" class="btn btn-rounded btn-default btn-sm">D</a> <a href="#" class="btn btn-rounded btn-default btn-sm">E</a> <a href="#" class="btn btn-rounded btn-default btn-sm">F</a> <a href="#" class="btn btn-rounded btn-default btn-sm">G</a> <a href="#" class="btn btn-rounded btn-default btn-sm">H</a> <a href="#" class="btn btn-rounded btn-default btn-sm">I</a> <a href="#" class="btn btn-rounded btn-default btn-sm">J</a> <a href="#" class="btn btn-rounded btn-default btn-sm">K</a> <a href="#" class="btn btn-rounded btn-default btn-sm">L</a> <a href="#" class="btn btn-rounded btn-default btn-sm">M</a>
+                          <div class="height10"></div>
+                          <a href="#" class="btn btn-rounded btn-default btn-sm">N</a> <a href="#" class="btn btn-rounded btn-default btn-sm">O</a> <a href="#" class="btn btn-rounded btn-default btn-sm">P</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Q</a> <a href="#" class="btn btn-rounded btn-default btn-sm">R</a> <a href="#" class="btn btn-rounded btn-default btn-sm">S</a> <a href="#" class="btn btn-rounded btn-default btn-sm">T</a> <a href="#" class="btn btn-rounded btn-default btn-sm">U</a> <a href="#" class="btn btn-rounded btn-default btn-sm">V</a> <a href="#" class="btn btn-rounded btn-default btn-sm">W</a> <a href="#" class="btn btn-rounded btn-default btn-sm">X</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Y</a> <a href="#" class="btn btn-rounded btn-default btn-sm">Z</a>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              
+                
+            
+          </div><!--end sub-page-content-->
+
+	<div class="solid-row"></div>
+@stop
+
+
+@section('end_scripts')
+	<script type="text/javascript">
+
+	</script>
+@stop

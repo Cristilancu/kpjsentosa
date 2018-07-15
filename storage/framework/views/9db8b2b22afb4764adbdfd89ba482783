@@ -1,0 +1,49 @@
+	
+                <div class="height40"></div>
+                
+    <!-- Screening packages start
+                ============================================= -->
+                <section class="meet-the-doctors no-bg-img team-carousel">
+                    
+                    <div class="container">
+                    
+                        <h2 class="light bordered">Offer <span>Packages</span></h2>
+                        
+                        <div id="team-carousel" class="owl-carousel wrapper-padding-none">
+                            
+                <?php foreach(Helper::getPromotionpackages() as $pack): ?>
+                            <div class="team-member">
+                                <div class="team-thumb">
+                                    <img src="<?php echo e($pack->image); ?>" class="img-rounded" alt="<?php echo e($pack->alt); ?>">
+                                    <div class="links">
+                       <?php if($pack->image_large): ?>
+                          <a href="<?php echo e($pack->image_large); ?>">
+                      <?php elseif($pack->pdf): ?>
+                          <a href="<?php echo e($pack->pdf); ?>">                 
+                      <?php elseif($pack->website): ?>                      
+                      <a href="<?php echo e(Helper::fix_link($pack->website)); ?>">
+                      <?php else: ?>
+                          <a href="/promotion_packages/<?php echo e($pack->id); ?>">
+                      <?php endif; ?> <i class="fa fa-link"></i></a>
+
+                                       
+                                     </div>
+                                </div>
+                                <h5><a href="/promotion_packages/<?php echo e($pack->id); ?>"><?php echo e($pack->title); ?></a></h5>
+                              	<p><?php echo e($pack->description); ?></p>
+                                <a href="/promotion_packages/<?php echo e($pack->id); ?>">- VIEW DETAILS</a>
+                            </div>
+                <?php endforeach; ?>
+                            
+                            
+                            
+                            
+                            
+                            
+                      </div>
+        
+                    </div>
+                    
+                </section>
+				
+				

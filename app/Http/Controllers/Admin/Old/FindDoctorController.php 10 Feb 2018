@@ -1,0 +1,267 @@
+<?php namespace App\Http\Controllers\Admin;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use App\doctor;
+use App\service;
+use App\Country;
+use App\Patient;
+use App\User;
+
+use Illuminate\Http\Request;
+
+class FindDoctorController extends Controller {
+
+	public function getFindDoctorList()
+	{
+		$doctors = doctor::paginate(10);
+		return view('admin.find_doctor.list', compact('doctors'));
+	}
+
+	public function getFindDoctorNew()
+	{
+		$services = service::where('status',1)->get();
+		return view('admin.find_doctor.new', compact('services'));
+	}
+
+	public function postFindDoctorNew(Request $request)
+	{
+		// return $request->all();
+		 $this->validate($request, [
+	        'profile_status' => 'sometimes',
+			'profile_consultant_name' => 'required',
+			'profile_service' => 'required|exists:services,id',
+			// 'profile_speciality' => 'required',
+			'profile_degrees' => 'required',
+			'profile_experience' => 'required',
+			'profile_consultant_image' => 'required|image|mimes:jpeg,png|min:1|max:500',
+			'profile_details' => 'required',
+			'profile_clinic_hours' => 'required',
+			'profile_consultant_type' => 'required',
+			'profile_consultant_image_alt_text' => 'required',
+			'profile_enable_link' => 'required'
+	    ]);
+
+		$doctor = new doctor();
+		
+		// if user choose a file, replace the old one //
+		if( $request->hasFile('profile_consultant_image') ){
+			$file = $request->file('profile_consultant_image');
+			$destination_path = 'images/find_doctor/';
+			$filename = str_random(6).'_'.$file->getClientOriginalName();
+			$file->move(public_path() .'/'. $destination_path, $filename);
+			$doctor->image = $destination_path . $filename;
+		}
+			// return public_path() .'/'. $destination_path.$filename;
+
+		// replace old data with new data from the submitted form //
+		$doctor->status = ($request->has('profile_status') && $request->profile_status == 'on'?1:0);
+		$doctor->name = $request->profile_consultant_name;
+		$doctor->service_id = $request->profile_service;
+		$doctor->degrees = $request->profile_degrees;
+		$doctor->experience = $request->profile_experience;
+		// $doctor->image = $request->profile_consultant_image;
+		$doctor->details = $request->profile_details;
+		$doctor->clinic_hours = $request->profile_clinic_hours;
+		$doctor->type = $request->profile_consultant_type;
+		$doctor->image_alt_text = $request->profile_consultant_image_alt_text;
+		$doctor->enable_link = $request->profile_enable_link;
+		$doctor->save();
+
+		return redirect('/admin/find_doctor_list')->with('message', 'The information has been saved/updated successfully.');
+	}
+
+	public function getFindDoctorEdit($id)
+	{
+		$doctor = doctor::find($id);
+		$services = service::where('status',1)->get();
+		return view('admin.find_doctor.edit', compact('doctor','services'));
+		// ALTER TABLE `doctors` ADD `status` ENUM('0','1') NOT NULL DEFAULT '1' AFTER `clinic_hours`;
+		// ALTER TABLE `doctors` ADD `type` VARCHAR(190) NULL AFTER `status`, ADD `image_alt_text` VARCHAR(190) NULL AFTER `type`, ADD `enable_link` ENUM('none','appointment') NULL AFTER `image_alt_text`;
+	}
+
+	public function postFindDoctorEdit(Request $request, $id)
+	{
+		// return $request->all();
+		$this->validate($request,[
+	        'profile_status' => 'sometimes',
+			'profile_consultant_name' => 'required',
+			'profile_service' => 'required|exists:services,id',
+			'profile_degrees' => 'required',
+			'profile_experience' => 'required',
+			'profile_consultant_image' => 'sometimes|image|mimes:jpeg,png|min:1|max:500',
+			'profile_details' => 'required',
+			'profile_clinic_hours' => 'required',
+			'profile_consultant_type' => 'required',
+			'profile_consultant_image_alt_text' => 'sometimes',
+			'profile_enable_link' => 'required'
+		]);
+
+		$doctor = doctor::find($id);
+		
+		// if user choose a file, replace the old one //
+		if( $request->hasFile('profile_consultant_image') ){
+			$file = $request->file('profile_consultant_image');
+			$destination_path = 'images/find_doctor/';
+			$filename = str_random(6).'_'.$file->getClientOriginalName();
+			$file->move(public_path() .'/'. $destination_path, $filename);
+			$doctor->image = $destination_path . $filename;
+		}
+			// return public_path() .'/'. $destination_path.$filename;
+
+		// replace old data with new data from the submitted form //
+		$doctor->status = ($request->has('profile_status') && $request->profile_status == 'on'?1:0);
+		$doctor->name = $request->profile_consultant_name;
+		$doctor->service_id = $request->profile_service;
+		$doctor->degrees = $request->profile_degrees;
+		$doctor->experience = $request->profile_experience;
+		$doctor->details = $request->profile_details;
+		$doctor->clinic_hours = $request->profile_clinic_hours;
+		$doctor->type = $request->profile_consultant_type;
+		if($request->has('profile_consultant_image_alt_text')){
+			$doctor->image_alt_text = $request->profile_consultant_image_alt_text;
+		}
+		$doctor->enable_link = $request->profile_enable_link;
+		$doctor->save();
+
+		return redirect('/admin/find_doctor_list')->with('message', 'The information has been saved/updated successfully.');
+	}
+
+	public function getPatientsList()
+	{
+		$countries = Country::where('status', 1)->get();
+		$patients = Patient::all();
+		return view('admin.find_doctor.patients_list', compact('countries','patients'));
+	}
+
+	public function postAddNewPatientAddNew(Request $request)
+	{
+		$this->validate($request,[
+			'patient_status' => 'required',
+			'patient_mrn_number' => 'required',
+			'patient_last_name' => 'required',
+			'patient_first_name' => 'required',
+			'patient_date_of_birth' => 'required',
+			'patient_gender' => 'required',
+			'patient_passport_number' => 'required',
+			'patient_contact_number' => 'required',
+			'patient_address' => 'required',
+			'patient_city' => 'required',
+			'patient_postal_code' => 'required',
+			'patient_state' => 'required',
+			'patient_country_id' => 'required|exists:countries,id',
+			'patient_email' => 'required|unique:users,email',
+			'password' => 'required|confirmed',
+			'patient_newsletter_subscription' => 'sometimes'
+		]);
+
+		$user = new User;
+		$user->name = $request->patient_first_name .' '. $request->patient_last_name;
+		$user->email = $request->patient_email;
+		$user->password = bcrypt($request->password);
+		$user->save();
+
+		$patient = new Patient;
+		$patient->user_id = $user->id;
+		$patient->status = $request->patient_status;
+		$patient->mrn_number = $request->patient_mrn_number;
+		$patient->last_name = $request->patient_last_name;
+		$patient->first_name = $request->patient_first_name;
+		$patient->date_of_birth = $request->patient_date_of_birth;
+		$patient->gender = $request->patient_gender;
+		$patient->passport_number = $request->patient_passport_number;
+		$patient->contact_number = $request->patient_contact_number;
+		$patient->address = $request->patient_address;
+		$patient->city = $request->patient_city;
+		$patient->postal_code = $request->patient_postal_code;
+		$patient->state = $request->patient_state;
+		$patient->country_id = $request->patient_country_id;
+		$patient->newsletter_subscription = $request->patient_newsletter_subscription;
+		$patient->save();
+
+		return [
+			'status' => 'ok',
+			'message' => 'The information has been saved/updated successfully.'
+		];
+	}
+
+	public function postPatientSaveEdit(Request $request)
+	{
+		$this->validate($request,[
+			'patient_status' => 'required',
+			// 'patient_mrn_number' => 'required|unique:patients,mrn_number',
+			'patient_last_name' => 'required',
+			'patient_first_name' => 'required',
+			'patient_date_of_birth' => 'required',
+			'patient_gender' => 'required',
+			'patient_passport_number' => 'required',
+			'patient_contact_number' => 'required',
+			'patient_address' => 'required',
+			'patient_city' => 'required',
+			'patient_postal_code' => 'required',
+			'patient_state' => 'required',
+			'patient_country_id' => 'required|exists:countries,id',
+			'patient_newsletter_subscription' => 'required',
+			// 'patient_email' => 'required|email|unique:users,email',
+			'password' => 'required|confirmed',
+			'patient_id' => 'required|exists:patients,id'
+		]);
+
+		$patient = Patient::find($request->patient_id);
+		$patient->status = $request->patient_status;
+		// $patient->mrn_number = $request->patient_mrn_number;
+		$patient->last_name = $request->patient_last_name;
+		$patient->first_name = $request->patient_first_name;
+		$patient->date_of_birth = $request->patient_date_of_birth;
+		$patient->gender = $request->patient_gender;
+		$patient->passport_number = $request->patient_passport_number;
+		$patient->contact_number = $request->patient_contact_number;
+		$patient->address = $request->patient_address;
+		$patient->city = $request->patient_city;
+		$patient->postal_code = $request->patient_postal_code;
+		$patient->state = $request->patient_state;
+		$patient->country_id = $request->patient_country_id;
+		$patient->newsletter_subscription = $request->patient_newsletter_subscription;
+		$patient->save();
+
+		$user = User::find($patient->user_id);
+		$user->name = $request->patient_first_name .' '. $request->patient_last_name;
+		// $user->email = $request->patient_email;
+		$user->password = bcrypt($request->patient_password);
+		$user->save();
+
+		return [
+			'status' => 'ok',
+			'message' => 'The information has been saved/updated successfully.'
+		];
+	}
+
+	public function getAppointmentsList()
+	{
+		$a = [];
+		return view('admin.find_doctor.appointments_list', compact('a'));
+	}
+
+	public function getPatientDelete($id)
+	{
+		$patient = Patient::find($id);
+		$patient->delete();
+
+		return [
+			'status' => 'ok',
+			'message' => 'The information has been saved/updated successfully.'
+		];
+	}
+
+	public function getDeleteDoctorImage($id)
+	{
+		$doctor = doctor::find($id);
+		$doctor->image = null;
+		$doctor->save();
+		
+		return [
+			'status' => 'ok',
+			'message' => 'The information has been saved/updated successfully.'
+		];
+	}
+}

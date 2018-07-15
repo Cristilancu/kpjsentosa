@@ -1,0 +1,70 @@
+<div class="modal fade book-an-appointment" id="modal-change-password" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Change/Update Password</h4>
+            </div>
+            <div class="modal-body">
+                <form action="<?php echo e(url("patient/reset-password")); ?>" method="post">
+                    <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                <p>Password must be <span class="text-danger">at least 12 characters</span>. The combination of the password must be alphanumeric with one special character <span class="text-danger">(eg. ! @ # $ % ^ & * ( ) _ + { } | : < > ? " \ [ ] ' ; / . ~ `)</span></p>
+                <hr>
+                <div class="form-group">
+                  <label class="col-md-4">Existing Password: <span class="text-danger">*</span></label>
+                  <div class="col-md-8">
+                     <input type="password" placeholder="*******" class="form-control" name="old_password">
+                     <?php /*  <div class="alert alert-success" style="width: 94%">
+                        <i class="fa fa-check-circle"></i> Password entered correctly.
+                    </div>
+                    <div class="alert alert-danger" style="width: 94%">
+                        <i class="fa fa-times-circle"></i> Password entered wrongly.
+                    </div>  */ ?>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                
+                
+                <div class="form-group">
+                  <label class="col-md-4">New Password: <span class="text-danger">*</span></label>
+                  <div class="col-md-8">
+                     <input type="password" placeholder="*******" class="form-control" name="new_password">
+                     <?php /*  <div data-hover="tooltip" data-placement="top" title="Strong Password" class="progress progress-striped active">
+                        
+                        <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;" class="progress-bar progress-bar-success">100% Strong</div>
+                    </div>
+                    <div class="clearfix"></div>
+                     <div data-hover="tooltip" data-placement="top" title="Moderate Password" class="progress progress-striped active">
+                        
+                        <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;" class="progress-bar progress-bar-warning">65% Moderate</div>
+                    </div>
+                    <div class="clearfix"></div>
+                     <div data-hover="tooltip" data-placement="top" title="Weak Password" class="progress progress-striped active">
+                        
+                        <div role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%;" class="progress-bar progress-bar-danger">15% Weak</div>
+                    </div>  */ ?>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                
+                
+                <div class="form-group">
+                  <label class="col-md-4">Confirm Password: <span class="text-danger">*</span></label>
+                  <div class="col-md-8">
+                     <input type="password" placeholder="*******" class="form-control" name="confirm_password">
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                
+                <hr>
+                <div class="col-md-12 text-center">
+                    <input type="submit" class="btn btn-danger btn-rounded" style="width: 20%" value="Update">
+                    <input type="submit" class="btn btn-primary btn-rounded" style="width: 20%" value="Cancel" data-dismiss="modal">
+                </div>
+                <div class="clearfix"></div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
